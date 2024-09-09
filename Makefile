@@ -8,4 +8,4 @@ preview: prez_auber_2024.qmd
 	quarto preview prez_auber_2024.qmd
 
 clean:
-	rm prez_auber_2024.qmd
+	rm prez_auber_2024.html

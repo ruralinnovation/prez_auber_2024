@@ -1,7 +1,20 @@
 ---
-title: "Habits"
-author: "John Doe"
-format: revealjs
+title: "Working with Primary data"
+subtitle: "Cori.data.fcc an example of code as data"
+author: "Olivier Leroy"
+date: "October 20 2024"
+institute: "Center On Rural Innovation"
+fontsize: 20pt
+format: 
+  revealjs: 
+    theme: custom_cori.scss
+    logo: img/CORI_Logo.png
+    css: logo.css
+editor: visual
+title-slide-attributes:
+  data-background-image: img/URISA_GISPro2023_SpeakerPPTTemplate.pptx.svg
+  data-background-size: contain
+  data-background-opacity: "0.5"
 ---
 
 # In the morning
