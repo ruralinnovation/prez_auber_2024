@@ -11,10 +11,6 @@ format:
     logo: img/CORI_Logo.png
     css: logo.css
 editor: visual
-title-slide-attributes:
-  data-background-image: img/URISA_GISPro2023_SpeakerPPTTemplate.pptx.svg
-  data-background-size: contain
-  data-background-opacity: "0.5"
 ---
 
 # In the morning
