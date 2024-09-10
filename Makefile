@@ -4,8 +4,8 @@ SHELL := bash
 .DELETE_ON_ERROR:
 MAKEFLAGS += --warn-undefined-variables
 
-preview: prez_auber_2024.qmd
-	quarto preview prez_auber_2024.qmd
+preview: index.qmd
+	quarto preview index.qmd
 
 clean:
-	rm prez_auber_2024.html
+	rm index.html
