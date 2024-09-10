@@ -10,32 +10,50 @@ format:
     theme: custom_cori.scss
     logo: img/CORI_Logo.png
     css: logo.css
+    footnotes-hover:: true
+
 editor: visual
 ---
 
-# In the morning
+# CORI
 
-## Getting up
+## CORI
 
-- Turn off alarm
-- Get out of bed
+- Me
+- CORI
 
-## Breakfast
+## Previous workflow
 
-- Eat eggs
-- Drink coffee
+- What FCC data look like in the wild
+- Our previous ingestion process
+- Limits of it
 
-# In the evening
+# cori.data.fcc
 
-## Dinner
+## New technologies
 
-- Eat spaghetti
-- Drink wine
+- DuckDB and S3
+- Parquet and interoperability 
 
-## Going to sleep
+## Packaging code and data
 
-- Get in bed
-- Count sheep
+>  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
+
+[^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
+
+
+# Examples of uses cases
+
+- Isp over time?
+- States level analysis? 
+
+## References
+
+TODO:
+
+McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/
+
+https://www.emilyriederer.com/post/team-of-packages/#collaboration
 
 ## Contacts
 
