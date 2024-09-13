@@ -1,6 +1,6 @@
 ---
 title: "Working with Primary data"
-subtitle: "Cori.data.fcc an example of data has code"
+subtitle: "Cori.data.fcc an example of data as code"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
@@ -128,6 +128,13 @@ identical(num_files, files_dl)
 
 
 # Examples of uses cases
+
+## Download files
+
+
+## Use CORI curated files
+
+## Custom
 
 - Isp over time?
 - States level analysis? 
