@@ -1,15 +1,16 @@
 ---
 title: "Working with Primary data"
-subtitle: "Cori.data.fcc an example of data has code"
+subtitle: "`cori.data.fcc`:: an example of data as code"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
 fontsize: 20pt
+favicon: assets/images/Logo-Mark_Black.png
 format: 
   revealjs: 
-    theme: custom_cori.scss
+    theme: src/custom.scss
     logo: img/CORI_Logo.png
-    css: logo.css
+    css: assets/fonts.css
     footnotes-hover:: true
 from: markdown+emoji
 editor: visual
