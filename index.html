@@ -97,7 +97,7 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="logo.css">
+  <link rel="stylesheet" href="assets/fonts.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -394,7 +394,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Working with Primary data</h1>
-  <p class="subtitle">Cori.data.fcc an example of data as code</p>
+  <p class="subtitle"><code>cori.data.fcc</code>:: an example of data as code</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -409,12 +409,7 @@ Olivier Leroy
 
   <p class="date">2024-10-20</p>
 </section>
-<section>
-<section id="cori" class="title-slide slide level1 center">
-<h1>CORI</h1>
-
-</section>
-<section id="cori-1" class="slide level2">
+<section id="cori" class="slide level2">
 <h2>CORI</h2>
 <ul>
 <li>Me</li>
@@ -423,7 +418,7 @@ Olivier Leroy
 </section>
 <section id="me" class="slide level2">
 <h2>Me</h2>
-</section></section>
+</section>
 <section>
 <section id="fccs-data" class="title-slide slide level1 center">
 <h1>FCC’s Data</h1>
@@ -442,8 +437,8 @@ Olivier Leroy
 <li>Limits of it</li>
 </ul>
 </section>
-<section id="manual-vs-automated" class="slide level2">
-<h2>Manual VS Automated:</h2>
+<section id="manual-v.s." class="slide level2">
+<h2>Manual v.s. …</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><video data-src="img/manual_fcc.mov" controls=""><a href="img/manual_fcc.mov">Video</a></video></p>
@@ -455,6 +450,25 @@ Olivier Leroy
 <li><span class="emoji" data-emoji="red_circle">🔴</span> Error prone</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
+<span id="cb1-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
+<span id="cb1-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
+<span id="cb1-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
+<span id="cb1-9"><a href=""></a></span>
+<span id="cb1-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
+<span id="cb1-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div></div>
+</section>
+<section id="automated" class="slide level2">
+<h2>… Automated</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Visual</a></li><li><a href="#tabset-1-2">Code</a></li></ul>
 <div class="tab-content">
@@ -463,38 +477,39 @@ Olivier Leroy
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
-<span id="cb1-4"><a href=""></a></span>
-<span id="cb1-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
-<span id="cb1-8"><a href=""></a></span>
-<span id="cb1-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
-<span id="cb1-10"><a href=""></a></span>
-<span id="cb1-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
-<span id="cb1-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
-<span id="cb1-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
-<span id="cb1-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
-<span id="cb1-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
-<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
-<span id="cb2-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
-<span id="cb2-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
 <span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir, </span>
-<span id="cb2-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
-<span id="cb2-9"><a href=""></a></span>
-<span id="cb2-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
-<span id="cb2-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
+<span id="cb2-10"><a href=""></a></span>
+<span id="cb2-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
+<span id="cb2-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
+<span id="cb2-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
+<span id="cb2-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
+<span id="cb2-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
+<span id="cb2-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
+<span id="cb3-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
+<span id="cb3-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
+<span id="cb3-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
+<span id="cb3-9"><a href=""></a></span>
+<span id="cb3-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
+<span id="cb3-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section></section>
