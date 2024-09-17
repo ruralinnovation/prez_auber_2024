@@ -1,32 +1,33 @@
 ---
 title: "Working with Primary data"
-subtitle: "Cori.data.fcc an example of data as code"
+subtitle: "`cori.data.fcc`:: an example of data as code"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
 fontsize: 20pt
-format: 
+favicon: assets/images/Logo-Mark_Black.png
+format:
   revealjs: 
-    theme: custom_cori.scss
+    theme: src/custom_cori.scss
     logo: img/CORI_Logo.png
-    css: logo.css
+    css: assets/fonts.css
     footnotes-hover:: true
 from: markdown+emoji
 editor: visual
 ---
 
-# CORI
 
 ## CORI
 
 - Me
 - CORI
 
+
 ## Me
 
 
-
 # FCC's Data
+
 
 ## Our needs
 
@@ -34,13 +35,15 @@ Connect humanity project
 
 Bead tools 
 
+
 ## Previous workflow:
 
 - What FCC data look like in the wild
 - Our previous ingestion process
 - Limits of it
 
-## Manual VS Automated:
+
+## Manual v.s. ...
 
 :::: {.columns}
 
@@ -56,6 +59,34 @@ Bead tools
 
 ::: {.column width="50%"}
 
+```{r}
+#| label: check_dl_1
+#| eval: false
+#| echo: true
+num_files <- get_nbm_available() |>
+  dplyr::filter(release == "June 30, 2023" &
+                data_type == "Fixed Broadband" &
+                data_category == "Nationwide") |>
+  nrow()
+
+files_dl <- length(list.files(dir,
+                              pattern = "*.zip"))
+
+identical(num_files, files_dl)
+# TRUE
+```
+
+:::
+
+::::
+
+
+## ... Automated
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
 ::: {.panel-tabset}
 
 ### Visual
@@ -66,8 +97,8 @@ Bead tools
 
 ```{r}
 #| label: example_dl_nbm
-#| eval: false 
-#| echo: true 
+#| eval: false
+#| echo: true
 library(cori.data.fcc)
 
 dir <- "data_swamp/nbm/"
@@ -89,17 +120,21 @@ dl_nbm(
 
 :::
 
+:::
+
+::: {.column width="50%"}
+
 ```{r}
-#| label: check_dl
-#| eval: false 
-#| echo: true 
-num_files <- get_nbm_available() |> 
+#| label: check_dl_2
+#| eval: false
+#| echo: true
+num_files <- get_nbm_available() |>
   dplyr::filter(release == "June 30, 2023" &
                 data_type == "Fixed Broadband" &
                 data_category == "Nationwide") |>
   nrow()
 
-files_dl <- length(list.files(dir, 
+files_dl <- length(list.files(dir,
                               pattern = "*.zip"))
 
 identical(num_files, files_dl)
@@ -111,14 +146,14 @@ identical(num_files, files_dl)
 ::::
 
 
-
-
 # cori.data.fcc
+
 
 ## New technologies
 
 - DuckDB and S3
 - Parquet and interoperability 
+
 
 ## Packaging code and data
 
@@ -129,15 +164,18 @@ identical(num_files, files_dl)
 
 # Examples of uses cases
 
+
 ## Download files
 
 
 ## Use CORI curated files
 
+
 ## Custom
 
 - Isp over time?
 - States level analysis? 
+
 
 ## References
 
@@ -146,6 +184,7 @@ TODO:
 McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/
 
 https://www.emilyriederer.com/post/team-of-packages/#collaboration
+
 
 ## Contacts
 
