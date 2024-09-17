@@ -8,7 +8,7 @@ fontsize: 20pt
 favicon: assets/images/Logo-Mark_Black.png
 format: 
   revealjs: 
-    theme: src/custom.scss
+    theme: src/custom_cori.scss
     logo: img/CORI_Logo.png
     css: assets/fonts.css
     footnotes-hover:: true
@@ -35,13 +35,15 @@ Connect humanity project
 
 Bead tools 
 
+
 ## Previous workflow:
 
 - What FCC data look like in the wild
 - Our previous ingestion process
 - Limits of it
 
-## Manual VS Automated:
+
+## Manual v.s. ...
 
 :::: {.columns}
 
@@ -57,6 +59,38 @@ Bead tools
 
 ::: {.column width="50%"}
 
+```{r}
+#| label: check_dl_1
+#| eval: false
+#| echo: true
+num_files <- get_nbm_available() |>
+  dplyr::filter(release == "June 30, 2023" &
+                data_type == "Fixed Broadband" &
+                data_category == "Nationwide") |>
+  nrow()
+
+files_dl <- length(list.files(dir,
+                              pattern = "*.zip"))
+
+identical(num_files, files_dl)
+# TRUE
+```
+
+:::
+
+::::
+
+
+
+
+## ... Automated
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+
+
 ::: {.panel-tabset}
 
 ### Visual
@@ -67,8 +101,8 @@ Bead tools
 
 ```{r}
 #| label: example_dl_nbm
-#| eval: false 
-#| echo: true 
+#| eval: false
+#| echo: true
 library(cori.data.fcc)
 
 dir <- "data_swamp/nbm/"
@@ -90,17 +124,21 @@ dl_nbm(
 
 :::
 
+:::
+
+::: {.column width="50%"}
+
 ```{r}
-#| label: check_dl
-#| eval: false 
-#| echo: true 
-num_files <- get_nbm_available() |> 
+#| label: check_dl_2
+#| eval: false
+#| echo: true
+num_files <- get_nbm_available() |>
   dplyr::filter(release == "June 30, 2023" &
                 data_type == "Fixed Broadband" &
                 data_category == "Nationwide") |>
   nrow()
 
-files_dl <- length(list.files(dir, 
+files_dl <- length(list.files(dir,
                               pattern = "*.zip"))
 
 identical(num_files, files_dl)

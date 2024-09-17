@@ -1,0 +1,162 @@
+/*-- scss:defaults --*/
+@import "base";
+//@import url(./fonts/league-gothic/league-gothic.css);
+//@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+@import "custom.scss";
+
+// fonts
+$font-family-sans-serif: Bitter, sans-serif !default;
+
+// colors
+$body-bg: #fff !default;
+$body-color: #000 !default;
+$link-color: #00835D !default;
+$selection-bg:  #FFE473 !default;
+$selection-color: #000 !default;
+
+// headings
+$presentation-heading-font: "Montserrat", "TT Hoves", sans-serif !default;
+$presentation-heading-color: #16343E !default;
+$presentation-heading-text-transform: uppercase !default;
+
+// code blocks
+$code-block-border-color: #93a1a1 !default;
+
+/*-- scss:rules --*/
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+.reveal {
+  color: #1E343D;
+
+  /* Standard CORI slide deck actually includes logo in bottom right corner, like quarto default */
+  .slide-logo {
+    //display: block;
+    //position: fixed;
+    //bottom: unset !important;
+    //right: 12px !important;
+    //top: 5px !important;
+    //left: unset !important;
+    max-width: unset !important;
+    max-height: unset !important;
+    height: auto !important;
+    width: 12.5% !important;
+  }
+
+  .slides {
+
+    background-color: #FFF;
+
+    inset: unset !important;
+    transform: unset !important;
+
+    height: 100vh !important;
+    width: calc(100vw - 50px) !important;
+    position: absolute;
+    top: 0;
+    left: 50px !important;
+
+    .slide {
+
+      h1 {
+        font-size: 40pt !important;
+        text-align: left;
+      }
+
+      code {
+        color: #398160;
+        background-color: rgba(0, 0, 0, 0);
+        white-space: pre-wrap;
+      }
+
+      div.aside {
+        position: absolute;
+        bottom: 50px !important;
+        font-size: #{$presentation-font-smaller}em;
+        color: $text-muted;
+      }
+
+      &.level1, &.level2 {
+        display: flex !important;
+        flex-direction: column;
+
+        h1, h2 {
+          flex-basis: auto;
+          flex-grow: 1;
+          flex-shrink: 1;
+          max-height: calc(100px - 10%);
+          overflow: hidden;
+          padding: 2.5% 5% 5% 5%;
+        }
+
+        h2 {
+          background-color: #EEF5EF;
+          //border: 2px solid #000;
+        }
+
+        &>div, &>div:nth-child(2), &>p, &>p:nth-child(2), &>ul, &>ul:nth-child(2) {
+          flex-basis: auto;
+          flex-grow: 1;
+          flex-shrink: 1;
+          overflow-x: hidden;
+          padding-left: 5%;
+          //border: 2px solid #000;
+        }
+
+      }
+    }
+
+    section.quarto-title-block {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      padding: 15% 15% 15% 5%;
+    }
+
+    section#title-slide {
+      text-align: left;
+      //background-color: #EEF5EF;
+      //background: #FFF url('/assets/big_hexagon.svg') no-repeat 0 -50px;
+      //background-image: url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='layer1' transform='translate(-7.5, -1.5)'%3E%3Cpath d='M 5.3378906 2 L 0.671875 10 L 5.3378906 18 L 14.662109 18 L 19.328125 10 L 14.662109 2 L 5.3378906 2 z ' style='fill:%23EEF5EF; fill-opacity:1; stroke:none; stroke-width:0px;'/%3E%3C/g%3E%3C/svg%3E");
+      background: #FFF url("data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='layer1' transform='translate(-7.5, -1.5)'%3E%3Cpath d='M 5.3378906 2 L 0.671875 10 L 5.3378906 18 L 14.662109 18 L 19.328125 10 L 14.662109 2 L 5.3378906 2 z ' style='fill:%23EEF5EF; fill-opacity:1; stroke:none; stroke-width:0px;'/%3E%3C/g%3E%3C/svg%3E")
+        no-repeat 0 -100px;
+      background-size: contain;
+
+      h1 {
+        max-width: 600px;
+        line-height: 1.15em;
+        vertical-align: center;
+      }
+
+      h1::before {
+        max-width: 500px;
+        font-size: 12pt;
+        font-weight: bold;
+        font-variant: small-caps;
+        color: #398160;
+        content: "Center on Rural Innovation ";
+        line-height: 1.25em;
+      }
+
+      .quarto-title-authors {
+        text-align: left;
+
+        .quarto-title-author {
+          text-align: left;
+          padding: 0;
+        }
+      }
+    }
+
+    .quarto-title-block .quarto-title-authors {
+      display: flex;
+      justify-content: left;
+    }
+
+  }
+
+}
