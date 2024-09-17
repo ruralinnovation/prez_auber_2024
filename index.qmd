@@ -6,7 +6,7 @@ date: "October 20 2024"
 institute: "Center On Rural Innovation"
 fontsize: 20pt
 favicon: assets/images/Logo-Mark_Black.png
-format: 
+format:
   revealjs: 
     theme: src/custom_cori.scss
     logo: img/CORI_Logo.png
@@ -16,18 +16,18 @@ from: markdown+emoji
 editor: visual
 ---
 
-# CORI
 
 ## CORI
 
 - Me
 - CORI
 
+
 ## Me
 
 
-
 # FCC's Data
+
 
 ## Our needs
 
@@ -81,15 +81,11 @@ identical(num_files, files_dl)
 ::::
 
 
-
-
 ## ... Automated
 
 :::: {.columns}
 
 ::: {.column width="50%"}
-
-
 
 ::: {.panel-tabset}
 
@@ -150,14 +146,14 @@ identical(num_files, files_dl)
 ::::
 
 
-
-
 # cori.data.fcc
+
 
 ## New technologies
 
 - DuckDB and S3
 - Parquet and interoperability 
+
 
 ## Packaging code and data
 
@@ -168,8 +164,18 @@ identical(num_files, files_dl)
 
 # Examples of uses cases
 
+
+## Download files
+
+
+## Use CORI curated files
+
+
+## Custom
+
 - Isp over time?
 - States level analysis? 
+
 
 ## References
 
@@ -178,6 +184,7 @@ TODO:
 McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/
 
 https://www.emilyriederer.com/post/team-of-packages/#collaboration
+
 
 ## Contacts
 
