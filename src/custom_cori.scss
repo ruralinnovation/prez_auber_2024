@@ -33,6 +33,14 @@ html * {
 .reveal {
   color: #1E343D;
 
+  .r-stretch {
+    max-width: none;
+    max-height: none;
+    padding-left: 5%;
+    width: calc(50vw - 5%) !important;
+    height: calc(50vw/16 * 9 - 5%) !important;
+  }
+
   /* Standard CORI slide deck actually includes logo in bottom right corner, like quarto default */
   .slide-logo {
     //display: block;
@@ -65,6 +73,10 @@ html * {
       h1 {
         font-size: 40pt !important;
         text-align: left;
+      }
+
+      aside {
+        padding-left: 5%;
       }
 
       code {
@@ -138,7 +150,9 @@ html * {
         font-weight: bold;
         font-variant: small-caps;
         color: #398160;
-        content: "Center on Rural Innovation ";
+        content: "Center on Rural Innovation \A";
+        line-height: 1.25em;
+        white-space: pre;
         line-height: 1.25em;
       }
 
