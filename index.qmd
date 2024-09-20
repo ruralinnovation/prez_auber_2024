@@ -19,13 +19,18 @@ editor: visual
 
 ## PLAN
 
-## CORI
+* me & CORI
 
-- Me
-- CORI
+* FCC's Data
 
 
+
+ 
 ## Me
+
+- role at cori
+
+- dad joke 
 
 
 ## CORI
@@ -38,13 +43,11 @@ Center On Rural Innovation (CORI)
 
 # FCC's Data
 
+## FCC TLDR
 
+- FCC
 
-## Our needs
-
-Connect humanity project
-
-Bead tools 
+- their data
 
 
 ## Previous workflow:
@@ -53,6 +56,21 @@ Bead tools
 - Our previous ingestion process
 - Limits of it
 
+ELT versus ETL and what that means for business perspective 
+
+data as files data as tables and the limit 
+
+(out of sync tables/files)
+
+## Our needs
+
+Connect humanity project
+
+Bead tools 
+
+-> how do we produced that
+
+Importance of using PG
 
 ## Manual v.s. ...
 
@@ -163,12 +181,14 @@ identical(num_files, files_dl)
 ## New technologies
 
 - DuckDB and S3
+  - takewaysa of those technology
+
 - Parquet and interoperability 
+
+skip PG here. 
 
 
 ## Packaging code and data
-
->  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
 tl:dr R package / pkgdown / GH
 
@@ -178,10 +198,28 @@ tl:dr R package / pkgdown / GH
 
 - vignettes
 
+- snipped of data-raw
+
+- bandwagon pkg dev: test/website/check/distribution  
+
+>  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
+
 [^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
+
+## why public
+
+- open source is :
+
+* a way to publish: ie you can read the code 
+
+* a way to share: ie you can use it
 
 
 # Examples of uses cases
+
+## dl the package 
+
+
 
 ## Pot. ideas
 
@@ -193,15 +231,22 @@ tl:dr R package / pkgdown / GH
 
 ## Download files
 
-- see above
+- see above / could be that automated code is enough 
+
 
 ## Use CORI curated files
 
+## Pot. discussions
 
-## Custom
+place of business logic in data example bead category 
 
-- Isp over time?
-- States level analysis? 
+## Summary
+
+- data as code:
+
+  * enhance reproducibility 
+
+  * easier to capitalize/build on it 
 
 
 ## References
