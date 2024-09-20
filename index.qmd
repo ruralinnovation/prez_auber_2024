@@ -17,6 +17,8 @@ editor: visual
 ---
 
 
+## PLAN
+
 ## CORI
 
 - Me
@@ -26,7 +28,16 @@ editor: visual
 ## Me
 
 
+## CORI
+
+Center On Rural Innovation (CORI)
+
+- one image (Doritos?)
+
+-  why Data , open source and open data is important at CORI
+
 # FCC's Data
+
 
 
 ## Our needs
@@ -81,7 +92,7 @@ identical(num_files, files_dl)
 ::::
 
 
-## ... Automated
+## ... Code Automated ...
 
 :::: {.columns}
 
@@ -145,9 +156,9 @@ identical(num_files, files_dl)
 
 ::::
 
+## ... Code Packaged
 
 # cori.data.fcc
-
 
 ## New technologies
 
@@ -159,14 +170,30 @@ identical(num_files, files_dl)
 
 >  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
+tl:dr R package / pkgdown / GH
+
+- `?get_nbm_raw` 
+
+- articles
+
+- vignettes
+
 [^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
 
 
 # Examples of uses cases
 
+## Pot. ideas
+
+- Block covered BEAD like
+
+- ISP networks
+
+- Just download data
 
 ## Download files
 
+- see above
 
 ## Use CORI curated files
 
