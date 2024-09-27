@@ -28,10 +28,17 @@ editor: visual
  
 ## Me
 
-- role at cori
+- I work as a senior data engineer
 
-- dad joke 
+TODO: link to linkedin / mastodon / website 
 
+data scientist : sexiest job 
+
+data engineer : we are the plumber 
+ 
+Data scientist; usually are on the business side and data engineer tend to be on the infrastructure side  
+
+Working with primary data: distinction between something general and something business specific (I will give example later: downloading data is general, counting underseved location is business specific)  
 
 ## CORI
 
@@ -64,9 +71,7 @@ data as files data as tables and the limit
 
 ## Our needs
 
-Connect humanity project
-
-Bead tools 
+Connect humanity project / BEAD tool 
 
 -> how do we produced that
 
@@ -80,30 +85,14 @@ Importance of using PG
 
 ![](img/manual_fcc.mov)
 
-* :repeat: Repeat for every state  
-* :repeat: Repeat for every version  
-* :red_circle: Error prone 
 
 :::
 
 ::: {.column width="50%"}
 
-```{r}
-#| label: check_dl_1
-#| eval: false
-#| echo: true
-num_files <- get_nbm_available() |>
-  dplyr::filter(release == "June 30, 2023" &
-                data_type == "Fixed Broadband" &
-                data_category == "Nationwide") |>
-  nrow()
-
-files_dl <- length(list.files(dir,
-                              pattern = "*.zip"))
-
-identical(num_files, files_dl)
-# TRUE
-```
+* :repeat: Repeat for every state  
+* :repeat: Repeat for every version  
+* :red_circle: Error prone 
 
 :::
 
@@ -181,6 +170,7 @@ identical(num_files, files_dl)
 ## New technologies
 
 - DuckDB and S3
+
   - takewaysa of those technology
 
 - Parquet and interoperability 
@@ -196,7 +186,7 @@ tl:dr R package / pkgdown / GH
 
 - articles
 
-- vignettes
+- vignettes / mention of Emily R interbal package
 
 - snipped of data-raw
 
@@ -214,11 +204,32 @@ tl:dr R package / pkgdown / GH
 
 * a way to share: ie you can use it
 
+We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.
+
+
+
 
 # Examples of uses cases
 
-## dl the package 
+## How to get it: 
 
+The source code is hosted on GitHub. 
+
+You need the R packages remotes (or pak)
+
+```{r}
+#| eval: false
+#| label: install-package
+#| echo: true
+ 
+install.packages("remotes")
+remotes::install_github("ruralinnovation/cori.data.fcc")
+```
+
+
+We recommend that you also pay attention to the release you are downloading as the package is under development.
+
+TODO show how to get the version of a package 
 
 
 ## Pot. ideas
