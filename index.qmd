@@ -19,34 +19,26 @@ editor: visual
 
 ## PLAN
 
-* me & CORI
+* Presentation (Me & CORI)
 
 * FCC's Data
 
-
-
  
-## Me
+## :wave: Hi, I am Olivier 
 
-- I work as a senior data engineer
+- Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html) 
 
-TODO: link to linkedin / mastodon / website 
+![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](img/hbrsexiestjob.png){width=800} 
 
-data scientist : sexiest job 
+- Not a Data Scientist but Data Engineer and Working with primary data: "messy, unstructured data" is on us now    
 
-data engineer : we are the plumber 
- 
-Data scientist; usually are on the business side and data engineer tend to be on the infrastructure side  
+## Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
-Working with primary data: distinction between something general and something business specific (I will give example later: downloading data is general, counting underseved location is business specific)  
+![](img/cori_triangle.png){fig-align="center"}
 
-## CORI
+1. Broadband Infrastucture is part of necesary infrastucture to enable 
 
-Center On Rural Innovation (CORI)
-
-- one image (Doritos?)
-
--  why Data , open source and open data is important at CORI
+2. Our focus on Rural: Need to go back to primary data  
 
 # FCC's Data
 
