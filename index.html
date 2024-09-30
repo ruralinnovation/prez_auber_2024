@@ -387,6 +387,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -423,15 +426,26 @@ Olivier Leroy
 </ul>
 
 <img data-src="img/hbrsexiestjob.png" width="800" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">Harvard Business Review</a></p><ul>
-<li>Not a Data Scientist but Data Engineer and Working with primary data: “messy, unstructured data” is on us now</li>
+<li>Not Data Scientist but Data Engineer and Working with primary data: “messy, unstructured data” is on us now</li>
 </ul>
+</section>
+<section id="slides-are-online" class="slide level2">
+<h2>Slides are online:</h2>
+<p>Realized in <a href="https://quarto.org/">Quarto</a> (Reavealjs) hosted in <a href="https://github.com/ruralinnovation/conf_URISA_2023">GitHub</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/qr.svg" class="quarto-figure quarto-figure-center" height="300"></p>
+</figure>
+</div>
+<p><a href="https://ruralinnovation.github.io/conf_URISA_2023/#/title-slide">https://ruralinnovation.github.io/prez_auber_2024/#/title-slide</a></p>
 </section>
 <section id="center-on-rural-innovation-cori" class="slide level2">
 <h2>Center On Rural Innovation (<a href="https://ruralinnovation.us/">CORI</a>)</h2>
+<p><em>Advancing economic prosperity in rural America through the creation of inclusive tech economy ecosystem that support scalable entrepreneurship and tech job creation</em></p>
 
 <img data-src="img/cori_triangle.png" class="quarto-figure quarto-figure-center r-stretch"><ol type="1">
-<li><p>Broadband Infrastucture is part of necesary infrastucture to enable</p></li>
-<li><p>Our focus on Rural: Need to go back to primary data</p></li>
+<li><p>Broadband Infrastucture is an important part of it</p></li>
+<li><p>Rural data: Need to go back to primary data</p></li>
 </ol>
 </section>
 <section>
@@ -439,29 +453,118 @@ Olivier Leroy
 <h1>FCC’s Data</h1>
 
 </section>
-<section id="fcc-tldr" class="slide level2">
-<h2>FCC TLDR</h2>
+<section id="federal-communications-commission-fcc" class="slide level2">
+<h2>Federal Communications Commission (<a href="https://www.fcc.gov/">FCC</a>)</h2>
 <ul>
-<li><p>FCC</p></li>
-<li><p>their data</p></li>
+<li><p>Agency in charge of regulating “everything” communications</p></li>
+<li><p>Lot of useful datasets!</p></li>
+<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!)</p></li>
 </ul>
-</section>
-<section id="previous-workflow" class="slide level2">
-<h2>Previous workflow:</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th><a href="https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources">Form 477</a></th>
+<th><a href="https://broadbandmap.fcc.gov/home">National Broadband Map</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>US Census Boundaries</td>
+<td>2010</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>Type of recording</td>
+<td>self declarative</td>
+<td>self declarative</td>
+</tr>
+<tr class="odd">
+<td>Granularity</td>
+<td>Census blocks</td>
+<td><a href="https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&amp;location_id=1350199199&amp;addr1=390+MORGAN+ST&amp;addr2=OBERLIN%2C+OH+44074&amp;zoom=15.00&amp;vlon=-82.231744&amp;vlat=41.287448&amp;br=r&amp;speed=25_3&amp;tech=1_2_3_4_5_6_7_8">Locations</a></td>
+</tr>
+<tr class="even">
+<td>Services</td>
+<td>Mobile/<strong>Fixed</strong></td>
+<td>Mobile/<strong>Fixed</strong></td>
+</tr>
+<tr class="odd">
+<td>Timeframe</td>
+<td>2014-2021</td>
+<td>2022 - <em>Ongoing</em></td>
+</tr>
+<tr class="even">
+<td>Releases</td>
+<td>twice a year</td>
+<td>twice a year<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td>Size</td>
+<td>400MB/year</td>
+<td>22GB/year</td>
+</tr>
+</tbody>
+</table>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple version</p></li></ol></aside></section>
+<section id="fcc-data-is-included-in-our-apps-and-analysis-work" class="slide level2">
+<h2>FCC data is included in our apps and analysis work</h2>
+<p>We released multiple apps relying on FCC primary data:</p>
 <ul>
-<li>What FCC data look like in the wild</li>
-<li>Our previous ingestion process</li>
-<li>Limits of it</li>
+<li><p>2023: <a href="https://broadband-risk.ruralinnovation.us/">Broadband Climate Risk Mitigation Tool</a></p></li>
+<li><p>2024: <a href="https://rural-broadband-map.ruralinnovation.us/">Rural Broadband Mapping Tool</a></p></li>
 </ul>
-<p>ELT versus ETL and what that means for business perspective</p>
+<p>(also included in ERC tools should I mention it?)</p>
+<p>Importance of using PG, see next slide</p>
 <p>data as files data as tables and the limit</p>
 <p>(out of sync tables/files)</p>
 </section>
-<section id="our-needs" class="slide level2">
-<h2>Our needs</h2>
-<p>Connect humanity project / BEAD tool</p>
-<p>-&gt; how do we produced that</p>
-<p>Importance of using PG</p>
+<section id="our-previous-data-processing-pattern" class="slide level2">
+<h2>Our Previous data processing pattern:</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px', 'fontFamily': 'Bitter'}}}%%
+flowchart LR
+    A1[FCC Website] --&gt; B1[Server]
+    A2[TIGER Census block] --&gt; C2
+    subgraph Ingestion
+    direction TB
+    B1--&gt; B2[Data Wrangling]
+    B2--&gt; B3[Populate source DB]
+    end
+    subgraph Transform
+    direction TB
+    C1[Remove Sat.]--&gt; C2[Count Services]
+    C2 --&gt; C3[Blocks DB]
+    end
+    subgraph Serving
+    direction TB
+    D1[Prod. Server] --&gt; D2[Analytic Tables]
+    end
+    Ingestion --&gt; Transform
+    C3 --&gt; D1
+    D1--&gt; E1[Tools]
+    D2--&gt; E1
+    D2 --&gt; E4[Data team &lt;BR&gt; Broadband team]
+    style Ingestion fill:#fff
+    style Transform fill:#fff
+    style Serving fill:#fff
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Classic ELT (Extract Load Tranform): the tranform step is done in DB and here slow (or $$)</p></li>
+<li><p>Change in business/research needs: “we need ISP” / “We should exlude location with bad latency” -&gt; redo ingestion/load/transform</p></li>
+</ul>
+<blockquote>
+<p>You can quote me…. “My manager regularly asks for quick turn deliveries”…. “He’s bullies the team with short delivery times”</p>
+</blockquote>
 </section>
 <section id="manual-v.s." class="slide level2">
 <h2>Manual v.s. …</h2>
@@ -558,7 +661,7 @@ Olivier Leroy
 <blockquote>
 <p>internally developed packages are […] extra expert team members.<sup>1</sup></p>
 </blockquote>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
 <section id="why-public" class="slide level2">
 <h2>why public</h2>
 <ul>
