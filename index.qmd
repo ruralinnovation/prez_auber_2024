@@ -30,16 +30,15 @@ editor: visual
 
 ![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](img/hbrsexiestjob.png){width=800} 
 
-- Not a Data Scientist but Data Engineer and Working with primary data: "messy, unstructured data" is on us now    
+- Not Data Scientist but Data Engineer and Working with primary data: "messy, unstructured data" is on us now    
 
 ## Slides are online: 
 
-Realized in [Quarto](https://quarto.org/) (reavealjs) hosted in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)
+Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)
 
 ![](img/qr.svg){height="300" fig-align="center"}
 
 [https://ruralinnovation.github.io/prez_auber_2024/#/title-slide](https://ruralinnovation.github.io/conf_URISA_2023/#/title-slide)
-
 
 ## Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
@@ -47,7 +46,7 @@ Realized in [Quarto](https://quarto.org/) (reavealjs) hosted in [GitHub](https:/
 
 ![](img/cori_triangle.png){fig-align="center"}
 
-1. Broadband Infrastucture is part of it
+1. Broadband Infrastucture is an important part of it
 
 2. Rural data: Need to go back to primary data  
 
@@ -57,7 +56,7 @@ Realized in [Quarto](https://quarto.org/) (reavealjs) hosted in [GitHub](https:/
 
 - Agency in charge of regulating "everything" communications
 
-- Lot of useful datasets
+- Lot of useful datasets!
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
@@ -68,28 +67,68 @@ Realized in [Quarto](https://quarto.org/) (reavealjs) hosted in [GitHub](https:/
 | Type of recording    | self declarative | self declarative                                                                                                                                                                                                                     |
 | Granularity          | Census blocks     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
 | Services             | Mobile/**Fixed** | Mobile/**Fixed**  |
-| Releases | 2014-2021 | 2022 - *Ongoing* |
+|Timeframe | 2014-2021 | 2022 - *Ongoing* |
+| Releases | twice a year | twice a year[^verion] |
+| Size | 400MB/year | 22GB/year |
 
+[^verion]: One release can have multiple version
 
-## Previous workflow:
+## FCC data is included in our apps and analysis work
 
-- What FCC data look like in the wild
-- Our previous ingestion process
-- Limits of it
+We released multiple apps relying on FCC primary data: 
 
-ELT versus ETL and what that means for business perspective 
+- 2023: [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
+
+- 2024: [Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
+
+(also included in ERC tools should I mention it?)
+
+Importance of using PG, see next slide 
 
 data as files data as tables and the limit 
 
 (out of sync tables/files)
 
-## Our needs
+## Our Previous data processing pattern:
 
-Connect humanity project / BEAD tool 
+```{mermaid}
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '20px', 'fontFamily': 'Bitter'}}}%%
+flowchart LR
+    A1[FCC Website] --> B1[Server]
+    A2[TIGER Census block] --> C2
+    subgraph Ingestion
+    direction TB
+    B1--> B2[Data Wrangling]
+    B2--> B3[Populate source DB]
+    end
+    subgraph Transform
+    direction TB
+    C1[Remove Sat.]--> C2[Count Services]
+    C2 --> C3[Blocks DB]
+    end
+    subgraph Serving
+    direction TB
+    D1[Prod. Server] --> D2[Analytic Tables]
+    end
+    Ingestion --> Transform
+    C3 --> D1
+    D1--> E1[Tools]
+    D2--> E1
+    D2 --> E4[Data team <BR> Broadband team]
+    style Ingestion fill:#fff
+    style Transform fill:#fff
+    style Serving fill:#fff
+```
 
--> how do we produced that
 
-Importance of using PG
+- Classic ELT (Extract Load Tranform): the tranform step is done in DB and here slow (or $$)  
+
+- Change in business/research needs: "we need ISP" / "We should exlude location with bad latency" ->  redo ingestion/load/transform
+
+> You can quote me.... "My manager regularly asks for quick turn deliveries".... "He's bullies the team with short delivery times"
+
+
+
 
 ## Manual v.s. ...
 
