@@ -412,24 +412,27 @@ Olivier Leroy
 <section id="plan" class="slide level2">
 <h2>PLAN</h2>
 <ul>
-<li><p>me &amp; CORI</p></li>
+<li><p>Presentation (Me &amp; CORI)</p></li>
 <li><p>FCC’s Data</p></li>
 </ul>
 </section>
-<section id="me" class="slide level2">
-<h2>Me</h2>
+<section id="hi-i-am-olivier" class="slide level2">
+<h2><span class="emoji" data-emoji="wave">👋</span> Hi, I am Olivier</h2>
 <ul>
-<li><p>role at cori</p></li>
-<li><p>dad joke</p></li>
+<li>Socials: <a href="https://www.linkedin.com/in/olivier-leroy-r/">LinkedIn</a> | <a href="https://fosstodon.org/@defuneste">Mastodon</a> | <a href="https://branchtwigleaf.com/about.html">Personal Website</a></li>
+</ul>
+
+<img data-src="img/hbrsexiestjob.png" width="800" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">Harvard Business Review</a></p><ul>
+<li>Not a Data Scientist but Data Engineer and Working with primary data: “messy, unstructured data” is on us now</li>
 </ul>
 </section>
-<section id="cori" class="slide level2">
-<h2>CORI</h2>
-<p>Center On Rural Innovation (CORI)</p>
-<ul>
-<li><p>one image (Doritos?)</p></li>
-<li><p>why Data , open source and open data is important at CORI</p></li>
-</ul>
+<section id="center-on-rural-innovation-cori" class="slide level2">
+<h2>Center On Rural Innovation (<a href="https://ruralinnovation.us/">CORI</a>)</h2>
+
+<img data-src="img/cori_triangle.png" class="quarto-figure quarto-figure-center r-stretch"><ol type="1">
+<li><p>Broadband Infrastucture is part of necesary infrastucture to enable</p></li>
+<li><p>Our focus on Rural: Need to go back to primary data</p></li>
+</ol>
 </section>
 <section>
 <section id="fccs-data" class="title-slide slide level1 center">
@@ -456,8 +459,7 @@ Olivier Leroy
 </section>
 <section id="our-needs" class="slide level2">
 <h2>Our needs</h2>
-<p>Connect humanity project</p>
-<p>Bead tools</p>
+<p>Connect humanity project / BEAD tool</p>
 <p>-&gt; how do we produced that</p>
 <p>Importance of using PG</p>
 </section>
@@ -466,6 +468,7 @@ Olivier Leroy
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><video data-src="img/manual_fcc.mov" controls=""><a href="img/manual_fcc.mov">Video</a></video></p>
+</div><div class="column" style="width:50%;">
 <ul>
 <li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every state<br>
 </li>
@@ -473,20 +476,6 @@ Olivier Leroy
 </li>
 <li><span class="emoji" data-emoji="red_circle">🔴</span> Error prone</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
-<span id="cb1-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
-<span id="cb1-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
-<span id="cb1-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
-<span id="cb1-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
-<span id="cb1-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div></div>
 </section>
 <section id="code-automated" class="slide level2">
@@ -501,39 +490,39 @@ Olivier Leroy
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
-<span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
-<span id="cb2-8"><a href=""></a></span>
-<span id="cb2-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
-<span id="cb2-10"><a href=""></a></span>
-<span id="cb2-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
-<span id="cb2-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
-<span id="cb2-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
-<span id="cb2-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
-<span id="cb2-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
-<span id="cb2-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
+<span id="cb1-8"><a href=""></a></span>
+<span id="cb1-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
+<span id="cb1-10"><a href=""></a></span>
+<span id="cb1-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
+<span id="cb1-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
+<span id="cb1-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
+<span id="cb1-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
+<span id="cb1-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
+<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
-<span id="cb3-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
-<span id="cb3-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
-<span id="cb3-6"><a href=""></a></span>
-<span id="cb3-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
-<span id="cb3-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
-<span id="cb3-9"><a href=""></a></span>
-<span id="cb3-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
-<span id="cb3-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
+<span id="cb2-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
+<span id="cb2-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
+<span id="cb2-6"><a href=""></a></span>
+<span id="cb2-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
+<span id="cb2-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
+<span id="cb2-9"><a href=""></a></span>
+<span id="cb2-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
+<span id="cb2-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </section>
@@ -548,11 +537,11 @@ Olivier Leroy
 <section id="new-technologies" class="slide level2">
 <h2>New technologies</h2>
 <ul>
-<li>DuckDB and S3
+<li><p>DuckDB and S3</p>
 <ul>
 <li>takewaysa of those technology</li>
 </ul></li>
-<li>Parquet and interoperability</li>
+<li><p>Parquet and interoperability</p></li>
 </ul>
 <p>skip PG here.</p>
 </section>
@@ -562,7 +551,7 @@ Olivier Leroy
 <ul>
 <li><p><code>?get_nbm_raw</code></p></li>
 <li><p>articles</p></li>
-<li><p>vignettes</p></li>
+<li><p>vignettes / mention of Emily R interbal package</p></li>
 <li><p>snipped of data-raw</p></li>
 <li><p>bandwagon pkg dev: test/website/check/distribution</p></li>
 </ul>
@@ -577,14 +566,23 @@ Olivier Leroy
 <li><p>a way to publish: ie you can read the code</p></li>
 <li><p>a way to share: ie you can use it</p></li>
 </ul>
+<p>We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.</p>
 </section></section>
 <section>
 <section id="examples-of-uses-cases" class="title-slide slide level1 center">
 <h1>Examples of uses cases</h1>
 
 </section>
-<section id="dl-the-package" class="slide level2">
-<h2>dl the package</h2>
+<section id="how-to-get-it" class="slide level2">
+<h2>How to get it:</h2>
+<p>The source code is hosted on GitHub.</p>
+<p>You need the R packages remotes (or pak)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb3-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ruralinnovation/cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We recommend that you also pay attention to the release you are downloading as the package is under development.</p>
+<p>TODO show how to get the version of a package</p>
 </section>
 <section id="pot.-ideas" class="slide level2">
 <h2>Pot. ideas</h2>
