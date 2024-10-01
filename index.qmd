@@ -230,28 +230,38 @@ identical(num_files, files_dl)
 
 skip PG here. 
 
+## Packaging data as code
 
-## Packaging code and data
+1. Benefits from the language ecosystem: 
+  
+    - What does this function do? `?get_nbm_block`
 
-tl:dr R package / pkgdown / GH
+    - How can I integrate this functions in my workflow? Vignettes
 
-- `?get_nbm_raw` 
+    - A doubt on how the data was processed: Articles and data-raw
 
-- articles
+    - Easy to distribute (GitHub / built-in functions)
 
-- vignettes / mention of Emily R interbal package
+    - Tests! TODO codecov 
 
-- snipped of data-raw
-
-- bandwagon pkg dev: test/website/check/distribution  
+    - Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
 >  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
+
+2. Data as code: 
+
+    - Better documentation: `get_fcc_dictionary`
+
+    - Website to share it
+
+    - Capitalize on it! 
+        * New project that is requiring FCC staff estimes: it can be added 
 
 [^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
 
 ## why public
 
-- open source is :
+- Open source is :
 
 * a way to publish: ie you can read the code 
 
@@ -260,15 +270,13 @@ tl:dr R package / pkgdown / GH
 We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.
 
 
-
-
 # Examples of uses cases
 
 ## How to get it: 
 
-The source code is hosted on GitHub. 
+The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) it has a website: [https://ruralinnovation.github.io/cori.data.fcc/index.html](https://ruralinnovation.github.io/cori.data.fcc/index.html) 
 
-You need the R packages remotes (or pak)
+You need the R packages [{remotes}](https://remotes.r-lib.org/) (or [pak](https://pak.r-lib.org/))
 
 ```{r}
 #| eval: false
@@ -279,11 +287,12 @@ install.packages("remotes")
 remotes::install_github("ruralinnovation/cori.data.fcc")
 ```
 
-
-We recommend that you also pay attention to the release you are downloading as the package is under development.
-
-TODO show how to get the version of a package 
-
+:construction: Check the version you have and see what new versions are offering :construction:
+```{r}
+#| label: version-package
+#| echo: true
+packageVersion("cori.data.fcc")
+```
 
 ## Pot. ideas
 
@@ -308,9 +317,12 @@ place of business logic in data example bead category
 
 - data as code:
 
-  * enhance reproducibility 
+  * Metadata is hard: moving data as code help on that
+
+  * enhance reproducibility  
 
   * easier to capitalize/build on it 
+
 
 
 ## References
@@ -321,6 +333,8 @@ McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data anal
 
 https://www.emilyriederer.com/post/team-of-packages/#collaboration
 
+
+R packages 2ed
 
 ## Contacts
 
