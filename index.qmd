@@ -19,6 +19,9 @@ editor: visual
 
 ## PLAN
 
+
+My goal: convince you that you should package data!
+
 * Presentation (Me & CORI)
 
 * FCC's Data
@@ -60,6 +63,8 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
+    -> challenge: how to work with constant change upstream?
+
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                                                                              |
 |-------------------------|------------------------|------------------------|
@@ -71,7 +76,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 | Releases | twice a year | twice a year[^verion] |
 | Size | 400MB/year | 22GB/year |
 
-[^verion]: One release can have multiple version
+[^verion]: One release can have multiple versions
 
 ## FCC data is included in our apps and analysis work
 
@@ -130,7 +135,7 @@ flowchart LR
 
 
 
-## Manual v.s. ...
+## Manuel ELT v.s. ...
 
 :::: {.columns}
 
@@ -143,9 +148,9 @@ flowchart LR
 
 ::: {.column width="50%"}
 
-* :repeat: Repeat for every state  
-* :repeat: Repeat for every version  
-* :red_circle: Error prone 
+* :repeat: Repeat for every state  (56)
+* :repeat: Repeat for every version  (??)
+* :red_circle: Error prone (500 hundred clicks)
 
 :::
 
@@ -158,10 +163,61 @@ flowchart LR
 
 ::: {.column width="50%"}
 
+```{bash}
+#| eval: false
+#| echo: true
+
+# [...] 
+# Download all FCC data needed
+all : dirs dl_file list_file
+
+include config.mk
+
+## dirs:	Create specific dirs to download data
+dirs : config.mk
+	@pwd
+	@mkdir -p $(DATA_PATH)
+	echo "create $(DATA_PATH)"
+
+## dl_file:	Create a list of files availiable, download them
+dl_file : $(CSV_SRC) get_csv_dl.R
+	Rscript get_csv_dl.R $(CSV_SRC)
+	Rscript list_file_dl.R $(DATA_PATH) $(CSV_SRC)
+.PHONY : dl_file
+
+## list_file: Create a list of downloaded file
+list_file : list_file_dl.R $(CSV_SRC)
+	Rscript report_dl.R $(DATA_PATH) 
+.PHONY : list_file
+
+# [...]
+```
+
+:::
+
+::: {.column width="50%"}
+
+- "old" GNU make: bash, some R codes
+
+- 227 commits
+
+- 267 files
+
+- New project / New spec -> copy/pasting and maintaining X **similar** code sources
+
+:::
+
+::::
+
+## ... Code Packaged
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
 ::: {.panel-tabset}
 
 ### Visual
-
 ![](img/dl_nbm_smaller.mov)
 
 ### Code
@@ -186,19 +242,7 @@ dl_nbm(
   data_type = "Fixed Broadband",
   data_category = "Nationwide",
 )
-
-```
-
-:::
-
-:::
-
-::: {.column width="50%"}
-
-```{r}
-#| label: check_dl_2
-#| eval: false
-#| echo: true
+# part to check if dl was successful 
 num_files <- get_nbm_available() |>
   dplyr::filter(release == "June 30, 2023" &
                 data_type == "Fixed Broadband" &
@@ -210,13 +254,24 @@ files_dl <- length(list.files(dir,
 
 identical(num_files, files_dl)
 # TRUE
+
 ```
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+-  reduce errors 
+
+-  complexity is **one** place and **abstracted** 
+
 
 :::
 
 ::::
 
-## ... Code Packaged
 
 # cori.data.fcc
 
@@ -224,9 +279,13 @@ identical(num_files, files_dl)
 
 - DuckDB and S3
 
-  - takewaysa of those technology
+  - takeaways of those technologies
 
-- Parquet and interoperability 
+- Parquet and interoperability: 
+
+  * language change file format also but way slowly 
+
+  * file format is more agnostic 
 
 skip PG here. 
 
