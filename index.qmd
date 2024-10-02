@@ -17,8 +17,7 @@ editor: visual
 ---
 
 
-## PLAN
-
+## PLAN & GOAL
 
 My goal: convince you that you should package data!
 
@@ -134,7 +133,6 @@ flowchart LR
 
 
 
-
 ## Manuel ELT v.s. ...
 
 :::: {.columns}
@@ -197,7 +195,7 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 ::: {.column width="50%"}
 
-- "old" GNU make: bash, some R codes
+- "old" GNU make: bash, R codes, SQL
 
 - 227 commits
 
@@ -277,9 +275,15 @@ identical(num_files, files_dl)
 
 ## New technologies
 
-- DuckDB and S3
+- DuckDB and S3 (Simple Storage Service of AWS)
+ 
+![](img/DuckDB_logo.svg)
 
-  - takeaways of those technologies
+Compute: PG (RDS) -> DuckDB 
+
+Storage: PG (RDS) -> S3
+
+added benefit: lower cost
 
 - Parquet and interoperability: 
 

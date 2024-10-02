@@ -42,6 +42,12 @@ jobs:
             any::knitr
             any::rmarkdown
 
+      - name: Install package from GH
+        run: |
+          Rscript -e 'remotes::install_github("ruralinnovation/cori.data.fcc")'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Render quarto doc(s)
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
