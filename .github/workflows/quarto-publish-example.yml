@@ -41,6 +41,7 @@ jobs:
           packages: |
             any::knitr
             any::rmarkdown
+            any::remotes
 
       - name: Install package from GH
         run: |
