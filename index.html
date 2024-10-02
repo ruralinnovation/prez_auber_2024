@@ -412,8 +412,9 @@ Olivier Leroy
 
   <p class="date">2024-10-20</p>
 </section>
-<section id="plan" class="slide level2">
-<h2>PLAN</h2>
+<section id="plan-goal" class="slide level2">
+<h2>PLAN &amp; GOAL</h2>
+<p>My goal: convince you that you should package data!</p>
 <ul>
 <li><p>Presentation (Me &amp; CORI)</p></li>
 <li><p>FCC’s Data</p></li>
@@ -458,7 +459,8 @@ Olivier Leroy
 <ul>
 <li><p>Agency in charge of regulating “everything” communications</p></li>
 <li><p>Lot of useful datasets!</p></li>
-<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!)</p></li>
+<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!)</p>
+<p>-&gt; challenge: how to work with constant change upstream?</p></li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -506,7 +508,7 @@ Olivier Leroy
 </tr>
 </tbody>
 </table>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple version</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple versions</p></li></ol></aside></section>
 <section id="fcc-data-is-included-in-our-apps-and-analysis-work" class="slide level2">
 <h2>FCC data is included in our apps and analysis work</h2>
 <p>We released multiple apps relying on FCC primary data:</p>
@@ -566,23 +568,60 @@ flowchart LR
 <p>You can quote me…. “My manager regularly asks for quick turn deliveries”…. “He’s bullies the team with short delivery times”</p>
 </blockquote>
 </section>
-<section id="manual-v.s." class="slide level2">
-<h2>Manual v.s. …</h2>
+<section id="manuel-elt-v.s." class="slide level2">
+<h2>Manuel ELT v.s. …</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><video data-src="img/manual_fcc.mov" controls=""><a href="img/manual_fcc.mov">Video</a></video></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every state<br>
-</li>
-<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every version<br>
-</li>
-<li><span class="emoji" data-emoji="red_circle">🔴</span> Error prone</li>
+<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every state (56)</li>
+<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every version (??)</li>
+<li><span class="emoji" data-emoji="red_circle">🔴</span> Error prone (500 hundred clicks)</li>
 </ul>
 </div></div>
 </section>
 <section id="code-automated" class="slide level2">
 <h2>… Code Automated …</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># [...] </span></span>
+<span id="cb1-2"><a href=""></a><span class="co"># Download all FCC data needed</span></span>
+<span id="cb1-3"><a href=""></a><span class="ex">all</span> : dirs dl_file list_file</span>
+<span id="cb1-4"><a href=""></a></span>
+<span id="cb1-5"><a href=""></a><span class="ex">include</span> config.mk</span>
+<span id="cb1-6"><a href=""></a></span>
+<span id="cb1-7"><a href=""></a><span class="co">## dirs:    Create specific dirs to download data</span></span>
+<span id="cb1-8"><a href=""></a><span class="bu">dirs</span> : config.mk</span>
+<span id="cb1-9"><a href=""></a>    <span class="ex">@pwd</span></span>
+<span id="cb1-10"><a href=""></a>    <span class="ex">@mkdir</span> <span class="at">-p</span> <span class="va">$(</span><span class="ex">DATA_PATH</span><span class="va">)</span></span>
+<span id="cb1-11"><a href=""></a>    <span class="bu">echo</span> <span class="st">"create </span><span class="va">$(</span><span class="ex">DATA_PATH</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb1-12"><a href=""></a></span>
+<span id="cb1-13"><a href=""></a><span class="co">## dl_file: Create a list of files availiable, download them</span></span>
+<span id="cb1-14"><a href=""></a><span class="ex">dl_file</span> : <span class="va">$(</span><span class="ex">CSV_SRC</span><span class="va">)</span> get_csv_dl.R</span>
+<span id="cb1-15"><a href=""></a>    <span class="ex">Rscript</span> get_csv_dl.R <span class="va">$(</span><span class="ex">CSV_SRC</span><span class="va">)</span></span>
+<span id="cb1-16"><a href=""></a>    <span class="ex">Rscript</span> list_file_dl.R <span class="va">$(</span><span class="ex">DATA_PATH</span><span class="va">)</span> <span class="va">$(</span><span class="ex">CSV_SRC</span><span class="va">)</span></span>
+<span id="cb1-17"><a href=""></a><span class="ex">.PHONY</span> : dl_file</span>
+<span id="cb1-18"><a href=""></a></span>
+<span id="cb1-19"><a href=""></a><span class="co">## list_file: Create a list of downloaded file</span></span>
+<span id="cb1-20"><a href=""></a><span class="ex">list_file</span> : list_file_dl.R <span class="va">$(</span><span class="ex">CSV_SRC</span><span class="va">)</span></span>
+<span id="cb1-21"><a href=""></a>    <span class="ex">Rscript</span> report_dl.R <span class="va">$(</span><span class="ex">DATA_PATH</span><span class="va">)</span> </span>
+<span id="cb1-22"><a href=""></a><span class="ex">.PHONY</span> : list_file</span>
+<span id="cb1-23"><a href=""></a></span>
+<span id="cb1-24"><a href=""></a><span class="co"># [...]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>“old” GNU make: bash, R codes, SQL</p></li>
+<li><p>227 commits</p></li>
+<li><p>267 files</p></li>
+<li><p>New project / New spec -&gt; copy/pasting and maintaining X <strong>similar</strong> code sources</p></li>
+</ul>
+</div></div>
+</section>
+<section id="code-packaged" class="slide level2">
+<h2>… Code Packaged</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="panel-tabset">
@@ -593,44 +632,44 @@ flowchart LR
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
-<span id="cb1-4"><a href=""></a></span>
-<span id="cb1-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
-<span id="cb1-8"><a href=""></a></span>
-<span id="cb1-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
-<span id="cb1-10"><a href=""></a></span>
-<span id="cb1-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
-<span id="cb1-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
-<span id="cb1-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
-<span id="cb1-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
-<span id="cb1-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
-<span id="cb1-16"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(cori.data.fcc)</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>dir <span class="ot">&lt;-</span> <span class="st">"data_swamp/nbm/"</span></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a><span class="fu">get_nbm_release</span>()</span>
+<span id="cb2-6"><a href=""></a></span>
+<span id="cb2-7"><a href=""></a>nbm_data <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>()</span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a><span class="fu">system</span>(<span class="fu">sprintf</span>(<span class="st">"mkdir -p %s"</span>, dir))</span>
+<span id="cb2-10"><a href=""></a></span>
+<span id="cb2-11"><a href=""></a><span class="fu">dl_nbm</span>(</span>
+<span id="cb2-12"><a href=""></a>  <span class="at">path_to_dl =</span> <span class="st">"data_swamp/nbm"</span>,</span>
+<span id="cb2-13"><a href=""></a>  <span class="at">release_date =</span> <span class="st">"June 30, 2023"</span>,</span>
+<span id="cb2-14"><a href=""></a>  <span class="at">data_type =</span> <span class="st">"Fixed Broadband"</span>,</span>
+<span id="cb2-15"><a href=""></a>  <span class="at">data_category =</span> <span class="st">"Nationwide"</span>,</span>
+<span id="cb2-16"><a href=""></a>)</span>
+<span id="cb2-17"><a href=""></a><span class="co"># part to check if dl was successful </span></span>
+<span id="cb2-18"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-19"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
+<span id="cb2-20"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
+<span id="cb2-21"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-22"><a href=""></a>  <span class="fu">nrow</span>()</span>
+<span id="cb2-23"><a href=""></a></span>
+<span id="cb2-24"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
+<span id="cb2-25"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
+<span id="cb2-26"><a href=""></a></span>
+<span id="cb2-27"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
+<span id="cb2-28"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>num_files <span class="ot">&lt;-</span> <span class="fu">get_nbm_available</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-2"><a href=""></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(release <span class="sc">==</span> <span class="st">"June 30, 2023"</span> <span class="sc">&amp;</span></span>
-<span id="cb2-3"><a href=""></a>                data_type <span class="sc">==</span> <span class="st">"Fixed Broadband"</span> <span class="sc">&amp;</span></span>
-<span id="cb2-4"><a href=""></a>                data_category <span class="sc">==</span> <span class="st">"Nationwide"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-5"><a href=""></a>  <span class="fu">nrow</span>()</span>
-<span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a>files_dl <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">list.files</span>(dir,</span>
-<span id="cb2-8"><a href=""></a>                              <span class="at">pattern =</span> <span class="st">"*.zip"</span>))</span>
-<span id="cb2-9"><a href=""></a></span>
-<span id="cb2-10"><a href=""></a><span class="fu">identical</span>(num_files, files_dl)</span>
-<span id="cb2-11"><a href=""></a><span class="co"># TRUE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<ul>
+<li><p>reduce errors</p></li>
+<li><p>complexity is <strong>one</strong> place and <strong>abstracted</strong></p></li>
+</ul>
 </div></div>
-</section>
-<section id="code-packaged" class="slide level2">
-<h2>… Code Packaged</h2>
 </section></section>
 <section>
 <section id="cori.data.fcc" class="title-slide slide level1 center">
@@ -640,32 +679,53 @@ flowchart LR
 <section id="new-technologies" class="slide level2">
 <h2>New technologies</h2>
 <ul>
-<li><p>DuckDB and S3</p>
+<li>DuckDB and S3 (Simple Storage Service of AWS)</li>
+</ul>
+
+<img data-src="img/DuckDB_logo.svg" class="r-stretch"><p>Compute: PG (RDS) -&gt; DuckDB</p>
+<p>Storage: PG (RDS) -&gt; S3</p>
+<p>added benefit: lower cost</p>
 <ul>
-<li>takewaysa of those technology</li>
+<li><p>Parquet and interoperability:</p>
+<ul>
+<li><p>language change file format also but way slowly</p></li>
+<li><p>file format is more agnostic</p></li>
 </ul></li>
-<li><p>Parquet and interoperability</p></li>
 </ul>
 <p>skip PG here.</p>
 </section>
-<section id="packaging-code-and-data" class="slide level2">
-<h2>Packaging code and data</h2>
-<p>tl:dr R package / pkgdown / GH</p>
+<section id="packaging-data-as-code" class="slide level2">
+<h2>Packaging data as code</h2>
+<ol type="1">
+<li><p>Benefits from the language ecosystem:</p>
 <ul>
-<li><p><code>?get_nbm_raw</code></p></li>
-<li><p>articles</p></li>
-<li><p>vignettes / mention of Emily R interbal package</p></li>
-<li><p>snipped of data-raw</p></li>
-<li><p>bandwagon pkg dev: test/website/check/distribution</p></li>
-</ul>
+<li><p>What does this function do? <code>?get_nbm_block</code></p></li>
+<li><p>How can I integrate this functions in my workflow? Vignettes</p></li>
+<li><p>A doubt on how the data was processed: Articles and data-raw</p></li>
+<li><p>Easy to distribute (GitHub / built-in functions)</p></li>
+<li><p>Tests! TODO codecov</p></li>
+<li><p>Versions / updates with a <a href="https://ruralinnovation.github.io/cori.data.fcc/news/index.html">Changelog</a></p></li>
+</ul></li>
+</ol>
 <blockquote>
 <p>internally developed packages are […] extra expert team members.<sup>1</sup></p>
 </blockquote>
+<ol start="2" type="1">
+<li><p>Data as code:</p>
+<ul>
+<li><p>Better documentation: <code>get_fcc_dictionary</code></p></li>
+<li><p>Website to share it</p></li>
+<li><p>Capitalize on it!</p>
+<ul>
+<li>New project that is requiring FCC staff estimes: it can be added</li>
+</ul></li>
+</ul></li>
+</ol>
 <aside><ol class="aside-footnotes"><li id="fn2"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
 <section id="why-public" class="slide level2">
 <h2>why public</h2>
 <ul>
-<li><p>open source is :</p></li>
+<li><p>Open source is :</p></li>
 <li><p>a way to publish: ie you can read the code</p></li>
 <li><p>a way to share: ie you can use it</p></li>
 </ul>
@@ -678,14 +738,19 @@ flowchart LR
 </section>
 <section id="how-to-get-it" class="slide level2">
 <h2>How to get it:</h2>
-<p>The source code is hosted on GitHub.</p>
-<p>You need the R packages remotes (or pak)</p>
+<p>The source code is hosted on <a href="https://github.com/ruralinnovation/cori.data.fcc">GitHub</a> it has a website: <a href="https://ruralinnovation.github.io/cori.data.fcc/index.html">https://ruralinnovation.github.io/cori.data.fcc/index.html</a></p>
+<p>You need the R packages <a href="https://remotes.r-lib.org/">{remotes}</a> (or <a href="https://pak.r-lib.org/">pak</a>)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
 <span id="cb3-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ruralinnovation/cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We recommend that you also pay attention to the release you are downloading as the package is under development.</p>
-<p>TODO show how to get the version of a package</p>
+<p><span class="emoji" data-emoji="construction">🚧</span> Check the version you have and see what new versions are offering <span class="emoji" data-emoji="construction">🚧</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">packageVersion</span>(<span class="st">"cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] '0.0.1'</code></pre>
+</div>
+</div>
 </section>
 <section id="pot.-ideas" class="slide level2">
 <h2>Pot. ideas</h2>
@@ -713,6 +778,7 @@ flowchart LR
 <ul>
 <li><p>data as code:</p>
 <ul>
+<li><p>Metadata is hard: moving data as code help on that</p></li>
 <li><p>enhance reproducibility</p></li>
 <li><p>easier to capitalize/build on it</p></li>
 </ul></li>
@@ -723,6 +789,7 @@ flowchart LR
 <p>TODO:</p>
 <p>McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/</p>
 <p>https://www.emilyriederer.com/post/team-of-packages/#collaboration</p>
+<p>R packages 2ed</p>
 </section>
 <section id="contacts" class="slide level2">
 <h2>Contacts</h2>
