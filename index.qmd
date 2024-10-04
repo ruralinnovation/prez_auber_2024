@@ -17,9 +17,13 @@ editor: visual
 ---
 
 
-## PLAN & GOAL
+## GOAL & PLAN
 
-My goal: convince you that you should package data!
+My goals: 
+
+- Convince you that you should package data!
+
+- 
 
 * Presentation (Me & CORI)
 
@@ -32,7 +36,7 @@ My goal: convince you that you should package data!
 
 ![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](img/hbrsexiestjob.png){width=800} 
 
-- Not Data Scientist but Data Engineer and Working with primary data: "messy, unstructured data" is on us now    
+- Data Engineer and Working with primary data: "messy, unstructured data" is on us now    
 
 ## Slides are online: 
 
@@ -62,7 +66,11 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
-    -> challenge: how to work with constant change upstream?
+    -> **challenge**: how to work with constant change upstream?
+
+- 2 datasets are providing an overview of broadband access since 2014
+
+- Data is files (csv), tabular format 
 
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                                                                              |
@@ -85,13 +93,15 @@ We released multiple apps relying on FCC primary data:
 
 - 2024: [Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
 
-(also included in ERC tools should I mention it?)
+<!-- also included in ERC tools should I mention it? -->
 
-Importance of using PG, see next slide 
+We are also using it on our report and research projects 
 
-data as files data as tables and the limit 
+- [Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
-(out of sync tables/files)
+- [The equity of economic opportunity in rural America](https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/)
+
+- Multiple projects at different time, multiple tables  
 
 ## Our Previous data processing pattern:
 
@@ -130,7 +140,6 @@ flowchart LR
 - Change in business/research needs: "we need ISP" / "We should exlude location with bad latency" ->  redo ingestion/load/transform
 
 > You can quote me.... "My manager regularly asks for quick turn deliveries".... "He's bullies the team with short delivery times"
-
 
 
 ## Manuel ELT v.s. ...
@@ -261,9 +270,11 @@ identical(num_files, files_dl)
 
 ::: {.column width="50%"}
 
--  reduce errors 
+- reduce errors 
 
--  complexity is **one** place and **abstracted** 
+- complexity is **one** place and **abstracted** 
+
+- provide a timestamp: solve a bit the "multiple tables" issue 
 
 
 :::
@@ -275,23 +286,21 @@ identical(num_files, files_dl)
 
 ## New technologies
 
-- DuckDB and S3 (Simple Storage Service of AWS)
+- DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) and S3 (Simple Storage Service of AWS)
  
 ![](img/DuckDB_logo.svg)
 
 Compute: PG (RDS) -> DuckDB 
 
-Storage: PG (RDS) -> S3
+Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
 
-added benefit: lower cost
+added benefits: lower cost, less contraintes on permissions -> share it!
 
 - Parquet and interoperability: 
 
-  * language change file format also but way slowly 
+  * language change, file format also but way slowly 
 
   * file format is more agnostic 
-
-skip PG here. 
 
 ## Packaging data as code
 
