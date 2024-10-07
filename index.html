@@ -412,25 +412,29 @@ Olivier Leroy
 
   <p class="date">2024-10-20</p>
 </section>
-<section id="goal-plan" class="slide level2">
-<h2>GOAL &amp; PLAN</h2>
-<p>My goals:</p>
+<section id="goals-plan" class="slide level2">
+<h2>GOALS &amp; PLAN</h2>
+<h4 id="my-goals">My goals:</h4>
+<ol type="1">
+<li><p>Convince you that you should use code to work with primary data</p></li>
+<li><p>Package this code will make everyone live easier</p></li>
+</ol>
+<h4 id="plan">Plan</h4>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
 <ul>
-<li>Convince you that you should package data!
-<ul>
-<li>Presentation (Myself &amp; CORI)</li>
-<li>FCC’s data</li>
-</ul></li>
+<li><p>FCC’s Data</p></li>
+<li><p><code>cori.data.fcc</code>: primary data as code</p></li>
+<li><p>Examples of uses cases</p></li>
+<li><p>Discussions</p></li>
 </ul>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
 </section>
 <section id="hi-i-am-olivier" class="slide level2">
 <h2><span class="emoji" data-emoji="wave">👋</span> Hi, I am Olivier</h2>
@@ -468,13 +472,22 @@ Olivier Leroy
 </section>
 <section id="federal-communications-commission-fcc" class="slide level2">
 <h2>Federal Communications Commission (<a href="https://www.fcc.gov/">FCC</a>)</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="img/fcc-seal-rgb-2020.svg"></p>
+</div><div class="column" style="width:70%;">
 <ul>
 <li><p>Agency in charge of regulating “everything” communications</p></li>
 <li><p>Lot of useful datasets!</p></li>
 <li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!) -&gt; <strong>challenge</strong>: how to work with constant change upstream?</p></li>
-<li><p>Two datasets are providing an overview of broadband access since 2014</p></li>
-<li><p>Data is files (csv), tabular format</p></li>
 </ul>
+<p><strong>Challenge</strong>: how to work with constant change upstream?</p>
+</div></div>
+</section>
+<section id="federal-communications-commission-fcc-1" class="slide level2">
+<h2>Federal Communications Commission (<a href="https://www.fcc.gov/">FCC</a>)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -521,6 +534,13 @@ Olivier Leroy
 </tr>
 </tbody>
 </table>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>2 <strong>voluninous</strong> datasets are providing an overview of broadband access since 2014</p></li>
+<li><p>Data is multiples files (csv), tabular format and no “road safety barriers”</p></li>
+</ul>
+<p><strong>Challenge</strong>: Build an infrastructure that allows you to capitalize on your work?</p>
+</div></div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple versions</p></li></ol></aside></section>
 <section id="fcc-data-in-our-apps-and-analysis-work" class="slide level2">
 <h2>FCC data in our apps and analysis work</h2>
@@ -693,9 +713,9 @@ flowchart LR
 </div>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><p>reduce errors</p></li>
-<li><p>complexity is <strong>one</strong> place and <strong>abstracted</strong></p></li>
-<li><p>provide a timestamp: solve a bit the “multiple tables” issue</p></li>
+<li><p>Reduce errors</p></li>
+<li><p>Complexity is in <strong>one</strong> place and <strong>abstracted</strong></p></li>
+<li><p>Provide a timestamp: solve the “multiple tables” issue</p></li>
 </ul>
 </div></div>
 </section></section>
@@ -705,7 +725,7 @@ flowchart LR
 
 </section>
 <section id="new-technologies" class="slide level2">
-<h2>New technologies</h2>
+<h2>New technologies:</h2>
 <p style="float: left">
 DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arrow.apache.org/">Arrow</a> / <a href="https://en.wikipedia.org/wiki/Online_analytical_processing">OLAP</a>) and S3 (Simple Storage Service of AWS) <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
@@ -714,13 +734,26 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 -->
 <p>Compute: PG (RDS) -&gt; DuckDB</p>
 <p>Storage: PG (RDS) -&gt; S3 (Range HTTP, storage with nice access)</p>
-<p>added benefits: lower cost, less contraintes on permissions -&gt; share it!</p>
 <ul>
-<li>Parquet and interoperability:
+<li><p>Parquet and interoperability:</p>
 <ul>
-<li>language change file format also but way slowly</li>
-<li>file format is more agnostic</li>
+<li><p>Computer language change, file format also but way slowly</p></li>
+<li><p>File format is more agnostic</p></li>
 </ul></li>
+</ul>
+<ol type="1">
+<li><p>Solved the lack of reactivity: working with primary data does not need to be slow!</p></li>
+<li><p>Added benefits: lower cost, less contraintes on permissions -&gt; share it!</p></li>
+</ol>
+</section>
+<section id="why-sharing-it" class="slide level2">
+<h2>why sharing it:</h2>
+<p>Facilitate the access to primary data to researchers, regional economists One of CORI’s goal is to provide rural community with good internet:</p>
+<p>We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.</p>
+<ul>
+<li><p>Open source is :</p></li>
+<li><p>a way to publish: ie you can read the code</p></li>
+<li><p>a way to share: ie you can use it</p></li>
 </ul>
 </section>
 <section id="packaging-data-as-code" class="slide level2">
@@ -732,7 +765,7 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 <li><p>How can I integrate this functions in my workflow? Vignettes</p></li>
 <li><p>A doubt on how the data was processed: Articles and data-raw</p></li>
 <li><p>Easy to distribute (GitHub / built-in functions)</p></li>
-<li><p>Tests! TODO codecov</p></li>
+<li><p>Tests!</p></li>
 <li><p>Versions / updates with a <a href="https://ruralinnovation.github.io/cori.data.fcc/news/index.html">Changelog</a></p></li>
 </ul></li>
 </ol>
@@ -750,18 +783,7 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 </ul></li>
 </ul></li>
 </ol>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
-<section id="why-public" class="slide level2">
-<h2>why public</h2>
-<ul>
-<li>Open source is :
-<ul>
-<li>a way to publish: i.e., you can read the code</li>
-<li>a way to share: i.e., you can use it</li>
-</ul></li>
-</ul>
-<p>We care more about process than product or to say it differently, the product is just a means to reach a goal (a process). <br>We want to lower the cost of using that data so rural america can validate the service claims made by their ISP and manage their <br>strategy for broadband access and expansion.</p>
-</section></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section></section>
 <section>
 <section id="examples-of-uses-cases" class="title-slide slide level1 center">
 <h1>Examples of uses cases</h1>
@@ -810,8 +832,9 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 <li><p>data as code:</p>
 <ul>
 <li><p>Metadata is hard: moving data as code help on that</p></li>
-<li><p>enhance reproducibility</p></li>
-<li><p>easier to capitalize/build on it</p></li>
+<li><p>Enhance reproducibility</p></li>
+<li><p>Easier to capitalize/build on it</p></li>
+<li><p>Is packaging primary still count has working primary data</p></li>
 </ul></li>
 </ul>
 </section>
