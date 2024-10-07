@@ -345,6 +345,14 @@ identical(num_files, files_dl)
 
 # cori.data.fcc
 
+## What can it do? 
+
+1. Download data from FCC
+
+2. Download raw data from CORI (MBM / Form 477)
+
+3. Download tranformed data (NBM) 
+
 ## New technologies:
 
 <p style="float: left">
@@ -379,11 +387,11 @@ Facilitate the access to primary data to researchers, regional economists:  one 
 
 ## Packaging code: Documentation
   
-- What does this function do? -> `?get_nbm_block` / References
+- What does this function do? -> `?get_nbm_block` / [References](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html)
 
-- How can I integrate those functions in my workflow? Vignettes/Uses cases
+- How can I integrate those functions in my workflow? [Vignettes/Uses cases](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html)
 
-- A doubt on how the data was processed: Articles and data-raw
+- A doubt on how the data was processed: [Articles](https://ruralinnovation.github.io/cori.data.fcc/articles/NBM.html) and [`data-raw/`](https://github.com/ruralinnovation/cori.data.fcc/tree/main/data-raw)
 
 - Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
