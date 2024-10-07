@@ -137,6 +137,10 @@ html * {
           }
         }
 
+        &>p {
+          max-width: 95%
+        }
+
         &>ul, &>ul:nth-child(2), &>ol, &>ol:nth-child(2) {
           margin-bottom: 0.5em;
           padding-left: 7.5% !important;

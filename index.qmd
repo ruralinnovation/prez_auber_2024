@@ -22,9 +22,8 @@ editor: visual
 My goals:
 
 - Convince you that you should package data!
-
-* Presentation (Me & CORI)
-* FCC's Data
+  - Presentation (Myself & CORI)
+  - FCC's data
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -37,7 +36,7 @@ My goals:
 
 ![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](img/hbrsexiestjob.png){width=800} 
 
-- Data Engineer and Working with primary data: "messy, unstructured data" is on us now
+- Data Engineer and working with primary data: "messy, unstructured data" is upon us
 
 ## Slides are online: 
 
@@ -75,21 +74,28 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 - Data is files (csv), tabular format
 
 
-|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                                                                              |
-|-------------------------|------------------------|------------------------|
+|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
+|-------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010             | 2020                                                                                                                                                                                                                                 |
 | Type of recording    | self declarative | self declarative                                                                                                                                                                                                                     |
 | Granularity          | Census blocks     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services             | Mobile/**Fixed** | Mobile/**Fixed**  |
-|Timeframe | 2014-2021 | 2022 - *Ongoing* |
-| Releases | twice a year | twice a year[^verion] |
-| Size | 400MB/year | 22GB/year |
+| Services             | Mobile/**Fixed** | Mobile/**Fixed**                                                                                                                                                                                                                     |
+|Timeframe | 2014-2021 | 2022 - *Ongoing*                                                                                                                                                                                                                     |
+| Releases | twice a year | twice a year[^verizon]                                                                                                                                                                                                               |
+| Size | 400MB/year | 22GB/year                                                                                                                                                                                                                            |
 
-[^verion]: One release can have multiple versions
+[^verizon]: One release can have multiple versions
+
 
 ## FCC data in our apps and analysis work
 
-We released multiple apps relying on FCC primary data: 
+Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement
+<br />the programs needed to unlock the potential of rural America.
+
+<p style="max-height: 50px">
+Along with our ongoing broadband consulting and technical assistance work, we released
+two public-facing apps that rely on FCC primary data:
+</p>
 
 - 2023: [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
 
@@ -97,13 +103,16 @@ We released multiple apps relying on FCC primary data:
 
 <!-- also included in ERC tools should I mention it? -->
 
+<p style="max-height: 50px">
 We are also using it on our report and research projects
+</p>
 
 - [Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
 - [The equity of economic opportunity in rural America](https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/)
 
 - Multiple projects at different time, multiple tables
+
 
 ## Our Previous data processing pattern:
 
@@ -136,10 +145,11 @@ flowchart LR
     style Serving fill:#fff
 ```
 
+- Classic ELT (Extract Load Transform):
+  - ->  transformation step had to happen in the database (slow or $$$)
 
-- Classic ELT (Extract Load Tranform): the tranform step is done in DB and here slow (or $$)  
-
-- Change in business/research needs: "we need ISP" / "We should exlude location with bad latency" ->  redo ingestion/load/transform
+- Any change in the business/research needs (i.e., "We need ISP footprints" / "We should exclude locations with bad latency"):
+  - ->  required another cycle to ingest/load/transform
 
 > You can quote me.... "My manager regularly asks for quick turn deliveries".... "He's bullies the team with short delivery times"
 
@@ -339,12 +349,14 @@ added benefits: lower cost, less contraintes on permissions -> share it!
 ## why public
 
 - Open source is :
+   - a way to publish: i.e., you can read the code
+   - a way to share: i.e., you can use it
 
-* a way to publish: ie you can read the code 
-
-* a way to share: ie you can use it
-
-We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.
+We care more about process than product or to say it differently,
+the product is just a means to reach a goal (a process).
+<br />We want to lower the cost of using that data so rural america
+can validate the service claims made by their ISP and manage their
+<br />strategy for broadband access and expansion.
 
 
 # Examples of uses cases
