@@ -17,19 +17,28 @@ editor: visual
 ---
 
 
-## GOAL & PLAN
+## GOALS & PLAN
 
-My goals:
+#### My goals: 
 
-- Convince you that you should package data!
-  - Presentation (Myself & CORI)
-  - FCC's data
+1. Convince you that you should use code to work with primary data
+
+2. Package this code will make everyone live easier
+
+#### Plan
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
+* FCC's Data
 
+* `cori.data.fcc`: primary data as code
+
+* Examples of uses cases
+
+* Discussions
+ 
 ## :wave: Hi, I am Olivier 
 
 - Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html) 
@@ -62,6 +71,16 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 
 ## Federal Communications Commission ([FCC](https://www.fcc.gov/)) 
 
+:::: {.columns}
+
+::: {.column width="30%"}
+
+![](img/fcc-seal-rgb-2020.svg)
+
+:::
+
+::: {.column width="70%"}
+
 - Agency in charge of regulating "everything" communications
 
 - Lot of useful datasets!
@@ -69,9 +88,18 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
   -> **challenge**: how to work with constant change upstream?
 
-- Two datasets are providing an overview of broadband access since 2014
+**Challenge**: how to work with constant change upstream?
+:::
 
-- Data is files (csv), tabular format
+::::
+
+
+## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
@@ -81,10 +109,26 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 | Granularity          | Census blocks     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
 | Services             | Mobile/**Fixed** | Mobile/**Fixed**                                                                                                                                                                                                                     |
 |Timeframe | 2014-2021 | 2022 - *Ongoing*                                                                                                                                                                                                                     |
-| Releases | twice a year | twice a year[^verizon]                                                                                                                                                                                                               |
+| Releases | twice a year | twice a year[^version]                                                                                                                                                                                                               |
 | Size | 400MB/year | 22GB/year                                                                                                                                                                                                                            |
 
-[^verizon]: One release can have multiple versions
+[^version]: One release can have multiple versions
+
+
+:::
+
+::: {.column width="50%"}
+
+
+- 2 **voluninous** datasets are providing an overview of broadband access since 2014
+
+- Data is multiples files (csv), tabular format and no "road safety barriers"
+
+**Challenge**: Build an infrastructure that allows you to capitalize on your work?
+:::
+
+::::
+
 
 
 ## FCC data in our apps and analysis work
@@ -222,7 +266,7 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 - 267 files
 
-- New project / New spec -> copy/pasting and maintaining X **similar** code sources
+- New project / New spec -> copy/pasting and maintaining X **similar** code sources 
 
 :::
 
@@ -282,12 +326,12 @@ identical(num_files, files_dl)
 
 ::: {.column width="50%"}
 
-- reduce errors
 
-- complexity is **one** place and **abstracted**
+- Reduce errors 
 
-- provide a timestamp: solve a bit the "multiple tables" issue
+- Complexity is in **one** place and **abstracted** 
 
+- Provide a timestamp: solve the "multiple tables" issue 
 
 :::
 
@@ -296,7 +340,7 @@ identical(num_files, files_dl)
 
 # cori.data.fcc
 
-## New technologies
+## New technologies:
 
 <p style="float: left">
 DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) and S3 (Simple Storage Service of AWS)
@@ -310,11 +354,28 @@ Compute: PG (RDS) -> DuckDB
 
 Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
 
-added benefits: lower cost, less contraintes on permissions -> share it!
 
-- Parquet and interoperability:
-  * language change file format also but way slowly
-  * file format is more agnostic 
+- Parquet and interoperability: 
+
+  * Computer language change, file format also but way slowly 
+
+  * File format is more agnostic
+
+1. Solved the lack of reactivity: working with primary data does not need to be slow!  
+
+2. Added benefits: lower cost, less contraintes on permissions -> share it!
+
+## why sharing it:
+
+Facilitate the access to primary data to researchers, regional economists  One of CORI's goal is to provide rural community with good internet: 
+
+We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.
+
+- Open source is :
+
+* a way to publish: ie you can read the code 
+
+* a way to share: ie you can use it
 
 
 ## Packaging data as code
@@ -329,7 +390,7 @@ added benefits: lower cost, less contraintes on permissions -> share it!
 
     - Easy to distribute (GitHub / built-in functions)
 
-    - Tests! TODO codecov 
+    - Tests! 
 
     - Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
@@ -345,19 +406,6 @@ added benefits: lower cost, less contraintes on permissions -> share it!
         * New project that is requiring FCC staff estimes: it can be added 
 
 [^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
-
-## why public
-
-- Open source is :
-   - a way to publish: i.e., you can read the code
-   - a way to share: i.e., you can use it
-
-We care more about process than product or to say it differently,
-the product is just a means to reach a goal (a process).
-<br />We want to lower the cost of using that data so rural america
-can validate the service claims made by their ISP and manage their
-<br />strategy for broadband access and expansion.
-
 
 # Examples of uses cases
 
@@ -408,9 +456,11 @@ place of business logic in data example bead category
 
   * Metadata is hard: moving data as code help on that
 
-  * enhance reproducibility  
+  * Enhance reproducibility  
 
-  * easier to capitalize/build on it 
+  * Easier to capitalize/build on it 
+
+  * Is packaging primary still count has working primary data 
 
 
 
