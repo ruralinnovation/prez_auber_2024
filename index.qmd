@@ -19,11 +19,14 @@ editor: visual
 
 ## PLAN & GOAL
 
-My goal: convince you that you should package data!
+My goal: convince you that you should package data as code!
 
 * Presentation (Me & CORI)
-
 * FCC's Data
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
  
 ## :wave: Hi, I am Olivier 
@@ -37,16 +40,18 @@ My goal: convince you that you should package data!
 ## Slides are online: 
 
 Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)
+<br />[https://ruralinnovation.github.io/prez_auber_2024/](https://ruralinnovation.github.io/prez_auber_2024/#/title-slide)
 
 ![](img/qr.svg){height="300" fig-align="center"}
 
-[https://ruralinnovation.github.io/prez_auber_2024/#/title-slide](https://ruralinnovation.github.io/conf_URISA_2023/#/title-slide)
 
 ## Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
 *Advancing economic prosperity in rural America through the creation of inclusive tech economy ecosystem that support scalable entrepreneurship and tech job creation*
-
+<img style="float:right; position: relative; top: 0px; margin: 2.5% 10%; width: 50vw; height: calc(50vw / 1.816);max-height:  none !important;" src="img/cori_triangle.png" data-lazy-loaded="">
+<!--
 ![](img/cori_triangle.png){fig-align="center"}
+-->
 
 1. Broadband Infrastucture is an important part of it
 
@@ -77,7 +82,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 
 [^verion]: One release can have multiple versions
 
-## FCC data is included in our apps and analysis work
+## FCC data in our apps and analysis work
 
 We released multiple apps relying on FCC primary data: 
 
@@ -275,9 +280,13 @@ identical(num_files, files_dl)
 
 ## New technologies
 
-- DuckDB and S3 (Simple Storage Service of AWS)
- 
-![](img/DuckDB_logo.svg)
+<p style="float: left">
+  DuckDB and S3 (Simple Storage Service of AWS)
+<img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
+</p>
+<!--
+![DuckDB](img/DuckDB_logo.svg)
+-->
 
 Compute: PG (RDS) -> DuckDB 
 
@@ -285,13 +294,10 @@ Storage: PG (RDS) -> S3
 
 added benefit: lower cost
 
-- Parquet and interoperability: 
-
-  * language change file format also but way slowly 
-
+- Parquet and interoperability:
+  * language change file format also but way slowly
   * file format is more agnostic 
 
-skip PG here. 
 
 ## Packaging data as code
 
