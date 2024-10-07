@@ -412,13 +412,25 @@ Olivier Leroy
 
   <p class="date">2024-10-20</p>
 </section>
-<section id="plan-goal" class="slide level2">
-<h2>PLAN &amp; GOAL</h2>
-<p>My goal: convince you that you should package data!</p>
+<section id="goal-plan" class="slide level2">
+<h2>GOAL &amp; PLAN</h2>
+<p>My goals:</p>
 <ul>
-<li><p>Presentation (Me &amp; CORI)</p></li>
-<li><p>FCC’s Data</p></li>
+<li>Convince you that you should package data!
+<ul>
+<li>Presentation (Myself &amp; CORI)</li>
+<li>FCC’s data</li>
+</ul></li>
 </ul>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
 </section>
 <section id="hi-i-am-olivier" class="slide level2">
 <h2><span class="emoji" data-emoji="wave">👋</span> Hi, I am Olivier</h2>
@@ -427,24 +439,24 @@ Olivier Leroy
 </ul>
 
 <img data-src="img/hbrsexiestjob.png" width="800" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">Harvard Business Review</a></p><ul>
-<li>Not Data Scientist but Data Engineer and Working with primary data: “messy, unstructured data” is on us now</li>
+<li>Data Engineer and working with primary data: “messy, unstructured data” is upon us</li>
 </ul>
 </section>
 <section id="slides-are-online" class="slide level2">
 <h2>Slides are online:</h2>
-<p>Realized in <a href="https://quarto.org/">Quarto</a> (Reavealjs) hosted in <a href="https://github.com/ruralinnovation/conf_URISA_2023">GitHub</a></p>
+<p>Realized in <a href="https://quarto.org/">Quarto</a> (Reavealjs) hosted in <a href="https://github.com/ruralinnovation/conf_URISA_2023">GitHub</a> <br><a href="https://ruralinnovation.github.io/prez_auber_2024/#/title-slide">https://ruralinnovation.github.io/prez_auber_2024/</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/qr.svg" class="quarto-figure quarto-figure-center" height="300"></p>
 </figure>
 </div>
-<p><a href="https://ruralinnovation.github.io/conf_URISA_2023/#/title-slide">https://ruralinnovation.github.io/prez_auber_2024/#/title-slide</a></p>
 </section>
 <section id="center-on-rural-innovation-cori" class="slide level2">
 <h2>Center On Rural Innovation (<a href="https://ruralinnovation.us/">CORI</a>)</h2>
-<p><em>Advancing economic prosperity in rural America through the creation of inclusive tech economy ecosystem that support scalable entrepreneurship and tech job creation</em></p>
-
-<img data-src="img/cori_triangle.png" class="quarto-figure quarto-figure-center r-stretch"><ol type="1">
+<p><em>Advancing economic prosperity in rural America through the creation of inclusive tech economy ecosystem that support scalable entrepreneurship and tech job creation</em> <img style="float:right; position: relative; top: 0px; margin: 2.5% 10%; width: 50vw; height: calc(50vw / 1.816);max-height:  none !important;" src="img/cori_triangle.png" data-lazy-loaded=""> <!--
+![](img/cori_triangle.png){fig-align="center"}
+--></p>
+<ol type="1">
 <li><p>Broadband Infrastucture is an important part of it</p></li>
 <li><p>Rural data: Need to go back to primary data</p></li>
 </ol>
@@ -459,8 +471,9 @@ Olivier Leroy
 <ul>
 <li><p>Agency in charge of regulating “everything” communications</p></li>
 <li><p>Lot of useful datasets!</p></li>
-<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!)</p>
-<p>-&gt; challenge: how to work with constant change upstream?</p></li>
+<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!) -&gt; <strong>challenge</strong>: how to work with constant change upstream?</p></li>
+<li><p>Two datasets are providing an overview of broadband access since 2014</p></li>
+<li><p>Data is files (csv), tabular format</p></li>
 </ul>
 <table class="caption-top">
 <thead>
@@ -509,17 +522,25 @@ Olivier Leroy
 </tbody>
 </table>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple versions</p></li></ol></aside></section>
-<section id="fcc-data-is-included-in-our-apps-and-analysis-work" class="slide level2">
-<h2>FCC data is included in our apps and analysis work</h2>
-<p>We released multiple apps relying on FCC primary data:</p>
+<section id="fcc-data-in-our-apps-and-analysis-work" class="slide level2">
+<h2>FCC data in our apps and analysis work</h2>
+<p>Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement <br>the programs needed to unlock the potential of rural America.</p>
+<p style="max-height: 50px">
+Along with our ongoing broadband consulting and technical assistance work, we released two public-facing apps that rely on FCC primary data:
+</p>
 <ul>
 <li><p>2023: <a href="https://broadband-risk.ruralinnovation.us/">Broadband Climate Risk Mitigation Tool</a></p></li>
 <li><p>2024: <a href="https://rural-broadband-map.ruralinnovation.us/">Rural Broadband Mapping Tool</a></p></li>
 </ul>
-<p>(also included in ERC tools should I mention it?)</p>
-<p>Importance of using PG, see next slide</p>
-<p>data as files data as tables and the limit</p>
-<p>(out of sync tables/files)</p>
+<!-- also included in ERC tools should I mention it? -->
+<p style="max-height: 50px">
+We are also using it on our report and research projects
+</p>
+<ul>
+<li><p><a href="https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/">Beyond connectivity: The role of broadband in rural economic growth and resilience</a></p></li>
+<li><p><a href="https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/">The equity of economic opportunity in rural America</a></p></li>
+<li><p>Multiple projects at different time, multiple tables</p></li>
+</ul>
 </section>
 <section id="our-previous-data-processing-pattern" class="slide level2">
 <h2>Our Previous data processing pattern:</h2>
@@ -561,8 +582,14 @@ flowchart LR
 </div>
 </div>
 <ul>
-<li><p>Classic ELT (Extract Load Tranform): the tranform step is done in DB and here slow (or $$)</p></li>
-<li><p>Change in business/research needs: “we need ISP” / “We should exlude location with bad latency” -&gt; redo ingestion/load/transform</p></li>
+<li>Classic ELT (Extract Load Transform):
+<ul>
+<li>-&gt; transformation step had to happen in the database (slow or $$$)</li>
+</ul></li>
+<li>Any change in the business/research needs (i.e., “We need ISP footprints” / “We should exclude locations with bad latency”):
+<ul>
+<li>-&gt; required another cycle to ingest/load/transform</li>
+</ul></li>
 </ul>
 <blockquote>
 <p>You can quote me…. “My manager regularly asks for quick turn deliveries”…. “He’s bullies the team with short delivery times”</p>
@@ -668,6 +695,7 @@ flowchart LR
 <ul>
 <li><p>reduce errors</p></li>
 <li><p>complexity is <strong>one</strong> place and <strong>abstracted</strong></p></li>
+<li><p>provide a timestamp: solve a bit the “multiple tables” issue</p></li>
 </ul>
 </div></div>
 </section></section>
@@ -678,21 +706,22 @@ flowchart LR
 </section>
 <section id="new-technologies" class="slide level2">
 <h2>New technologies</h2>
+<p style="float: left">
+DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arrow.apache.org/">Arrow</a> / <a href="https://en.wikipedia.org/wiki/Online_analytical_processing">OLAP</a>) and S3 (Simple Storage Service of AWS) <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
+</p>
+<!--
+![DuckDB](img/DuckDB_logo.svg)
+-->
+<p>Compute: PG (RDS) -&gt; DuckDB</p>
+<p>Storage: PG (RDS) -&gt; S3 (Range HTTP, storage with nice access)</p>
+<p>added benefits: lower cost, less contraintes on permissions -&gt; share it!</p>
 <ul>
-<li>DuckDB and S3 (Simple Storage Service of AWS)</li>
-</ul>
-
-<img data-src="img/DuckDB_logo.svg" class="r-stretch"><p>Compute: PG (RDS) -&gt; DuckDB</p>
-<p>Storage: PG (RDS) -&gt; S3</p>
-<p>added benefit: lower cost</p>
+<li>Parquet and interoperability:
 <ul>
-<li><p>Parquet and interoperability:</p>
-<ul>
-<li><p>language change file format also but way slowly</p></li>
-<li><p>file format is more agnostic</p></li>
+<li>language change file format also but way slowly</li>
+<li>file format is more agnostic</li>
 </ul></li>
 </ul>
-<p>skip PG here.</p>
 </section>
 <section id="packaging-data-as-code" class="slide level2">
 <h2>Packaging data as code</h2>
@@ -725,11 +754,13 @@ flowchart LR
 <section id="why-public" class="slide level2">
 <h2>why public</h2>
 <ul>
-<li><p>Open source is :</p></li>
-<li><p>a way to publish: ie you can read the code</p></li>
-<li><p>a way to share: ie you can use it</p></li>
+<li>Open source is :
+<ul>
+<li>a way to publish: i.e., you can read the code</li>
+<li>a way to share: i.e., you can use it</li>
+</ul></li>
 </ul>
-<p>We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.</p>
+<p>We care more about process than product or to say it differently, the product is just a means to reach a goal (a process). <br>We want to lower the cost of using that data so rural america can validate the service claims made by their ISP and manage their <br>strategy for broadband access and expansion.</p>
 </section></section>
 <section>
 <section id="examples-of-uses-cases" class="title-slide slide level1 center">
@@ -748,7 +779,7 @@ flowchart LR
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">packageVersion</span>(<span class="st">"cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] '0.0.1'</code></pre>
+<pre><code>[1] '0.1.0'</code></pre>
 </div>
 </div>
 </section>
