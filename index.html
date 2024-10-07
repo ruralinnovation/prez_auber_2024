@@ -419,17 +419,12 @@ Olivier Leroy
 <li><p>Convince you that you should use code to work with primary data</p></li>
 <li><p>Package this code will make everyone live easier</p></li>
 </ol>
+<p>
+&nbsp;
+</p>
 <h4 id="plan">Plan</h4>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
 <ul>
+<li><p>Presentation: Me &amp; CORI</p></li>
 <li><p>FCC’s Data</p></li>
 <li><p><code>cori.data.fcc</code>: primary data as code</p></li>
 <li><p>Examples of uses cases</p></li>
@@ -479,7 +474,7 @@ Olivier Leroy
 <ul>
 <li><p>Agency in charge of regulating “everything” communications</p></li>
 <li><p>Lot of useful datasets!</p></li>
-<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!) -&gt; <strong>challenge</strong>: how to work with constant change upstream?</p></li>
+<li><p>Their data landscape is evolving fast (now they have a <a href="https://opendata.fcc.gov/">platform</a>!)</p></li>
 </ul>
 <p><strong>Challenge</strong>: how to work with constant change upstream?</p>
 </div></div>
@@ -536,15 +531,20 @@ Olivier Leroy
 </table>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><p>2 <strong>voluninous</strong> datasets are providing an overview of broadband access since 2014</p></li>
-<li><p>Data is multiples files (csv), tabular format and no “road safety barriers”</p></li>
+<li><p>2 <strong>voluminous</strong> datasets are providing an overview of broadband access since 2014</p></li>
+<li><p>Multiples files (csv), tabular format and no “road safety barriers”</p></li>
 </ul>
 <p><strong>Challenge</strong>: Build an infrastructure that allows you to capitalize on your work?</p>
 </div></div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple versions</p></li></ol></aside></section>
 <section id="fcc-data-in-our-apps-and-analysis-work" class="slide level2">
 <h2>FCC data in our apps and analysis work</h2>
-<p>Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement <br>the programs needed to unlock the potential of rural America.</p>
+<p>Broadband data is used extensively in our work:</p>
+<ul>
+<li><p>Provide critical support to secure funding,</p></li>
+<li><p>Develop infrastructure,</p></li>
+<li><p>Implement the programs needed to unlock the potential of rural America.</p></li>
+</ul>
 <p style="max-height: 50px">
 Along with our ongoing broadband consulting and technical assistance work, we released two public-facing apps that rely on FCC primary data:
 </p>
@@ -559,7 +559,7 @@ We are also using it on our report and research projects
 <ul>
 <li><p><a href="https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/">Beyond connectivity: The role of broadband in rural economic growth and resilience</a></p></li>
 <li><p><a href="https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/">The equity of economic opportunity in rural America</a></p></li>
-<li><p>Multiple projects at different time, multiple tables</p></li>
+<li><p>Multiple projects at different times, multiple tables</p></li>
 </ul>
 </section>
 <section id="our-previous-data-processing-pattern" class="slide level2">
@@ -663,7 +663,10 @@ flowchart LR
 <li><p>“old” GNU make: bash, R codes, SQL</p></li>
 <li><p>227 commits</p></li>
 <li><p>267 files</p></li>
-<li><p>New project / New spec -&gt; copy/pasting and maintaining X <strong>similar</strong> code sources</p></li>
+<li><p>New project / New spec</p>
+<ul>
+<li><strong>challenge</strong>: copy/pasting and maintaining X <strong>similar</strong> code sources</li>
+</ul></li>
 </ul>
 </div></div>
 </section>
@@ -729,9 +732,6 @@ flowchart LR
 <p style="float: left">
 DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arrow.apache.org/">Arrow</a> / <a href="https://en.wikipedia.org/wiki/Online_analytical_processing">OLAP</a>) and S3 (Simple Storage Service of AWS) <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
-<!--
-![DuckDB](img/DuckDB_logo.svg)
--->
 <p>Compute: PG (RDS) -&gt; DuckDB</p>
 <p>Storage: PG (RDS) -&gt; S3 (Range HTTP, storage with nice access)</p>
 <ul>
@@ -743,47 +743,63 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 </ul>
 <ol type="1">
 <li><p>Solved the lack of reactivity: working with primary data does not need to be slow!</p></li>
-<li><p>Added benefits: lower cost, less contraintes on permissions -&gt; share it!</p></li>
+<li><p>Added benefits: lower cost, less contraints on permissions -&gt; share it!</p></li>
 </ol>
 </section>
 <section id="why-sharing-it" class="slide level2">
-<h2>why sharing it:</h2>
-<p>Facilitate the access to primary data to researchers, regional economists One of CORI’s goal is to provide rural community with good internet:</p>
-<p>We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.</p>
+<h2>why sharing it?</h2>
+<p>Facilitate the access to primary data to researchers, regional economists: one of CORI’s goal is to provide rural community with good internet.</p>
 <ul>
 <li><p>Open source is :</p></li>
-<li><p>a way to publish: ie you can read the code</p></li>
-<li><p>a way to share: ie you can use it</p></li>
+<li><p>Way to publish: Everyone can read the code and contribute</p></li>
+<li><p>Way to share: you can use it</p></li>
 </ul>
 </section>
-<section id="packaging-data-as-code" class="slide level2">
-<h2>Packaging data as code</h2>
-<ol type="1">
-<li><p>Benefits from the language ecosystem:</p>
+<section id="packaging-code-documentation" class="slide level2">
+<h2>Packaging code: Documentation</h2>
 <ul>
-<li><p>What does this function do? <code>?get_nbm_block</code></p></li>
-<li><p>How can I integrate this functions in my workflow? Vignettes</p></li>
+<li><p>What does this function do? -&gt; <code>?get_nbm_block</code> / References</p></li>
+<li><p>How can I integrate those functions in my workflow? Vignettes/Uses cases</p></li>
 <li><p>A doubt on how the data was processed: Articles and data-raw</p></li>
+<li><p>Versions / updates with a <a href="https://ruralinnovation.github.io/cori.data.fcc/news/index.html">Changelog</a></p></li>
+</ul>
+<blockquote>
+<p>we’ve talked about how packages can act like team members such as the IT Guy, Analyst, Tech Lead, or Project Manager.<sup>1</sup></p>
+</blockquote>
+<blockquote>
+<p>[…] developed packages are […] extra expert team members.<sup>2</sup></p>
+</blockquote>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>https://www.emilyriederer.com/post/team-of-packages/#collaboration</p></li><li id="fn3"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
+<section id="packaging-code-data-as-code" class="slide level2">
+<h2>Packaging code: Data as code</h2>
+<ol start="2" type="1">
+<li>Data as code:</li>
+</ol>
+<ul>
+<li>Better documentation: <code>get_fcc_dictionary</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>fcc_dict <span class="ot">&lt;-</span> cori.data.fcc<span class="sc">::</span><span class="fu">get_fcc_dictionary</span>()</span>
+<span id="cb3-2"><a href=""></a>fcc_dict[<span class="fu">grep</span>(<span class="st">"frn"</span>, fcc_dict<span class="sc">$</span>var_name),</span>
+<span id="cb3-3"><a href=""></a>         <span class="fu">c</span>(<span class="st">"dataset"</span>, <span class="st">"var_name"</span>, <span class="st">"var_example"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     dataset         var_name              var_example
+16   nbm_raw              frn               0032176356
+47 nbm_block cnt_distcint_frn                        1
+48 nbm_block        array_frn [0004991444, 0018506568]
+49 nbm_block        combo_frn     14501455127825752064</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Website to share it (benefits from the language ecosystem)</p></li>
 <li><p>Easy to distribute (GitHub / built-in functions)</p></li>
 <li><p>Tests!</p></li>
-<li><p>Versions / updates with a <a href="https://ruralinnovation.github.io/cori.data.fcc/news/index.html">Changelog</a></p></li>
-</ul></li>
-</ol>
-<blockquote>
-<p>internally developed packages are […] extra expert team members.<sup>1</sup></p>
-</blockquote>
-<ol start="2" type="1">
-<li><p>Data as code:</p>
-<ul>
-<li><p>Better documentation: <code>get_fcc_dictionary</code></p></li>
-<li><p>Website to share it</p></li>
 <li><p>Capitalize on it!</p>
 <ul>
 <li>New project that is requiring FCC staff estimes: it can be added</li>
 </ul></li>
-</ul></li>
-</ol>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section></section>
+</ul>
+</section></section>
 <section>
 <section id="examples-of-uses-cases" class="title-slide slide level1 center">
 <h1>Examples of uses cases</h1>
@@ -794,56 +810,40 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 <p>The source code is hosted on <a href="https://github.com/ruralinnovation/cori.data.fcc">GitHub</a> it has a website: <a href="https://ruralinnovation.github.io/cori.data.fcc/index.html">https://ruralinnovation.github.io/cori.data.fcc/index.html</a></p>
 <p>You need the R packages <a href="https://remotes.r-lib.org/">{remotes}</a> (or <a href="https://pak.r-lib.org/">pak</a>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
-<span id="cb3-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ruralinnovation/cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb5-2"><a href=""></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ruralinnovation/cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><span class="emoji" data-emoji="construction">🚧</span> Check the version you have and see what new versions are offering <span class="emoji" data-emoji="construction">🚧</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">packageVersion</span>(<span class="st">"cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">packageVersion</span>(<span class="st">"cori.data.fcc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] '0.1.0'</code></pre>
 </div>
 </div>
 </section>
-<section id="pot.-ideas" class="slide level2">
-<h2>Pot. ideas</h2>
+<section id="block-covered-bead-like" class="slide level2">
+<h2>Block covered BEAD like</h2>
+</section>
+<section id="isp-networks" class="slide level2">
+<h2>ISP networks</h2>
+</section>
+<section id="discussions" class="slide level2">
+<h2>Discussions</h2>
 <ul>
-<li><p>Block covered BEAD like</p></li>
-<li><p>ISP networks</p></li>
-<li><p>Just download data</p></li>
+<li><p>place of business logic in data example bead category</p></li>
+<li><p>once data as code is place we can focus on business logic</p></li>
 </ul>
-</section>
-<section id="download-files" class="slide level2">
-<h2>Download files</h2>
-<ul>
-<li>see above / could be that automated code is enough</li>
-</ul>
-</section>
-<section id="use-cori-curated-files" class="slide level2">
-<h2>Use CORI curated files</h2>
-</section>
-<section id="pot.-discussions" class="slide level2">
-<h2>Pot. discussions</h2>
-<p>place of business logic in data example bead category</p>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
 <li><p>data as code:</p>
 <ul>
-<li><p>Metadata is hard: moving data as code help on that</p></li>
+<li><p>Metadata is hard: moving data as code help with that!</p></li>
 <li><p>Enhance reproducibility</p></li>
-<li><p>Easier to capitalize/build on it</p></li>
-<li><p>Is packaging primary still count has working primary data</p></li>
 </ul></li>
+<li><p>Easier to capitalize/build on it: generating less tech debt</p></li>
 </ul>
-</section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<p>TODO:</p>
-<p>McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/</p>
-<p>https://www.emilyriederer.com/post/team-of-packages/#collaboration</p>
-<p>R packages 2ed</p>
 </section>
 <section id="contacts" class="slide level2">
 <h2>Contacts</h2>
