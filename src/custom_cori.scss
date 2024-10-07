@@ -78,6 +78,13 @@ html * {
         color: #398160;
         background-color: rgba(0, 0, 0, 0);
         white-space: pre-wrap;
+        padding-right: 5%;
+      }
+      
+      div.sourceCode {
+        margin: 0;
+        overflow: auto;
+        max-width: 50%;
       }
 
       div.aside {
@@ -103,7 +110,7 @@ html * {
         display: flex !important;
         flex-direction: column;
 
-        h1, h2 {
+        h1, h2, h3, h4 {
           flex-basis: auto;
           flex-grow: 1;
           flex-shrink: 1;

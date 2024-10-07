@@ -25,11 +25,11 @@ editor: visual
 
 2. Package this code will make everyone live easier
 
+<p>&nbsp;</p>
+
 #### Plan
 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+* Presentation: Me & CORI 
 
 * FCC's Data
 
@@ -71,7 +71,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 
 ## Federal Communications Commission ([FCC](https://www.fcc.gov/)) 
 
-:::: {.columns}
+:::: {.columns} 
 
 ::: {.column width="30%"}
 
@@ -86,7 +86,6 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 - Lot of useful datasets!
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-  -> **challenge**: how to work with constant change upstream?
 
 **Challenge**: how to work with constant change upstream?
 :::
@@ -120,9 +119,9 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 ::: {.column width="50%"}
 
 
-- 2 **voluninous** datasets are providing an overview of broadband access since 2014
+- 2 **voluminous** datasets are providing an overview of broadband access since 2014
 
-- Data is multiples files (csv), tabular format and no "road safety barriers"
+- Multiples files (csv), tabular format and no "road safety barriers"
 
 **Challenge**: Build an infrastructure that allows you to capitalize on your work?
 :::
@@ -130,11 +129,15 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https:/
 ::::
 
 
-
 ## FCC data in our apps and analysis work
 
-Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement
-<br />the programs needed to unlock the potential of rural America.
+Broadband data is used extensively in our work: 
+
+- Provide critical support to secure funding, 
+
+- Develop infrastructure, 
+
+- Implement the programs needed to unlock the potential of rural America.
 
 <p style="max-height: 50px">
 Along with our ongoing broadband consulting and technical assistance work, we released
@@ -155,7 +158,7 @@ We are also using it on our report and research projects
 
 - [The equity of economic opportunity in rural America](https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/)
 
-- Multiple projects at different time, multiple tables
+- Multiple projects at different times, multiple tables
 
 
 ## Our Previous data processing pattern:
@@ -266,7 +269,9 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 - 267 files
 
-- New project / New spec -> copy/pasting and maintaining X **similar** code sources 
+- New project / New spec 
+
+  - **challenge**: copy/pasting and maintaining X **similar** code sources 
 
 :::
 
@@ -346,14 +351,10 @@ identical(num_files, files_dl)
 DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) and S3 (Simple Storage Service of AWS)
 <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
-<!--
-![DuckDB](img/DuckDB_logo.svg)
--->
 
 Compute: PG (RDS) -> DuckDB 
 
 Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
-
 
 - Parquet and interoperability: 
 
@@ -363,49 +364,61 @@ Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
 
 1. Solved the lack of reactivity: working with primary data does not need to be slow!  
 
-2. Added benefits: lower cost, less contraintes on permissions -> share it!
+2. Added benefits: lower cost, less contraints on permissions -> share it!
 
-## why sharing it:
+## why sharing it?
 
-Facilitate the access to primary data to researchers, regional economists  One of CORI's goal is to provide rural community with good internet: 
-
-We care more about process than product or to say it differently the product is just a mean to reach a goal (a process). We want to lower the cost of using that data so rural america can check what their isp are saying and challenge it and plan to get a better bb.
+Facilitate the access to primary data to researchers, regional economists:  one of CORI's goal is to provide rural community with good internet.
 
 - Open source is :
 
-* a way to publish: ie you can read the code 
+* Way to publish: Everyone can read the code and contribute
 
-* a way to share: ie you can use it
+* Way to share: you can use it
 
 
-## Packaging data as code
-
-1. Benefits from the language ecosystem: 
+## Packaging code: Documentation
   
-    - What does this function do? `?get_nbm_block`
+- What does this function do? -> `?get_nbm_block` / References
 
-    - How can I integrate this functions in my workflow? Vignettes
+- How can I integrate those functions in my workflow? Vignettes/Uses cases
 
-    - A doubt on how the data was processed: Articles and data-raw
+- A doubt on how the data was processed: Articles and data-raw
 
-    - Easy to distribute (GitHub / built-in functions)
+- Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
-    - Tests! 
+> we’ve talked about how packages can act like team members such as the IT Guy, Analyst, Tech Lead, or Project Manager.[^emily]
 
-    - Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
+>  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
->  internally developed packages are [...] extra expert team members.[^dataanalysisreuse]
+[^emily]: https://www.emilyriederer.com/post/team-of-packages/#collaboration
+
+[^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
+
+## Packaging code: Data as code
 
 2. Data as code: 
 
-    - Better documentation: `get_fcc_dictionary`
+- Better documentation: `get_fcc_dictionary`
 
-    - Website to share it
+```{r}
+#| echo: true
+fcc_dict <- cori.data.fcc::get_fcc_dictionary()
+fcc_dict[grep("frn", fcc_dict$var_name),
+         c("dataset", "var_name", "var_example")]
+```
 
-    - Capitalize on it! 
-        * New project that is requiring FCC staff estimes: it can be added 
+- Website to share it (benefits from the language ecosystem)
 
-[^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
+- Easy to distribute (GitHub / built-in functions)
+
+- Tests! 
+
+- Capitalize on it! 
+
+  * New project that is requiring FCC staff estimes: it can be added 
+
+
 
 # Examples of uses cases
 
@@ -431,49 +444,26 @@ remotes::install_github("ruralinnovation/cori.data.fcc")
 packageVersion("cori.data.fcc")
 ```
 
-## Pot. ideas
+## Block covered BEAD like
 
-- Block covered BEAD like
+## ISP networks
 
-- ISP networks
+## Discussions
 
-- Just download data
+- place of business logic in data example bead category 
 
-## Download files
-
-- see above / could be that automated code is enough 
-
-
-## Use CORI curated files
-
-## Pot. discussions
-
-place of business logic in data example bead category 
+- once data as code is place we can focus on business logic 
 
 ## Summary
 
 - data as code:
 
-  * Metadata is hard: moving data as code help on that
+  * Metadata is hard: moving data as code help with that!
 
   * Enhance reproducibility  
 
-  * Easier to capitalize/build on it 
+- Easier to capitalize/build on it: generating less tech debt  
 
-  * Is packaging primary still count has working primary data 
-
-
-
-## References
-
-TODO:
-
-McBain (2024, March 11). Before I Sleep: Patterns and anti-patterns of data analysis reuse. Retrieved from https://milesmcbain.com/posts/data-analysis-reuse/
-
-https://www.emilyriederer.com/post/team-of-packages/#collaboration
-
-
-R packages 2ed
 
 ## Contacts
 
