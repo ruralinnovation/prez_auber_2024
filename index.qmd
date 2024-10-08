@@ -349,7 +349,7 @@ identical(num_files, files_dl)
 
 1. Download data from FCC
 
-2. Download raw data from CORI (MBM / Form 477)
+2. Download raw data from CORI (NBM / Form 477)
 
 3. Download tranformed data (NBM) from CORI
 
@@ -395,7 +395,7 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
   * A place were we can exchange in a constructive way 
 
   
-## Packaging code: Documentation
+## Packaging code: Documentation make easier
   
 - What does this function do? ->  [References](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html) / `?get_nbm_block`
 
@@ -448,19 +448,18 @@ fcc_dict[grep("frn", fcc_dict$var_name),
 
 - Tests! 
 
-- Capitalize on it! 
+- **Capitalize on it**! 
 
-  * New project that is requiring FCC staff estimes: it can be added 
-
+  * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates): it can be added 
 
 
 # Examples of uses cases
 
 ## How to get it: 
 
-The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) it has a website: [https://ruralinnovation.github.io/cori.data.fcc/index.html](https://ruralinnovation.github.io/cori.data.fcc/index.html) 
+The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control) it has a website: [https://ruralinnovation.github.io/cori.data.fcc/index.html](https://ruralinnovation.github.io/cori.data.fcc/index.html) 
 
-You need the R packages [{remotes}](https://remotes.r-lib.org/) (or [pak](https://pak.r-lib.org/))
+You need the R packages [{remotes}](https://remotes.r-lib.org/).
 
 ```{r}
 #| eval: false
@@ -484,10 +483,15 @@ Place holder for Camdem blog post
 
 ## Second Example: ISP networks
 
-NBM Block dataset has a column with an array of FRN: 
+- `nbm_block` dataset is at the Census Block level (one row = one Census Block)
 
-`
-# [1] "0002930980" "0002946986" "0003757341" "0016098931" "0018506568" "0020449831" "0025646373"`
+- A column with a list of FRN in every block:
+
+`# [1] "0002930980" "0002946986" "0003757341" "0016098931" "0018506568" "0020449831" "0025646373"`
+
+- Use of `fcc_providers` : `"0002930980"` ->  `"W A T C H TV Company"`
+
+#### What are the ISP that share commun blocks (or not) in Ohio?
 
 ## Second Example: ISP networks
 
@@ -498,7 +502,6 @@ NBM Block dataset has a column with an array of FRN:
 ```{r}
 #| echo: FALSE
 #| eval: TRUE
-#| code-line-numbers: "8,32"
 library(igraph)
 library(crosstalk);library(DT);library(threejs)
 
@@ -515,9 +518,12 @@ draw_me_a_graph <- function(x, ...) {
 }
 
 sd = SharedData$new(data.frame(provider_name = V(oh_graph)$provider_name))
-bscols(
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd, width=550),
-  datatable(sd, rownames=FALSE, options = list(dom='tp'), width=350)
+bscols(widths = c(4, 8),
+       list(
+         datatable(sd, rownames=FALSE),
+         datatable(sd, rownames=FALSE)
+       ),
+       draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
 )
 
 ```
@@ -528,7 +534,7 @@ bscols(
 ```{r}
 #| echo: TRUE
 #| eval: FALSE
-#| code-line-numbers: "8,32"
+#| code-line-numbers: "8,36"
 library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
 library(crosstalk);library(DT);library(threejs)
 
@@ -592,9 +598,9 @@ bscols(
 
 ## Discussions
 
-- Place of business logic in primary data?
-
 - Once data as code is in place we can focus on business logic 
+
+- Place of business logic in primary data?
 
 - Opinion: if something related to buiseness logic is needed it can be added 
 
