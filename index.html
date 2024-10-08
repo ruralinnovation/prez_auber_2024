@@ -443,7 +443,7 @@ Olivier Leroy
 </section>
 <section id="slides-are-online" class="slide level2">
 <h2>Slides are online:</h2>
-<p>Realized in <a href="https://quarto.org/">Quarto</a> (Reavealjs) hosted in <a href="https://github.com/ruralinnovation/conf_URISA_2023">GitHub</a> <br><a href="https://ruralinnovation.github.io/prez_auber_2024/#/title-slide">https://ruralinnovation.github.io/prez_auber_2024/</a></p>
+<p>Realized in <a href="https://quarto.org/">Quarto</a> (Reavealjs) hosted/deployed in <a href="https://github.com/ruralinnovation/conf_URISA_2023">GitHub</a>, Running R and cori.data.fcc <br><a href="https://ruralinnovation.github.io/prez_auber_2024/#/title-slide">https://ruralinnovation.github.io/prez_auber_2024/</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/qr.svg" class="quarto-figure quarto-figure-center" height="300"></p>
@@ -534,7 +534,7 @@ Olivier Leroy
 <li><p>2 <strong>voluminous</strong> datasets are providing an overview of broadband access since 2014</p></li>
 <li><p>Multiples files (csv), tabular format and no “road safety barriers”</p></li>
 </ul>
-<p><strong>Challenge</strong>: Build an infrastructure that allows you to capitalize on your work?</p>
+<p><strong>Challenge</strong>: Build an infrastructure that allows you to <strong>capitalize</strong> on your work?</p>
 </div></div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>One release can have multiple versions</p></li></ol></aside></section>
 <section id="fcc-data-in-our-apps-and-analysis-work" class="slide level2">
@@ -622,7 +622,7 @@ flowchart LR
 <p><video data-src="img/manual_fcc.mov" controls=""><a href="img/manual_fcc.mov">Video</a></video></p>
 </div><div class="column" style="width:50%;">
 <ul>
-<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every state (56)</li>
+<li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every State (56)</li>
 <li><span class="emoji" data-emoji="repeat">🔁</span> Repeat for every version (??)</li>
 <li><span class="emoji" data-emoji="red_circle">🔴</span> Error prone (500 hundred clicks)</li>
 </ul>
@@ -732,7 +732,8 @@ flowchart LR
 <ol type="1">
 <li><p>Download data from FCC</p></li>
 <li><p>Download raw data from CORI (MBM / Form 477)</p></li>
-<li><p>Download tranformed data (NBM)</p></li>
+<li><p>Download tranformed data (NBM) from CORI</p></li>
+<li><p>Guide you!</p></li>
 </ol>
 </section>
 <section id="new-technologies" class="slide level2">
@@ -740,49 +741,57 @@ flowchart LR
 <p style="float: left">
 DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arrow.apache.org/">Arrow</a> / <a href="https://en.wikipedia.org/wiki/Online_analytical_processing">OLAP</a>) and S3 (Simple Storage Service of AWS) <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
-<p>Compute: PG (RDS) -&gt; DuckDB</p>
-<p>Storage: PG (RDS) -&gt; S3 (Range HTTP, storage with nice access)</p>
 <ul>
+<li><p>Simplify architecture:</p>
+<ul>
+<li><p>Compute: PostgreSQL (RDS) -&gt; DuckDB</p></li>
+<li><p>Storage: PostgreSQL (RDS) -&gt; S3 (Range HTTP, storage with nice access)</p></li>
+</ul></li>
 <li><p>Parquet and interoperability:</p>
 <ul>
 <li><p>Computer language change, file format also but way slowly</p></li>
 <li><p>File format is more agnostic</p></li>
 </ul></li>
+<li><p>Results:</p>
+<ul>
+<li><p>Solved the lack of <strong>reactivity</strong>: working with primary data does not need to be slow!</p></li>
+<li><p>Added benefits: <strong>lower cost</strong>, less contraints on permissions -&gt; share it!</p></li>
+</ul></li>
 </ul>
-<ol type="1">
-<li><p>Solved the lack of reactivity: working with primary data does not need to be slow!</p></li>
-<li><p>Added benefits: lower cost, less contraints on permissions -&gt; share it!</p></li>
-</ol>
 </section>
 <section id="why-sharing-it" class="slide level2">
 <h2>why sharing it?</h2>
-<p>Facilitate the access to primary data to researchers, regional economists: one of CORI’s goal is to provide rural community with good internet.</p>
+<ol type="1">
+<li><p>Sharing it with “ourself” and the broadband community</p></li>
+<li><p>Facilitate the access to primary data to researchers, regional economists: one of CORI’s goal is to provide rural community with good internet.</p></li>
+</ol>
 <ul>
-<li><p>Open source is :</p></li>
+<li><p>Open source is :</p>
+<ul>
+<li><p>Way to share: Everyone can use it</p></li>
 <li><p>Way to publish: Everyone can read the code and contribute</p></li>
-<li><p>Way to share: you can use it</p></li>
+<li><p>A place were we can exchange in a constructuve way</p></li>
+</ul></li>
 </ul>
 </section>
 <section id="packaging-code-documentation" class="slide level2">
 <h2>Packaging code: Documentation</h2>
 <ul>
-<li><p>What does this function do? -&gt; <code>?get_nbm_block</code> / <a href="https://ruralinnovation.github.io/cori.data.fcc/reference/index.html">References</a></p></li>
-<li><p>How can I integrate those functions in my workflow? <a href="https://ruralinnovation.github.io/cori.data.fcc/reference/index.html">Vignettes/Uses cases</a></p></li>
+<li><p>What does this function do? -&gt; <a href="https://ruralinnovation.github.io/cori.data.fcc/reference/index.html">References</a> / <code>?get_nbm_block</code></p></li>
+<li><p>How can I integrate those functions in my workflow? <a href="https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html">Vignettes/Uses cases</a></p></li>
 <li><p>A doubt on how the data was processed: <a href="https://ruralinnovation.github.io/cori.data.fcc/articles/NBM.html">Articles</a> and <a href="https://github.com/ruralinnovation/cori.data.fcc/tree/main/data-raw"><code>data-raw/</code></a></p></li>
 <li><p>Versions / updates with a <a href="https://ruralinnovation.github.io/cori.data.fcc/news/index.html">Changelog</a></p></li>
 </ul>
+<p><br></p>
 <blockquote>
 <p>we’ve talked about how packages can act like team members such as the IT Guy, Analyst, Tech Lead, or Project Manager.<sup>1</sup></p>
 </blockquote>
 <blockquote>
 <p>[…] developed packages are […] extra expert team members.<sup>2</sup></p>
 </blockquote>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>https://www.emilyriederer.com/post/team-of-packages/#collaboration</p></li><li id="fn3"><p>https://milesmcbain.xyz/posts/data-analysis-reuse/</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn2"><p><a href="https://www.emilyriederer.com/post/team-of-packages/#collaboration">https://www.emilyriederer.com/post/team-of-packages/#collaboration</a></p></li><li id="fn3"><p><a href="https://milesmcbain.xyz/posts/data-analysis-reuse/">https://milesmcbain.xyz/posts/data-analysis-reuse/</a></p></li></ol></aside></section>
 <section id="packaging-code-data-as-code" class="slide level2">
 <h2>Packaging code: Data as code</h2>
-<ol start="2" type="1">
-<li>Data as code:</li>
-</ol>
 <ul>
 <li>Better documentation: <code>get_fcc_dictionary</code></li>
 </ul>
@@ -838,19 +847,22 @@ DuckDB (<a href="https://parquet.apache.org/">Parquet</a> / <a href="https://arr
 <section id="discussions" class="slide level2">
 <h2>Discussions</h2>
 <ul>
-<li><p>place of business logic in data example bead category</p></li>
-<li><p>once data as code is place we can focus on business logic</p></li>
+<li><p>Place of business logic in primary data?</p></li>
+<li><p>Once data as code is in place we can focus on business logic</p></li>
+<li><p>Opinion: if something related to buiseness logic is needed it can be added</p></li>
 </ul>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<p>(Primary) data is only useful if you can <strong>effectively</strong> use it.</p>
 <ul>
-<li><p>data as code:</p>
+<li><p>Data as code:</p>
 <ul>
-<li><p>Metadata is hard: moving data as code help with that!</p></li>
-<li><p>Enhance reproducibility</p></li>
+<li><p>Providing data is not enough: need those extra “team members” to guide you</p></li>
+<li><p>Metadata is hard: data as code help with that!</p></li>
+<li><p>Enhance reproducibility (accountability with a fake noze)</p></li>
 </ul></li>
-<li><p>Easier to capitalize/build on it: generating less tech debt</p></li>
+<li><p>Easier to <strong>capitalize/build</strong> on it: generating less tech debt</p></li>
 </ul>
 </section>
 <section id="contacts" class="slide level2">
