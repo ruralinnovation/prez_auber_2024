@@ -49,7 +49,7 @@ editor: visual
 
 ## Slides are online: 
 
-Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)
+Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023), Running R and cori.data.fcc
 <br />[https://ruralinnovation.github.io/prez_auber_2024/](https://ruralinnovation.github.io/prez_auber_2024/#/title-slide)
 
 ![](img/qr.svg){height="300" fig-align="center"}
@@ -351,7 +351,7 @@ identical(num_files, files_dl)
 
 2. Download raw data from CORI (MBM / Form 477)
 
-3. Download tranformed data (NBM) 
+3. Download tranformed data (NBM) fron CORI
 
 ## New technologies:
 
@@ -360,9 +360,11 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
 
-Compute: PG (RDS) -> DuckDB 
+- Simplify architecture: 
 
-Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
+  * Compute: PG (RDS) -> DuckDB 
+
+  * Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
 
 - Parquet and interoperability: 
 
@@ -370,43 +372,49 @@ Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
 
   * File format is more agnostic
 
-1. Solved the lack of reactivity: working with primary data does not need to be slow!  
+- Results:
 
-2. Added benefits: lower cost, less contraints on permissions -> share it!
+  * Solved the lack of **reactivity**: working with primary data does not need to be slow!  
+
+  * Added benefits: **lower cost**, less contraints on permissions -> share it!
 
 ## why sharing it?
 
-Facilitate the access to primary data to researchers, regional economists:  one of CORI's goal is to provide rural community with good internet.
+1. Sharing it with "ourself" and the broadband community 
+
+2. Facilitate the access to primary data to researchers, regional economists:  one of CORI's goal is to provide rural community with good internet.
 
 - Open source is :
 
-* Way to publish: Everyone can read the code and contribute
+  * Way to share: Everyone can use it
 
-* Way to share: you can use it
+  * Way to publish: Everyone can read the code and contribute
 
+  * A place were we can exchange in a constructuve way 
 
+  
 ## Packaging code: Documentation
   
-- What does this function do? -> `?get_nbm_block` / [References](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html)
+- What does this function do? ->  [References](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html) / `?get_nbm_block`
 
-- How can I integrate those functions in my workflow? [Vignettes/Uses cases](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html)
+- How can I integrate those functions in my workflow? [Vignettes/Uses cases](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
 
 - A doubt on how the data was processed: [Articles](https://ruralinnovation.github.io/cori.data.fcc/articles/NBM.html) and [`data-raw/`](https://github.com/ruralinnovation/cori.data.fcc/tree/main/data-raw)
 
 - Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
+<br>
+
 > we’ve talked about how packages can act like team members such as the IT Guy, Analyst, Tech Lead, or Project Manager.[^emily]
 
 >  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
-[^emily]: https://www.emilyriederer.com/post/team-of-packages/#collaboration
+[^emily]: [https://www.emilyriederer.com/post/team-of-packages/#collaboration](https://www.emilyriederer.com/post/team-of-packages/#collaboration)
 
-[^dataanalysisreuse]: https://milesmcbain.xyz/posts/data-analysis-reuse/
+[^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
 
 ## Packaging code: Data as code
-
-2. Data as code: 
-
+ 
 - Better documentation: `get_fcc_dictionary`
 
 ```{r}
@@ -458,20 +466,25 @@ packageVersion("cori.data.fcc")
 
 ## Discussions
 
-- place of business logic in data example bead category 
+- Place of business logic in primary data?
 
-- once data as code is place we can focus on business logic 
+- Once data as code is in place we can focus on business logic 
+
+- Opinion: if something related to buiseness logic is needed it can be added 
 
 ## Summary
 
-- data as code:
+(Primary) data is only useful if you can **effectively** use it.
 
-  * Metadata is hard: moving data as code help with that!
+- Data as code: 
+
+  * Providing data is not enough: need those extra "team members" to guide you 
+
+  * Metadata is hard: data as code help with that!
 
   * Enhance reproducibility  
 
 - Easier to capitalize/build on it: generating less tech debt  
-
 
 ## Contacts
 
