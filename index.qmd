@@ -123,7 +123,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub
 
 - Multiples files (csv), tabular format and no "road safety barriers"
 
-**Challenge**: Build an infrastructure that allows you to capitalize on your work?
+**Challenge**: Build an infrastructure that allows you to **capitalize** on your work?
 :::
 
 ::::
@@ -214,7 +214,7 @@ flowchart LR
 
 ::: {.column width="50%"}
 
-* :repeat: Repeat for every state  (56)
+* :repeat: Repeat for every State  (56)
 * :repeat: Repeat for every version  (??)
 * :red_circle: Error prone (500 hundred clicks)
 
@@ -351,7 +351,9 @@ identical(num_files, files_dl)
 
 2. Download raw data from CORI (MBM / Form 477)
 
-3. Download tranformed data (NBM) fron CORI
+3. Download tranformed data (NBM) from CORI
+
+4. Guide you!
 
 ## New technologies:
 
@@ -362,9 +364,9 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 
 - Simplify architecture: 
 
-  * Compute: PG (RDS) -> DuckDB 
+  * Compute: PostgreSQL (RDS) -> DuckDB 
 
-  * Storage: PG (RDS) -> S3 (Range HTTP, storage with nice access)
+  * Storage: PostgreSQL (RDS) -> S3 (Range HTTP, storage with nice access)
 
 - Parquet and interoperability: 
 
@@ -482,9 +484,9 @@ packageVersion("cori.data.fcc")
 
   * Metadata is hard: data as code help with that!
 
-  * Enhance reproducibility  
+  * Enhance reproducibility (accountability with a fake noze) 
 
-- Easier to capitalize/build on it: generating less tech debt  
+- Easier to **capitalize/build** on it: generating less tech debt  
 
 ## Contacts
 
