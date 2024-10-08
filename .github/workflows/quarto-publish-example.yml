@@ -39,10 +39,15 @@ jobs:
         with:
           cache-version: 2
           packages: |
+            any::dplyr
             any::knitr
             any::rmarkdown
             any::curl
             any::remotes
+            any::igraph
+            any::DT
+            any::threejs
+            any::crosstalk
 
       - name: Install package from GH
         run: |

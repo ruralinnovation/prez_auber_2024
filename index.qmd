@@ -380,7 +380,7 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 
   * Added benefits: **lower cost**, less contraints on permissions -> share it!
 
-## why sharing it?
+## Why sharing it?
 
 1. Sharing it with "ourself" and the broadband community 
 
@@ -392,7 +392,7 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 
   * Way to publish: Everyone can read the code and contribute
 
-  * A place were we can exchange in a constructuve way 
+  * A place were we can exchange in a constructive way 
 
   
 ## Packaging code: Documentation
@@ -417,18 +417,34 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 
 ## Packaging code: Data as code
  
-- Better documentation: `get_fcc_dictionary`
+::: {.panel-tabset}
+
+### Code
 
 ```{r}
 #| echo: true
+#| eval: false
 fcc_dict <- cori.data.fcc::get_fcc_dictionary()
 fcc_dict[grep("frn", fcc_dict$var_name),
          c("dataset", "var_name", "var_example")]
 ```
 
+### Result
+
+```{r}
+#| echo: false
+fcc_dict <- cori.data.fcc::get_fcc_dictionary()
+fcc_dict[grep("frn", fcc_dict$var_name),
+         c("dataset", "var_name", "var_example")]
+```
+
+:::
+
+- Better documentation: `get_fcc_dictionary`
+
 - Website to share it (benefits from the language ecosystem)
 
-- Easy to distribute (GitHub / built-in functions)
+- Easy to distribute: GitHub / built-in functions -> Next slide
 
 - Tests! 
 
@@ -462,9 +478,117 @@ remotes::install_github("ruralinnovation/cori.data.fcc")
 packageVersion("cori.data.fcc")
 ```
 
-## Block covered BEAD like
+## First Example: Block covered BEAD like
 
-## ISP networks
+Place holder for Camdem blog post
+
+## Second Example: ISP networks
+
+NBM Block dataset has a column with an array of FRN: 
+
+`
+# [1] "0002930980" "0002946986" "0003757341" "0016098931" "0018506568" "0020449831" "0025646373"`
+
+## Second Example: ISP networks
+
+::: {.panel-tabset}
+
+### Visual
+
+```{r}
+#| echo: FALSE
+#| eval: TRUE
+#| code-line-numbers: "8,32"
+library(igraph)
+library(crosstalk);library(DT);library(threejs)
+
+
+oh_graph <- readRDS("data//oh_graph.rds")
+
+draw_me_a_graph <- function(x, ...) {
+  threejs::graphjs(x,
+          vertex.label = V(x)$provider_name, 
+          vertex.color = rep(2, vcount(x)),
+          vertex.size = .5, 
+          edge.color = "black",
+          edge.width = 2, ...)
+}
+
+sd = SharedData$new(data.frame(provider_name = V(oh_graph)$provider_name))
+bscols(
+  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd, width=550),
+  datatable(sd, rownames=FALSE, options = list(dom='tp'), width=350)
+)
+
+```
+
+
+### Code 
+
+```{r}
+#| echo: TRUE
+#| eval: FALSE
+#| code-line-numbers: "8,32"
+library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
+library(crosstalk);library(DT);library(threejs)
+
+oh<- tigris::counties(state = "39") # tigris is a great example of data as code
+
+talk_to_me <- function(x) {
+    message(sprintf("Love Ohio: %s", x))
+    cori.data.fcc::get_nbm_bl(x)
+}
+oh_nbm <- lapply(oh$GEOID, talk_to_me) |> dplyr::bind_rows()
+
+oh2_nbm <- oh_nbm[!is.na(oh_nbm$combo_frn), ]
+
+od_me <- function(x) {
+  
+  temp <- oh2_nbm[x, "array_frn"][[1]]
+  if (length(temp) == 1L)
+  {
+    return(data.frame(V1 = temp, V2 = NA))
+  }
+  as.data.frame(t(combn(temp, 2)))
+}
+
+od <- lapply(1:nrow(oh2_nbm), od_me) |> dplyr::bind_rows()
+od <- od[!is.na(od$V2),]
+
+od$combo <- paste(od$V1, od$V2, sep = " - ")
+od$count <- 1
+
+rel <- od |> dplyr::summarize(n = sum(count), .by = combo)
+give_me_from <- function(x) unlist(strsplit(x, " - "))[1]
+give_me_to <- function(x) unlist(strsplit(x, " - "))[2]
+rel$from <- sapply(rel$combo , give_me_from)
+rel$to <- sapply(rel$combo, give_me_to)
+
+fcc_slim <- cori.data.fcc::fcc_provider[, c("frn", "provider_name")]
+frn <- data.frame( frn = unique(c(rel$from, rel$to)))
+frn <- merge(frn, fcc_slim, by.x = "frn", by.y = "frn")
+
+oh_graph <- graph_from_data_frame(rel[,c("from", "to")], directed = FALSE, vertices = frn)
+
+draw_me_a_graph <- function(x, ...) {
+  threejs::graphjs(x,
+          vertex.label = V(x)$provider_name, 
+          vertex.color = rep(2, vcount(x)),
+          vertex.size = .5, 
+          edge.color = "black",
+          edge.width = 2, ...)
+}
+
+sd = SharedData$new(data.frame(provider_name = V(oh_graph)$provider_name))
+bscols(
+  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd, width=550),
+  datatable(sd, rownames=FALSE, options = list(dom='tp'), width=350)
+)
+
+```
+
+
+:::
 
 ## Discussions
 
