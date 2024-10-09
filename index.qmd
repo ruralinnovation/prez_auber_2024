@@ -458,7 +458,7 @@ fcc_dict[grep("frn", fcc_dict$var_name),
 
 - Better documentation: `get_fcc_dictionary`
 
-- Functions designed to get data and load it in your environement  
+- Functions designed to get data and load it in your environment  
 
 - Code tested against github runner: it does not just work on my computer! 
 
