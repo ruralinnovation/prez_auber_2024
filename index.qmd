@@ -49,7 +49,7 @@ editor: visual
 
 ## Slides are online: 
 
-Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023), Running R and cori.data.fcc
+Realized in [Quarto](https://quarto.org/) (Reavealjs), hosted/deployed in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023), Running R and cori.data.fcc
 <br />[https://ruralinnovation.github.io/prez_auber_2024/](https://ruralinnovation.github.io/prez_auber_2024/#/title-slide)
 
 ![](img/qr.svg){height="300" fig-align="center"}
@@ -58,14 +58,30 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub
 ## Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
 *Advancing economic prosperity in rural America through the creation of inclusive tech economy ecosystem that support scalable entrepreneurship and tech job creation*
+
+:::: {.columns} 
+
+::: {.column width="60%"}
+
 <img style="float:right; position: relative; top: 0px; margin: 2.5% 10%; width: 50vw; height: calc(50vw / 1.816);max-height:  none !important;" src="img/cori_triangle.png" data-lazy-loaded="">
-<!--
-![](img/cori_triangle.png){fig-align="center"}
--->
+
+:::
+
+::: {.column width="40%"}
 
 1. Broadband Infrastucture is an important part of it
 
 2. Rural data: Need to go back to primary data  
+
+:::
+
+::::
+
+<!--
+![](img/cori_triangle.png){fig-align="center"}
+-->
+
+
 
 # FCC's Data
 
@@ -87,7 +103,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
-**Challenge**: how to work with constant change upstream?
+#### **Challenge**: how to work with constant change upstream?
 :::
 
 ::::
@@ -123,7 +139,7 @@ Realized in [Quarto](https://quarto.org/) (Reavealjs) hosted/deployed in [GitHub
 
 - Multiples files (csv), tabular format and no "road safety barriers"
 
-**Challenge**: Build an infrastructure that allows you to **capitalize** on your work?
+
 :::
 
 ::::
@@ -141,7 +157,7 @@ Broadband data is used extensively in our work:
 
 <p style="max-height: 50px">
 Along with our ongoing broadband consulting and technical assistance work, we released
-two public-facing apps that rely on FCC primary data:
+two **public-facing apps** that rely on FCC primary data:
 </p>
 
 - 2023: [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
@@ -151,14 +167,14 @@ two public-facing apps that rely on FCC primary data:
 <!-- also included in ERC tools should I mention it? -->
 
 <p style="max-height: 50px">
-We are also using it on our report and research projects
+We are also using it on our **report and research projects**
 </p>
 
 - [Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
 - [The equity of economic opportunity in rural America](https://ruralinnovation.us/blog/equity-economic-opportunity-rural-america/)
 
-- Multiple projects at different times, multiple tables
+#### **Challenge**: Build an infrastructure that allows us to **capitalize** on our work?
 
 
 ## Our Previous data processing pattern:
@@ -196,7 +212,7 @@ flowchart LR
   - ->  transformation step had to happen in the database (slow or $$$)
 
 - Any change in the business/research needs (i.e., "We need ISP footprints" / "We should exclude locations with bad latency"):
-  - ->  required another cycle to ingest/load/transform
+  - ->  required another cycle to ingest/load/transform: lack of **reactivity**
 
 > You can quote me.... "My manager regularly asks for quick turn deliveries".... "He's bullies the team with short delivery times"
 
@@ -269,9 +285,9 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 - 267 files
 
-- New project / New spec 
+- New projects ->  New specs 
 
-  - **challenge**: copy/pasting and maintaining X **similar** code sources 
+#### **challenge**: copy/pasting and maintaining X **similar** code sources 
 
 :::
 
@@ -347,9 +363,9 @@ identical(num_files, files_dl)
 
 ## What can it do? 
 
-1. Download data from FCC
+1. Download data from FCC (see previous example)
 
-2. Download raw data from CORI (NBM / Form 477)
+2. Download raw data from CORI (NBM / Form 477): Ingesting CSV still cost time!
 
 3. Download tranformed data (NBM) from CORI
 
@@ -362,7 +378,7 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 <img style="float:right; position: relative; top: 0px; margin-right: 30%;" src="img/DuckDB_logo.svg" data-lazy-loaded="">
 </p>
 
-- Simplify architecture: 
+- "Simplify" architecture: 
 
   * Compute: PostgreSQL (RDS) -> DuckDB 
 
@@ -384,26 +400,26 @@ DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.or
 
 1. Sharing it with "ourself" and the broadband community 
 
-2. Facilitate the access to primary data to researchers, regional economists:  one of CORI's goal is to provide rural community with good internet.
+2. Facilitate the access to primary data to researchers, regional economists:  CORI's goals to provide rural community with good internet and change narrative about Rural place.
 
 - Open source is :
 
-  * Way to share: Everyone can use it
+  * Way to **share**: Everyone can use it
 
-  * Way to publish: Everyone can read the code and contribute
+  * Way to **publish**: Everyone can read the code and contribute
 
-  * A place were we can exchange in a constructive way 
+  * A place were we can **exchange** in a constructive way 
 
   
 ## Packaging code: Documentation make easier
   
 - What does this function do? ->  [References](https://ruralinnovation.github.io/cori.data.fcc/reference/index.html) / `?get_nbm_block`
 
-- How can I integrate those functions in my workflow? [Vignettes/Uses cases](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
+- How can I integrate those functions in my workflow? -> [Vignettes/Uses cases](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
 
-- A doubt on how the data was processed: [Articles](https://ruralinnovation.github.io/cori.data.fcc/articles/NBM.html) and [`data-raw/`](https://github.com/ruralinnovation/cori.data.fcc/tree/main/data-raw)
+- How the data was processed? -> [Articles](https://ruralinnovation.github.io/cori.data.fcc/articles/NBM.html) and [`data-raw/`](https://github.com/ruralinnovation/cori.data.fcc/tree/main/data-raw)
 
-- Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
+- What are the news change? -> Versions / updates with a [Changelog](https://ruralinnovation.github.io/cori.data.fcc/news/index.html) 
 
 <br>
 
@@ -442,16 +458,18 @@ fcc_dict[grep("frn", fcc_dict$var_name),
 
 - Better documentation: `get_fcc_dictionary`
 
+- Functions designed to get data and load it in your environement  
+
+- Code tested against github runner: it does not just work on my computer! 
+
 - Website to share it (benefits from the language ecosystem)
-
-- Easy to distribute: GitHub / built-in functions -> Next slide
-
-- Tests! 
 
 - **Capitalize on it**! 
 
   * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates): it can be added 
 
+
+- Easy to distribute: GitHub / built-in functions -> Next slide
 
 # Examples of uses cases
 
@@ -459,7 +477,7 @@ fcc_dict[grep("frn", fcc_dict$var_name),
 
 The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control) it has a website: [https://ruralinnovation.github.io/cori.data.fcc/index.html](https://ruralinnovation.github.io/cori.data.fcc/index.html) 
 
-You need the R packages [{remotes}](https://remotes.r-lib.org/).
+You need the R package [{remotes}](https://remotes.r-lib.org/).
 
 ```{r}
 #| eval: false
@@ -592,27 +610,30 @@ draw_me_a_graph <- function(x, ...) {
           vertex.color = rep(2, vcount(x)),
           vertex.size = .5, 
           edge.color = "black",
-          edge.width = 2, ...)
+          edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame(provider_name = V(oh_graph)$provider_name))
+sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
+                               "cnt_bl" = V(oh_graph)$cnt_bl,
+                               "cnt_rel" = V(oh_graph)$cnt_rel))
 bscols(
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd, width=550),
-  datatable(sd, rownames=FALSE, options = list(dom='tp'), width=350)
+  datatable(sd, rownames=FALSE, 
+            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
+            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
+  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
 )
 
 ```
-
 
 :::
 
 ## Discussions
 
-- Once data as code is in place we can focus on business logic 
+Once data as code is in place we can focus on business logic 
 
-- Place of business logic in primary data?
+- Place of business logic in primary data? When should we integrate it? 
 
-- Opinion: if something related to buiseness logic is needed it can be added 
+- Opinion: if something related to business logic is needed it can be added 
 
 ## Summary
 
