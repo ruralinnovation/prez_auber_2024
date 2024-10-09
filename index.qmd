@@ -499,7 +499,7 @@ Place holder for Camdem blog post
 
 ### Visual
 
-```{r}
+```{r display_graph}
 #| echo: FALSE
 #| eval: TRUE
 library(igraph)
@@ -514,18 +514,18 @@ draw_me_a_graph <- function(x, ...) {
           vertex.color = rep(2, vcount(x)),
           vertex.size = .5, 
           edge.color = "black",
-          edge.width = 2, ...)
+          edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame(provider_name = V(oh_graph)$provider_name))
-bscols(widths = c(4, 8),
-       list(
-         datatable(sd, rownames=FALSE),
-         datatable(sd, rownames=FALSE)
-       ),
-       draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
+sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
+                               "cnt_bl" = V(oh_graph)$cnt_bl,
+                               "cnt_rel" = V(oh_graph)$cnt_rel))
+bscols(
+  datatable(sd, rownames=FALSE, 
+            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
+            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
+  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
 )
-
 ```
 
 
@@ -534,7 +534,7 @@ bscols(widths = c(4, 8),
 ```{r}
 #| echo: TRUE
 #| eval: FALSE
-#| code-line-numbers: "8,36"
+#| code-line-numbers: "8,43"
 library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
 library(crosstalk);library(DT);library(threejs)
 
@@ -561,6 +561,13 @@ od_me <- function(x) {
 od <- lapply(1:nrow(oh2_nbm), od_me) |> dplyr::bind_rows()
 od <- od[!is.na(od$V2),]
 
+bob <- rbind(data.frame(frn = od$V1, geoid_bl = od$geoid_bl), 
+             data.frame(frn = od$V2, geoid_bl = od$geoid_bl))
+
+cnt_bl <- summarise(bob, cnt_bl = n_distinct(geoid_bl), cnt_rel = n(), .by = frn)
+
+od <- od[!is.na(od$V2),]
+
 od$combo <- paste(od$V1, od$V2, sep = " - ")
 od$count <- 1
 
@@ -573,6 +580,9 @@ rel$to <- sapply(rel$combo, give_me_to)
 fcc_slim <- cori.data.fcc::fcc_provider[, c("frn", "provider_name")]
 frn <- data.frame( frn = unique(c(rel$from, rel$to)))
 frn <- merge(frn, fcc_slim, by.x = "frn", by.y = "frn")
+frn <- merge(frn, cnt_bl, by.x = "frn", by.y = "frn")
+
+oh_graph <- graph_from_data_frame(rel[,c("from", "to")], directed = FALSE, vertices = frn)
 
 oh_graph <- graph_from_data_frame(rel[,c("from", "to")], directed = FALSE, vertices = frn)
 
