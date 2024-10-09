@@ -627,14 +627,6 @@ bscols(
 
 :::
 
-## Discussions
-
-Once data as code is in place we can focus on business logic 
-
-- Place of business logic in primary data? When should we integrate it? 
-
-- Opinion: if something related to business logic is needed it can be added 
-
 ## Summary
 
 (Primary) data is only useful if you can **effectively** use it.
@@ -647,7 +639,9 @@ Once data as code is in place we can focus on business logic
 
   * Enhance reproducibility (accountability with a fake noze) 
 
-- Easier to **capitalize/build** on it: generating less tech debt  
+- Easier to **capitalize/build** on it: generating less tech debt 
+
+- Discusion: When integrating business logic? 
 
 ## Contacts
 
