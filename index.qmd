@@ -320,7 +320,7 @@ identical(num_files, files_dl)
 
 ## What is packaged code?
 
-### One white light: Code that work outside of "my" computer 
+### One white lie: Code that work outside of "my" computer 
 
 #### Benefits from the language ecosystem
 

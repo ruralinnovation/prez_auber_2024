@@ -33,6 +33,11 @@ html * {
 .reveal {
   color: #1E343D;
 
+  p, ol, ul { 
+  font-size: 1.25em;
+  padding-right: 5%;
+  }
+
   /* Standard CORI slide deck actually includes logo in bottom right corner, like quarto default */
   .slide-logo {
     //display: block;
@@ -85,6 +90,11 @@ html * {
         margin: 0;
         overflow: auto;
         max-width: 90%;
+      }
+
+      div.datatables {
+        color: #333;
+        padding-left: 5%;
       }
 
       div.aside {
