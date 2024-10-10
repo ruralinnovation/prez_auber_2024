@@ -36,7 +36,7 @@ editor: visual
 
 3. Packaging it will make live easier!
 
-## Plan
+## Plan: Retrace our Journey 
 
 [TODO: rework at the end]
  
@@ -55,7 +55,7 @@ editor: visual
 
 #  Broadband: an important part of our works
 
-## Our public facing apps:  
+## Public-facing apps:  
 
 :::: {.columns} 
 
@@ -63,22 +63,23 @@ editor: visual
 
 ![](img/small_bead_tool.gif)
 
+[Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
+
 :::
 
 ::: {.column width="40%"}
 
-- 2024: [Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
-
-- 2023: [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
-
-.. and [more!](https://ruralinnovation.us/our-work/research_mapping/) 
+![](img/bb_climate.png)
+[Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
 
 :::
 
 ::::
 
+.. and [more!](https://ruralinnovation.us/our-work/research_mapping/) 
 
-## Our research work: from ideation to report
+
+## Research work: from ideation to report
 
 ::::{.columns } 
 
@@ -90,13 +91,11 @@ editor: visual
 
 ::: {.column width="50%"}
 
-
 ![Beyond connectivity: The role of broadband in rural economic growth and resilience](img/report_slide.png){height=50%}
 
 :::
 
 ::::
-
 
 # Broadband research is evolving! 
 
@@ -322,7 +321,7 @@ identical(num_files, files_dl)
 
 ### One white lie: Code that work outside of "my" computer 
 
-#### Benefits from the language ecosystem
+### Benefits from the language ecosystem
 
 - Tested against github runner: it does not just work on my computer! 
 
@@ -373,7 +372,7 @@ packageVersion("cori.data.fcc")
 ```
 
 
-## What can it do: Choose your own adventure!{.center} 
+## What can it do: Choose your own adventure!
 
 * I need to go back to the source: [Download data from FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
 
