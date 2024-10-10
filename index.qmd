@@ -30,11 +30,14 @@ editor: visual
 
 ## Goals: 
 
+:::{.incremental} 
 1. Primary data is great! (but can be a pain...)
 
 2. Use code (other pain?) to work with primary data
 
 3. Packaging it will make live easier!
+
+:::
 
 ## Plan: Retrace our Journey 
 
@@ -76,22 +79,20 @@ editor: visual
 
 ::::
 
-.. and [more!](https://ruralinnovation.us/our-work/research_mapping/) 
-
-
 ## Research work: from ideation to report
+
 
 ::::{.columns } 
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 
 ![](img/ideation.png)
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 
-![Beyond connectivity: The role of broadband in rural economic growth and resilience](img/report_slide.png){height=50%}
+![](img/report_slide.png){height=50%}
 
 :::
 
@@ -113,11 +114,9 @@ editor: visual
 
 - Agency in charge of regulating "everything" communications
 
-- Lot of useful datasets!
-
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
-#### **Challenge**: How to work with constant change upstream?
+#### **Challenge**: How to work with constant change upstream? {.fragment}
 :::
 
 ::::
@@ -151,7 +150,7 @@ editor: visual
 #### Broadband access since 2014 but:
   *  2 **voluminous** datasets, hundreds of files  
 
-  * "No road safety barriers": multiple encodings, erronous values (and more..)
+  * No "road safety barriers": multiple encodings, erronous values (and more..)
 
 :::
 
@@ -221,15 +220,17 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%" .fragment}
 
-- New projects ->  New specs 
+::: {.incremental}
+- New projects ->  New specs
 
-#### **challenge**: copy/pasting and maintaining X **similar** code sources 
+#### **challenge**: copy/pasting and maintaining X **similar** code sources {.fragment} 
 
 - Spoiler: Not everyone like SQL 
 
-#### **challenge**: make it more accessible
+#### **challenge**: make it more accessible {.fragment}
+:::
 
 :::
 
