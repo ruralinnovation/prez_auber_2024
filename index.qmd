@@ -548,19 +548,17 @@ bscols(
 
 ## Summary
 
-(Primary) data is only useful if you can **effectively** use it.
+
+- Primary data can give more power (especialy in new field)
+
+- (Primary) data is only useful if you can **effectively** use it.
 
 - Data as code = less pain working with primary data: 
 
-  * Providing data is not enough: need those extra "team members" to guide you 
-
-  * Metadata is hard: data as code help with that!
-
-  * Enhance reproducibility (accountability with a fake noze) 
+- we need those extra "team members"
 
 - Easier to **capitalize/build** on it: generating less tech debt 
-
-- Discusion: When integrating business logic and moving away from primary data? 
+ 
 
 ## Contacts
 
