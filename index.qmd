@@ -230,28 +230,48 @@ list_file : list_file_dl.R $(CSV_SRC)
 - Spoiler: Not everyone like SQL 
 
 #### **challenge**: make it more accessible {.fragment}
+
+- Out of memory -> Process in DB 
+
+#### **Challenge**: Slow, lack of reactivity {.fragment} 
+
 :::
 
 :::
 
 ::::
 
-## Slow and lacked reactivity
+## Light from [posit::conf](https://posit.co/conference/)
 
-> You can quote me.... "My manager regularly asks for quick turn deliveries".... "He's bullies the team with short delivery times"
-
-
-1. The Extract Load Transform (ELT) was **slow** (or too costly)
-
-2. Lack of **reactivity** to change in the business/research (i.e., "We need ISP footprints" / "We should exclude locations with bad latency")
- 
-## DuckDB solved the lack of reactivity
-
-DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) and S3 (Simple Storage Service of AWS
+Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) 
 
 ![](img/duckplyr-duckDB.png){fig-align="center"}
 
-Added benefits: **lower cost**, less contraints on permissions -> **share it**?
+## Slack is buzzing!
+
+::: {.callout-warning}
+Contains real slack messages with typos!
+:::
+
+::: {.r-stack .fragment}
+
+![](img/asap_1.png){.fragment .fade-up}
+
+![](img/asap_2.png){.fragment .fade-up}
+
+![](img/asap_3.png){.fragment .fade-up}
+
+![](img/asap_4.png){.fragment .fade-up}
+
+![](img/asap_5.png){.fragment .fade-up}
+
+![](img/asap_6.png){.fragment .fade-up}
+
+![](img/asap_7.png){.fragment .fade-up}
+
+:::
+
+### DuckDB solved the lack of reactivity!{.fragment}
 
 ## ... Code Packaged
 
@@ -307,6 +327,8 @@ identical(num_files, files_dl)
 
 ::: {.column width="50%"}
 
+- DuckDB: in-process
+
 - Reduce errors 
 
 - Complexity is in **one** place and **abstracted** so we can focus on what bring **value**! 
@@ -324,26 +346,21 @@ identical(num_files, files_dl)
 
 ### Benefits from the language ecosystem
 
-- Tested against github runner: it does not just work on my computer! 
+- Tested against GitHub runner: it does not just work on my computer! 
 
 - [Website](https://ruralinnovation.github.io/cori.data.fcc/index.html) to share it/distribute it
 
-## Why sharing it?
+## Open Source: Why sharing it? 
 
-- Open source is :
+::: {.incremental}
 
-  * Way to **share**: Everyone can use it
-
-  * Way to **publish**: Everyone can read the code and contribute
+  * Way to **publish**: we get more value that way  
+  
+  * Way to **share**: code is used! 
 
   * A place were we can **exchange** in a constructive way 
 
-- CORI's Missions and values: 
-
-  * Bring good broadband to rural America 
-
-  * Change narrative around rural America
-
+::: 
 
 ## How to get it: 
 
@@ -375,6 +392,8 @@ packageVersion("cori.data.fcc")
 
 ## What can it do: Choose your own adventure!
 
+:::{.incremental}
+
 * I need to go back to the source: [Download data from FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
 
 * I need primary data but working with hundreds of CSV is not for me:  Download raw data from CORI ([NBM](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html) / [Form 477](https://ruralinnovation.github.io/cori.data.fcc/reference/get_f477.html))
@@ -383,6 +402,7 @@ packageVersion("cori.data.fcc")
 
 * Guide you in those steps!
 
+:::
   
 ##  Packaging code = extra team member :construction_worker:
   
