@@ -1,6 +1,6 @@
 ---
-title: "Beyond Raw Data"
-subtitle: "Streamlining Insights with Curated Data Packages"
+title: "Data Innovation"
+subtitle: "Accelerating Analysis with Packaged Data Solutions"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
