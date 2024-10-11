@@ -1,6 +1,6 @@
 ---
-title: "Working with Primary data"
-subtitle: "`cori.data.fcc`:: an example of data as code"
+title: "Beyond Raw Data"
+subtitle: "Streamlining Insights with Curated Data Packages"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
