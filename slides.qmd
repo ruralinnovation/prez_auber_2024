@@ -1,19 +1,11 @@
 ---
-title: "Working with Primary data"
-subtitle: "`cori.data.fcc`:: an example of data as code"
-author: "Olivier Leroy"
-date: "October 20 2024"
-institute: "Center On Rural Innovation"
-fontsize: 20pt
-favicon: assets/images/Logo-Mark_Black.png
 format:
-  revealjs: 
+  revealjs:
     theme: src/custom_cori.scss
-    logo: assets/images/CORI_Logo.png
+    logo: img/CORI_Logo.png
     css: assets/fonts.css
     footnotes-hover:: true
 from: markdown+emoji
-editor: visual
 ---
 
 ## Slides are online:
@@ -44,20 +36,18 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 ![](assets/images/cori-mission-slide-8.png)
 
 
-## :wave: Hi, I am Olivier Senior Data Engineer
+## Plan: Retrace our Journey [AGENDA]
 
-- Working with primary data: "messy, unstructured data" is upon us
-
-![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](assets/images/hbrsexiestjob.png){width=800}
-
-- Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
+[TODO: We'll come back and fill/format this later]
 
 
+<!--
 ## Data at Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
 1. Rural data: we can't work with aggregate and need to go deeper
 
 I plan to delete this unless good points against
+-->
 
 
 ## Goals of a Data Package:
@@ -72,19 +62,16 @@ I plan to delete this unless good points against
 
 :::
 
-## Plan: Retrace our Journey 
 
-[TODO: rework at the end]
- 
-#  Broadband: an important part of our works
+#  Broadband: an important part of our work
 
-## Public-facing apps:  
+## Public-facing apps:
 
-:::: {.columns} 
+:::: {.columns}
 
 ::: {.column width="60%"}
 
-![](assets/images/small_bead_tool.gif)
+![](img/small_bead_tool.gif)
 
 [Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
 
@@ -92,7 +79,7 @@ I plan to delete this unless good points against
 
 ::: {.column width="40%"}
 
-![](assets/images/bb_climate.png)
+![](img/bb_climate.png)
 [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
 
 :::
@@ -102,31 +89,31 @@ I plan to delete this unless good points against
 ## Research work: from ideation to report
 
 
-::::{.columns } 
+::::{.columns }
 
 ::: {.column width="50%" .fragment}
 
-![](assets/images/ideation.png)
+![](img/ideation.png)
 
 :::
 
 ::: {.column width="50%" .fragment}
 
-![](assets/images/report_slide.png){height=50%}
+![](img/report_slide.png){height=50%}
 
 :::
 
 ::::
 
-# Broadband research is evolving! 
+# Broadband research is evolving!
 
-## Federal Communications Commission ([FCC](https://www.fcc.gov/)) 
+## Federal Communications Commission ([FCC](https://www.fcc.gov/))
 
-:::: {.columns} 
+:::: {.columns}
 
 ::: {.column width="30%"}
 
-![](assets/images/fcc-seal-rgb-2020.svg)
+![](img/fcc-seal-rgb-2020.svg)
 
 :::
 
@@ -142,7 +129,7 @@ I plan to delete this unless good points against
 ::::
 
 
-## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
+## Federal Communications Commission ([FCC](https://www.fcc.gov/))
 
 :::: {.columns}
 
@@ -168,9 +155,9 @@ I plan to delete this unless good points against
 
 
 #### Broadband access since 2014 but:
-  * 2 **voluminous** datasets, hundreds of files  
+* 2 **voluminous** datasets, hundreds of files
 
-  * No "**road safety barriers**": multiple encodings, erronous values (and more..)
+* No "**road safety barriers**": multiple encodings, erronous values (and more..)
 
 :::
 
@@ -178,7 +165,7 @@ I plan to delete this unless good points against
 
 
 
-# Behind the scene: 
+# Behind the scene:
 
 ## How it started: Manuel Extraction ...
 
@@ -186,7 +173,7 @@ I plan to delete this unless good points against
 
 ::: {.column width="50%"}
 
-![](assets/images/manual_fcc.mov)
+![](img/manual_fcc.mov)
 
 
 :::
@@ -212,7 +199,7 @@ I plan to delete this unless good points against
 #| eval: false
 #| echo: true
 
-# [...] 
+# [...]
 # Download all FCC data needed
 all : dirs dl_file list_file
 
@@ -232,7 +219,7 @@ dl_file : $(CSV_SRC) get_csv_dl.R
 
 ## list_file: Create a list of downloaded file
 list_file : list_file_dl.R $(CSV_SRC)
-	Rscript report_dl.R $(DATA_PATH) 
+	Rscript report_dl.R $(DATA_PATH)
 .PHONY : list_file
 
 # [...]
@@ -245,15 +232,15 @@ list_file : list_file_dl.R $(CSV_SRC)
 ::: {.incremental}
 - New projects ->  New specs
 
-#### **challenge**: copy/pasting and maintaining X **similar** code sources {.fragment} 
+#### **challenge**: copy/pasting and maintaining X **similar** code sources {.fragment}
 
-- Spoiler: Not everyone like SQL 
+- Spoiler: Not everyone like SQL
 
 #### **challenge**: make it more accessible {.fragment}
 
-- Out of memory -> Process in DB 
+- Out of memory -> Process in DB
 
-#### **Challenge**: Slow, lack of reactivity {.fragment} 
+#### **Challenge**: Slow, lack of reactivity {.fragment}
 
 :::
 
@@ -263,9 +250,9 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 ## :bulb: Light from [posit::conf](https://posit.co/conference/)
 
-Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) 
+Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing))
 
-![](assets/images/duckplyr-duckDB.png){fig-align="center"}
+![](img/duckplyr-duckDB.png){fig-align="center"}
 
 ## Slack is buzzing!
 
@@ -275,19 +262,19 @@ Contains real slack messages with typos!
 
 ::: {.r-stack .fragment}
 
-![](assets/images/asap_1.png){.fragment .fade-up}
+![](img/asap_1.png){.fragment .fade-up}
 
-![](assets/images/asap_2.png){.fragment .fade-up}
+![](img/asap_2.png){.fragment .fade-up}
 
-![](assets/images/asap_3.png){.fragment .fade-up}
+![](img/asap_3.png){.fragment .fade-up}
 
-![](assets/images/asap_4.png){.fragment .fade-up}
+![](img/asap_4.png){.fragment .fade-up}
 
-![](assets/images/asap_5.png){.fragment .fade-up}
+![](img/asap_5.png){.fragment .fade-up}
 
-![](assets/images/asap_6.png){.fragment .fade-up}
+![](img/asap_6.png){.fragment .fade-up}
 
-![](assets/images/asap_7.png){.fragment .fade-up}
+![](img/asap_7.png){.fragment .fade-up}
 
 :::
 
@@ -302,7 +289,7 @@ Contains real slack messages with typos!
 ::: {.panel-tabset}
 
 ### Visual
-![](assets/images/dl_nbm_smaller.mov)
+![](img/dl_nbm_smaller.mov)
 
 ### Code
 
@@ -326,7 +313,7 @@ dl_nbm(
   data_type = "Fixed Broadband",
   data_category = "Nationwide",
 )
-# part to check if dl was successful 
+# part to check if dl was successful
 num_files <- get_nbm_available() |>
   dplyr::filter(release == "June 30, 2023" &
                 data_type == "Fixed Broadband" &
@@ -349,9 +336,9 @@ identical(num_files, files_dl)
 
 - DuckDB: in-process
 
-- Reduce errors 
+- Reduce errors
 
-- Complexity is in **one** place and **abstracted** so we can focus on what bring **value**! 
+- Complexity is in **one** place and **abstracted** so we can focus on what bring **value**!
 
 :::
 
@@ -362,27 +349,27 @@ identical(num_files, files_dl)
 
 ## What is packaged code?
 
-### One white lie: Code that work outside of "my" computer 
+### One white lie: Code that work outside of "my" computer
 
 ### Benefits from the language ecosystem
 
-- Tested against GitHub runner: it does not just work on my computer! 
+- Tested against GitHub runner: it does not just work on my computer!
 
 - [Website](https://ruralinnovation.github.io/cori.data.fcc/index.html) to share it/distribute it
 
-## Open Source: Why sharing it? 
+## Open Source: Why sharing it?
 
 ::: {.incremental}
 
-  * Way to **publish**: we get more value that way  
-  
-  * Way to **share**: code is used! 
+* Way to **publish**: we get more value that way
 
-  * A place were we can **exchange** in a constructive way 
+* Way to **share**: code is used!
 
-::: 
+* A place were we can **exchange** in a constructive way
 
-## How to get it: 
+:::
+
+## How to get it:
 
 The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
 
@@ -392,7 +379,7 @@ You need the R package [{remotes}](https://remotes.r-lib.org/).
 #| eval: false
 #| label: install-package
 #| echo: true
- 
+
 install.packages("remotes")
 remotes::install_github("ruralinnovation/cori.data.fcc")
 ```
@@ -423,9 +410,9 @@ packageVersion("cori.data.fcc")
 * Guide you in those steps!
 
 :::
-  
+
 ##  Packaging code = extra team member :construction_worker:
-  
+
 > we’ve talked about how packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager.[^emily]
 
 >  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
@@ -434,11 +421,11 @@ packageVersion("cori.data.fcc")
 
 [^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
 
-## Packaging code = Increase speed to inovation / insight 
- 
-- Functions designed to get data and load it in your environment  
+## Packaging code = Increase speed to inovation / insight
 
-- **Capitalize on it**! 
+- Functions designed to get data and load it in your environment
+
+- **Capitalize on it**!
 
   * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates) -> add it!
 
@@ -463,13 +450,13 @@ library(igraph)
 library(crosstalk);library(DT);library(threejs)
 
 
-oh_graph <- readRDS("data//oh_graph.rds")
+oh_graph <- readRDS("data/oh_graph.rds")
 
 draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
-          vertex.label = V(x)$provider_name, 
+          vertex.label = V(x)$provider_name,
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
+          vertex.size = .5,
           edge.color = "black",
           edge.width = 3, ...)
 }
@@ -478,21 +465,21 @@ sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
                                "cnt_bl" = V(oh_graph)$cnt_bl,
                                "cnt_rel" = V(oh_graph)$cnt_rel))
 bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
+  datatable(sd, rownames=FALSE,
+            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'),
             options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
   draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
 )
 ```
 
 
-### Code 
+### Code
 
 ```{r}
 #| echo: TRUE
 #| eval: FALSE
 #| code-line-numbers: "8,43"
-library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
+library(tigris);library(cori.data.fcc);library(igraph);library(dplyr)
 library(crosstalk);library(DT);library(threejs)
 
 oh<- tigris::counties(state = "39") # tigris is a great example of data as code
@@ -506,7 +493,7 @@ oh_nbm <- lapply(oh$GEOID, talk_to_me) |> dplyr::bind_rows()
 oh2_nbm <- oh_nbm[!is.na(oh_nbm$combo_frn), ]
 
 od_me <- function(x) {
-  
+
   temp <- oh2_nbm[x, "array_frn"][[1]]
   if (length(temp) == 1L)
   {
@@ -518,7 +505,7 @@ od_me <- function(x) {
 od <- lapply(1:nrow(oh2_nbm), od_me) |> dplyr::bind_rows()
 od <- od[!is.na(od$V2),]
 
-bob <- rbind(data.frame(frn = od$V1, geoid_bl = od$geoid_bl), 
+bob <- rbind(data.frame(frn = od$V1, geoid_bl = od$geoid_bl),
              data.frame(frn = od$V2, geoid_bl = od$geoid_bl))
 
 cnt_bl <- summarise(bob, cnt_bl = n_distinct(geoid_bl), cnt_rel = n(), .by = frn)
@@ -545,9 +532,9 @@ oh_graph <- graph_from_data_frame(rel[,c("from", "to")], directed = FALSE, verti
 
 draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
-          vertex.label = V(x)$provider_name, 
+          vertex.label = V(x)$provider_name,
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
+          vertex.size = .5,
           edge.color = "black",
           edge.width = 3, ...)
 }
@@ -556,8 +543,8 @@ sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
                                "cnt_bl" = V(oh_graph)$cnt_bl,
                                "cnt_rel" = V(oh_graph)$cnt_rel))
 bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
+  datatable(sd, rownames=FALSE,
+            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'),
             options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
   draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
 )
@@ -568,7 +555,7 @@ bscols(
 
 ## Summary
 
-::: {.incremental} 
+::: {.incremental}
 
 - Primary data can give more power (especialy in new field)!
 
@@ -580,11 +567,11 @@ bscols(
 
 - we need those extra "team members"
 
-::: 
+:::
 
 ## Contacts
 
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
 
-[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA) 
+[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
