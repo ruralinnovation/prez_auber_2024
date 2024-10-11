@@ -347,7 +347,7 @@ identical(num_files, files_dl)
 
 ## What is packaged code?
 
-### One white lie: Code that work outside of "my" computer 
+### Code that work outside of "my" computer 
 
 ### Benefits from the language ecosystem
 
