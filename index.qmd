@@ -90,6 +90,10 @@ I plan to delete this unless good points against
 
 ![](img/ideation.png)
 
+[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/){.fragment}
+
+[The fibre broadband housing premium across three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract){.fragment}
+
 :::
 
 ::: {.column width="50%" .fragment}
@@ -134,12 +138,11 @@ I plan to delete this unless good points against
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
 |-------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010             | 2020                                                                                                                                                                                                                                 |
-| Type of recording    | self declarative | self declarative                                                                                                                                                                                                                     |
 | Granularity          | Census blocks     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services             | Mobile/Fixed | Mobile/Fixed                                                                                                                                                                                                                     |
 |Timeframe | 2014-2021 | 2022 - *Ongoing*                                                                                                                                                                                                                     |
 | Releases | **twice a year** | **twice a year[^version]**                                                                                                                                                                                                               |
 | Size | **400MB/year** | **22GB/year**                                                                                                                                                                                                                            |
+| Records | **416 447 807**  | **3 488 191 994** |
 
 [^version]: One release can have multiple versions
 
@@ -152,7 +155,7 @@ I plan to delete this unless good points against
 #### Broadband access since 2014 but:
   * 2 **voluminous** datasets, hundreds of files  
 
-  * No "**road safety barriers**": multiple encodings, erronous values (and more..)
+  * No "**Rail safety barriers**": multiple encodings, erronous values (and more..)
 
 :::
 
