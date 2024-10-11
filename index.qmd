@@ -435,7 +435,7 @@ packageVersion("cori.data.fcc")
 Place holder for Camdem blog post
 
 
-## What are the ISP in Ohio?
+## What is the landscape of competition in broadband in Ohio?
 
 ::: {.panel-tabset}
 
@@ -555,15 +555,16 @@ bscols(
 
 ::: {.incremental} 
 
-- Primary data can give more power (especialy in new field)!
 
-- (Primary) data is only useful if you can **effectively** use it.
+- Data is only useful if you can **effectively** use it.
 
-- Use code that are abstracting the pain
+- Data packages can give more power (especialy in emerging field)!
+
+- Data packages are abstracting the pain
 
 - Easier to **capitalize/build** on it: generating less tech debt
 
-- we need those extra "team members"
+- We need those extra "team members"
 
 ::: 
 
