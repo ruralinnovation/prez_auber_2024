@@ -548,6 +548,7 @@ bscols(
 
 ## Summary
 
+::: {.incremental} 
 
 - Primary data can give more power (especialy in new field)
 
@@ -558,7 +559,8 @@ bscols(
 - we need those extra "team members"
 
 - Easier to **capitalize/build** on it: generating less tech debt 
- 
+
+::: 
 
 ## Contacts
 
