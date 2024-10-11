@@ -54,7 +54,9 @@ editor: visual
 
 ## Data at Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
 
-1. Rural data: we can't work with aggregate and need to go deeper 
+1. Rural data: we can't work with aggregate and need to go deeper
+
+I plan to delete this unless good points against
 
 #  Broadband: an important part of our works
 
@@ -148,9 +150,9 @@ editor: visual
 
 
 #### Broadband access since 2014 but:
-  *  2 **voluminous** datasets, hundreds of files  
+  * 2 **voluminous** datasets, hundreds of files  
 
-  * No "road safety barriers": multiple encodings, erronous values (and more..)
+  * No "**road safety barriers**": multiple encodings, erronous values (and more..)
 
 :::
 
@@ -241,7 +243,7 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 ::::
 
-## Light from [posit::conf](https://posit.co/conference/)
+## :bulb: Light from [posit::conf](https://posit.co/conference/)
 
 Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) 
 
@@ -430,7 +432,7 @@ packageVersion("cori.data.fcc")
 Place holder for Camdem blog post
 
 
-## What are the ISP in Ohio? 
+## What are the ISP in Ohio?
 
 ::: {.panel-tabset}
 
@@ -550,15 +552,15 @@ bscols(
 
 ::: {.incremental} 
 
-- Primary data can give more power (especialy in new field)
+- Primary data can give more power (especialy in new field)!
 
 - (Primary) data is only useful if you can **effectively** use it.
 
-- Data as code = less pain working with primary data: 
+- Use code that are abstracting the pain
+
+- Easier to **capitalize/build** on it: generating less tech debt
 
 - we need those extra "team members"
-
-- Easier to **capitalize/build** on it: generating less tech debt 
 
 ::: 
 
