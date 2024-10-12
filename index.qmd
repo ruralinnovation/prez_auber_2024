@@ -14,6 +14,7 @@ format:
     footnotes-hover:: true
 from: markdown+emoji
 editor: visual
+resources: assets
 ---
 
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
@@ -157,7 +158,7 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 
 ::: {.column width="50%"}
 
-![](assets/images/manual_fcc.mov)
+![](assets/manual_fcc.mov)
 
 
 :::
@@ -273,7 +274,7 @@ Contains real slack messages with typos!
 ::: {.panel-tabset}
 
 ### Visual
-![](assets/images/dl_nbm_smaller.mov)
+![](assets/dl_nbm_smaller.mov)
 
 ### Code
 
