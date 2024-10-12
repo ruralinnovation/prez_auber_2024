@@ -16,7 +16,7 @@ from: markdown+emoji
 editor: visual
 ---
 
-## :wave: Hi, I am Olivier, a Senior Data Engineer at CORI
+## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
 Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
 
@@ -62,7 +62,7 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 ::::
 
 
-## Research: from ideation to report
+## Broadband research: from ideation to report
 
 ::::{.columns }
 
@@ -74,7 +74,7 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 
 [The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract){.fragment}
 
-- Should these ^ look more like citations?
+
 :::
 
 ::: {.column width="50%" .fragment}
