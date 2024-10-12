@@ -33,11 +33,6 @@ html * {
 .reveal {
   color: #1E343D;
 
-  p, ol, ul { 
-  font-size: 1.25em;
-  padding-right: 5%;
-  }
-
   /* Standard CORI slide deck actually includes logo in bottom right corner, like quarto default */
   .slide-logo {
     //display: block;
@@ -83,18 +78,6 @@ html * {
         color: #398160;
         background-color: rgba(0, 0, 0, 0);
         white-space: pre-wrap;
-        padding-right: 5%;
-      }
-      
-      div.sourceCode {
-        margin: 0;
-        overflow: auto;
-        max-width: 90%;
-      }
-
-      div.datatables {
-        color: #333;
-        padding-left: 5%;
       }
 
       div.aside {
@@ -120,13 +103,14 @@ html * {
         display: flex !important;
         flex-direction: column;
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
           flex-basis: auto;
           flex-grow: 1;
           flex-shrink: 1;
           max-height: calc(100px - 10%);
           overflow: hidden;
           padding: 2.5% 5% 5% 5%;
+          margin-bottom: 0;
         }
 
         h2 {
@@ -152,6 +136,10 @@ html * {
             min-height: min-content;
             max-height: min-content;
           }
+        }
+
+        p, ol, ul {
+          padding-right: 5%;
         }
 
         &>p {
@@ -203,8 +191,9 @@ html * {
         font-weight: bold;
         font-variant: small-caps;
         color: #398160;
-        content: "Center on Rural Innovation ";
+        content: "Center on Rural Innovation \a";
         line-height: 1.25em;
+        white-space: break-spaces;
       }
 
       .quarto-title-authors {
@@ -230,6 +219,13 @@ html * {
     aspect-ratio: auto;
     width: 50% !important;
     height: auto !important;
+  }
+
+  img.r-stretch {
+    margin: 0 !important;
+    width: calc(100vw - 20px) !important;
+    height: calc(100vw * 0.421) !important;
+    max-height: calc(100vh - 215px) !important;
   }
 
 }
