@@ -1,6 +1,6 @@
 ---
 title: "Data Innovation"
-subtitle: "Accelerating Analysis with Packaged Data Solutions"
+subtitle: "Accelerating Broadband Analysis with `cori.data.fcc`"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"

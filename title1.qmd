@@ -1,6 +1,6 @@
 ---
 title: "Beyond Raw Data"
-subtitle: "Streamlining Insights with Curated Data Packages"
+subtitle: "Streamlining Broadband Insights with `cori.data.fcc`"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
