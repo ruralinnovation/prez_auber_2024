@@ -453,7 +453,7 @@ packageVersion("cori.data.fcc")
 #| echo: true
 #| eval: false
 #| code-line-numbers: "6,7,8" 
-library(cori.data.fcc); library(dplyr); library(sf)
+library(cori.data.fcc); library(dplyr); library(sf), library(tigris)
 library(ggplot2); library(cori.charts); library(basemapR)
 
 cori.charts::load_fonts()
@@ -524,6 +524,11 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 ##  Northeast Kingdom: only 11.5% of locations have fiber access in the Northeast Kingdom
 
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
 ::: {.panel-tabset}
 
 ### Visual
@@ -569,8 +574,23 @@ fig <- ggplot(data = nek_bb_blocks) +
   )
 
 ```
+:::
 
 :::
+
+::: {.column width="40%"}
+
+* Only 11.5% of locations have fiber access in the Northeast Kingdom
+
+* 6/25 ISP are providing Fiber
+
+* Leading ISP here is small ISP, non-profit: NEK broadband 
+
+:::
+
+::::
+
+
 
 ## How competitive are Ohio broadband providers?
 
