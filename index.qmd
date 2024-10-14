@@ -438,10 +438,139 @@ packageVersion("cori.data.fcc")
 # Examples use cases
 
 
-## First Example: Block covered BEAD like
+## Broadband service in the Northeast Kingdom
 
-Place holder for Camden blog post
+::: {.panel-tabset}
 
+### Visual
+
+![](assets/images/nek_bb_service.png)
+
+
+### Code
+
+```{r service-nek}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "6,7,8" 
+library(cori.data.fcc); library(dplyr); library(sf)
+library(ggplot2); library(cori.charts); library(basemapR)
+
+cori.charts::load_fonts()
+
+caledonia_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50005")
+essex_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50009")
+orleans_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50019")
+
+nek_nbm <- dplyr::bind_rows(caledonia_co_nbm, essex_co_nbm, orleans_co_nbm)
+
+# tigris to get places and block
+vt_blocks <- tigris::blocks("VT", progress_bar = FALSE)
+vt_places <- tigris::places(state = "VT", progress_bar = FALSE)
+
+# wrangling
+nek_bb_blocks <- inner_join(
+    vt_blocks,
+    nek_nbm,
+    by = c("GEOID20" = "geoid_bl")
+  ) |>
+  mutate(
+    pct_100_20 = cnt_100_20 / cnt_total_locations,
+    pct_fiber = cnt_fiber_locations / cnt_total_locations
+  )
+
+# Get major NEK Place centroids for map labeling
+vt_places_centroids <- vt_places[lengths(sf::st_intersects(vt_places, nek_bb_blocks)) > 0, ] |>
+  st_centroid() 
+
+# Map
+bbox <- sf::st_bbox(nek_bb_blocks) |>
+        cori.charts::fit_bbox_to_aspect_ratio(target_aspect_ratio = 2)
+
+fig <- ggplot(data = nek_bb_blocks) +
+  base_map(
+    bbox,
+    increase_zoom = 3,
+    basemap = 'voyager'
+  ) +
+  geom_sf(aes(fill = pct_100_20), color = "dimgray", linewidth = 0.1, alpha = 0.9) +
+  scale_fill_cori(
+    discrete = FALSE,
+    palette = "ctg2pu",
+    labels = scales::label_percent(),
+    reverse = T
+  ) +
+  geom_sf_label(data = vt_places_centroids, aes(label = NAME), size = 2, color = "black", family = "Lato", fontface = "bold") +  
+  coord_sf(
+    expand = TRUE, 
+    xlim = c(bbox['xmin'], bbox['xmax']), 
+    ylim = c(bbox['ymin'], bbox['ymax'])
+  ) +
+  theme_cori_map() +
+  theme(
+    legend.key.width = unit(50, "pt")
+  ) + 
+  labs(
+    title = "Broadband service in the Northeast Kingdom",
+    subtitle = "Percent of locations with access to 100/20 Mbps service by census block",
+    caption = "Data source: 2023 FCC National Broadband Map\nMap source: © OpenStreetMap contributors © CARTO",
+    x = NULL,
+    y = NULL
+  )
+
+```
+
+:::
+
+##  Northeast Kingdom: only 11.5% of locations have fiber access in the Northeast Kingdom
+
+::: {.panel-tabset}
+
+### Visual
+
+![](assets/images/nek_broadband_fiber_service.png)
+
+
+### Code
+
+```{r fiber-nek}
+#| echo: true
+#| eval: false
+
+fig <- ggplot(data = nek_bb_blocks) +
+  base_map(
+    bbox,
+    increase_zoom = 3,
+    basemap = 'voyager'
+  ) +
+  geom_sf(aes(fill = pct_fiber), color = "dimgray", linewidth = 0.1, alpha = 0.6) +
+  scale_fill_cori(
+    discrete = FALSE,
+    palette = "ctg2pu",
+    labels = scales::label_percent(),
+    reverse = T
+  ) +
+  geom_sf_label(data = vt_places_centroids, aes(label = NAME), size = 2, color = "black", family = "Lato", fontface = "bold") +  
+  coord_sf(
+    expand = TRUE, 
+    xlim = c(bbox['xmin'], bbox['xmax']), 
+    ylim = c(bbox['ymin'], bbox['ymax'])
+  ) +
+  theme_cori_map() +
+  theme(
+    legend.key.width = unit(50, "pt"),
+  ) + 
+  labs(
+    title = "Fiber access in the Northeast Kingdom",
+    subtitle = "Percent of locations with access to fiber by census block",
+    caption = "Data source: 2023 FCC National Broadband Map\nMap source: © OpenStreetMap contributors © CARTO",
+    x = NULL,
+    y = NULL
+  )
+
+```
+
+:::
 
 ## How competitive are Ohio broadband providers?
 
@@ -451,8 +580,8 @@ Place holder for Camden blog post
 ### Visual
 
 ```{r display_graph}
-#| echo: FALSE
-#| eval: TRUE
+#| echo: false
+#| eval: true
 library(igraph)
 library(crosstalk);library(DT);library(threejs)
 
