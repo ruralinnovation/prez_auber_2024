@@ -25,6 +25,10 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 
 - Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
 
+::: {.notes}
+I find ways to add structure and meaning to data so that it can effectively inform the work of the organization’s analysts, researchers and community managers.
+:::
+
 
 ## CORI's Mission
 
