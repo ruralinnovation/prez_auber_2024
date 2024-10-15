@@ -94,60 +94,56 @@ Working with source data—often referred to as "big", "messy", "unstructured" d
 
 :::: {.columns} 
 
-::: {.column width="30%"}
+::: {.column width="30%" .fragment}
 
 ![](assets/images/fcc-seal-rgb-2020.svg)
 
 :::
 
-::: {.column width="70%"}
-
-- Agency in charge of regulating "everything" communications
-
-- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-
-#### **Challenge**: How to work with constant change upstream? {.fragment}
-:::
-
-::::
-
-
-## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
-
-:::: {.columns}
-
-::: {.column width="50%"}
+::: {.column width="70%" .fragment}
 
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
 |----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
-| Type of recording    | self declarative                                                                                  | self declarative                                                                                                                                                                                                                     |
 | Granularity          | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services             | Mobile/Fixed                                                                                      | Mobile/Fixed                                                                                                                                                                                                                         |
 | Timeframe            | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
 | Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
+::: {.fragment}
+- Big messy data 
+
+- Recquire domain knowledge
+
+- Evolving data landscape
 
 [^version]: One release can have multiple versions
 
-
 :::
-
-::: {.column width="50%"}
-
-
-#### FCC has provided data on ISP's since 2014, but:
-
-  * Each dataset was quite **voluminous** (hundreds of files)
-
-  * No "**guard rails**": multiple encodings, erroneous values (limited QC)
 
 :::
 
 ::::
 
+::: {.notes}
+
+- Agency in charge of regulating "everything" communications
+
+- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
+
+How to work with constant change upstream?
+
+These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
+
+FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
+
+Analysis of the National Broadband Map (NBM) data reveals inconsistencies and potential errors in key identifiers like the FCC Registration Number (FRN), Provider ID, and Brand Name:
+* Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
+The same Provider ID is associated with different FRNs (Acentek).
+Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
+
+:::
 
 
 # Behind the scenes:
