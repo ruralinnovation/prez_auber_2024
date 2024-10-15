@@ -161,6 +161,7 @@ html * {
           &.cell {
             min-height: min-content;
             max-height: min-content;
+            padding-right: 5%;
           }
 
           &.img {
@@ -193,6 +194,14 @@ html * {
 
         table th {
           white-space: nowrap !important;
+        }
+
+        * div.cell {
+          padding-right: 5%;
+        }
+
+        * .panel-tabset .tab-content div.cell-output-display {
+          overflow: hidden !important;
         }
 
       }
