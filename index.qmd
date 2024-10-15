@@ -17,6 +17,17 @@ editor: visual
 resources: assets
 ---
 
+## Overview
+
+I.    <span style="font-size: 125%;">**Introduction**</span> ![](assets/images/overview.png){fig-align="right"}
+II.   <span style="font-size: 125%;">**Research using the latest broadband service data**</span>
+III.  <span style="font-size: 125%;">**Challenges to using the latest broadband service data**</span>
+  <br />_i.e., More data more problems_
+IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fcc`**</span>
+  <br />_i.e., How we accelerate innovation by making this complex,_
+  <br />_ever-changing broadband data more accessible and usable for research_
+
+
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
 Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
@@ -44,7 +55,10 @@ I find ways to add structure and meaning to data so that it can effectively info
   - Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
 
 
-## Broadband apps in the wild
+# Out of necessity we had to become experts in broadband data
+
+
+## Our broadband apps in the wild
 
 :::: {.columns} 
 
@@ -66,8 +80,12 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ::::
 
+::: {.notes}
+_Need speaker notes with short and sweet takeaways for these two apps_
+:::
 
-## Broadband research: from ideation to report
+
+## Our broadband research: from ideation to report
 
 ::::{.columns }
 
@@ -75,47 +93,102 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ![](assets/images/ideation.png)
 
-[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/){.fragment}
-
-[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract){.fragment}
-
-
 :::
 
 ::: {.column width="50%" .fragment}
 
-![](assets/images/report_slide.png){height=50%}
+![](assets/images/report_slide.png){width="50%"}
+![](assets/images/presenting_beyond_connectivity.png){width="75%"}
 
 :::
 
 ::::
 
 
-# Broadband research is evolving!
+## Broadband research derived from CORI data work
+
+- **[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)**
+  <br />Weinstein, A., Erouart, M., & Dewbury, A. (2024) Beyond Connectivity: The role of broadband in rural economic growth and resilience. Center on Rural Innovation. [https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
+
+- **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
+  <br />Whitacre, B. (2024). The fibre broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
+
+
+## New findings from Broadband Research
+
+> _“Broadband access is increasingly recognized as essential infrastructure in today’s economy, with the_
+> _ability to connect residents and businesses to economic opportunities nationwide”_
+
+- Broadband access can have a transformative impact on economic growth and resilience,
+  <br />but our research found that _access alone is insufficient_
+- Broadband utilization is a key metric, encompassing both adoption rates and effective leveraging of infrastructure
+- Rural counties with high broadband utilization experience:
+  - Significantly higher business growth rates
+  - Increased self-employment growth rates
+  - Higher per-capita income growth rates
+  - Stronger GDP growth rates
+
+<p style="padding-right: 10%; text-align: right">Weinstein, A., Erouart, M., & Dewbury, A. (2024)</p>
+
+
+## Broadband research is evolving<br >... and so is the data!
+
+#### Our role as data experts requires us to solve data issues on behalf of the researchers
+
+<!--
+- **Data Volume and Complexity**
+  <br />Sheer size of the data can overwhelm traditional data processing tools and techniques
+- **Lack of Data Quality and Consistency**
+  <br />Data duplication, inconsistencies in naming conventions, and data entry errors are widespread problems in data sources, requiring careful cleaning and validation
+- **Non-existent change process**
+  <br />General lack feedback/interaction cycle between researches and data providers
+-->
 
 
 ## Federal Communications Commission ([FCC](https://www.fcc.gov/))
 
 :::: {.columns} 
 
-::: {.column width="30%"}
+::: {.column width="55%"}
 
-![](assets/images/fcc-seal-rgb-2020.svg)
+
+|                   | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
+|-------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
+| Type of recording | self declarative                                                                                  | self declarative                                                                                                                                                                                                                     |
+| Granularity       | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
+| Services          | Mobile/Fixed                                                                                      | Mobile/Fixed                                                                                                                                                                                                                         |
+| Timeframe         | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
+| Releases          | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
+| Records           | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
+| Size              | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
+
+[^version]: One release can have multiple versions
 
 :::
 
-::: {.column width="70%"}
+::: {.column width="45%"}
 
-- Agency in charge of regulating "everything" communications
+- These datasets are voluminous, involving hundreds of files
+- FCC releases lack "guard rails" in terms of data quality and consistency.
+- Analysis of the National Broadband Map (NBM) data reveals inconsistencies:
+  - Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
+  - The same Provider ID is associated with different FRNs (Acentek).
+  - Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
-- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-
-#### **Challenge**: How to work with constant change upstream? {.fragment}
 :::
 
 ::::
 
+::: {.notes}
+Source of truth in terms of broadband data:
+- Agency in charge of regulating “everything” telco (... mostly; see [NTIA](https://www.ntia.gov/page/about-ntia){.external target="_blank"})
+- The agency collects and publishes data that is used as the basis for BIG infrastructure investments _and_ approval of federal + state funding awards
+- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
+:::
 
+
+<!--
 ## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
 
 :::: {.columns}
@@ -123,7 +196,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 ::: {.column width="50%"}
 
 
-|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
+|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
 |----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
 | Type of recording    | self declarative                                                                                  | self declarative                                                                                                                                                                                                                     |
@@ -142,21 +215,26 @@ I find ways to add structure and meaning to data so that it can effectively info
 ::: {.column width="50%"}
 
 
-#### FCC has provided data on ISP's since 2014, but:
+#### FCC provides data on ISP's since 2014, but:
 
-  * Each dataset was quite **voluminous** (hundreds of files)
+- These datasets are voluminous, involving hundreds of files
+- FCC releases lack "guard rails" in terms of data quality and consistency.
+- Analysis of the National Broadband Map (NBM) data reveals inconsistencies:
+  - Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
+  - The same Provider ID is associated with different FRNs (Acentek).
+  - Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
-  * No "**guard rails**": multiple encodings, erroneous values (limited QC)
+::: {.notes}
+In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
+:::
 
 :::
 
 ::::
+-->
 
 
-
-# Behind the scenes:
-
-## How it started: Manual Extraction ...
+## Our first take > Manual extraction of National Broadband Map data…
 
 :::: {.columns}
 
@@ -178,7 +256,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 ::::
 
 
-## ... Automation with code ...
+## … Automation with code …
 
 :::: {.columns}
 
@@ -213,23 +291,24 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 # [...]
 ```
+... this boilerplate was initially copy-and-pasted from project to project.
 
 :::
 
 ::: {.column width="50%" .fragment}
 
 ::: {.incremental}
-- New projects ->  New specs
+- New projects -> New specs
 
-#### **challenge**: copy/pasting and maintaining X **similar** code sources {.fragment} 
+#### **Challenge**: copy/pasting and maintaining X **similar** code sources {.fragment}
 
-- Spoiler: Not everyone like SQL 
+- Spoiler: Not everyone likes SQL
 
-#### **challenge**: make it more accessible {.fragment}
+#### **Challenge**: make it more accessible {.fragment}
 
-- Out of memory -> Process in DB 
+- Out of memory lead to processing data transformations in DB (PostgreSQL)
 
-#### **Challenge**: Slow, lack of reactivity {.fragment} 
+#### **Challenge**: Slow, lack of reactivity {.fragment}
 
 :::
 
@@ -267,9 +346,8 @@ Contains real slack messages with typos!
 
 :::
 
-### DuckDB solved the lack of reactivity!{.fragment}
 
-## ... Code Packaged
+## … Code Packaged
 
 :::: {.columns}
 
@@ -337,7 +415,7 @@ identical(num_files, files_dl)
 # `cori.data.fcc`
 
 
-## Goals of a broadband data package >>> `cori.data.fcc`
+## Goals of a broadband data package > `cori.data.fcc`
 
 :::{.incremental}
 1. **Accelerate Innovation**<br />
@@ -355,14 +433,23 @@ identical(num_files, files_dl)
 
 ### Code that works outside of "my" computer
 
+- Code that works seamlessly on any system with the necessary dependencies
+  <br />in this case the R programming language/runtime and…
+- Essential R packages, including
+  - `dplyr`
+  - `duckdb`
+  - `paws` (AWS S3 access)
+
+
 ### Benefits from the language ecosystem
 
-- Tested against GitHub runner: it does not just work on my computer! 
+- Testing and Validation:
+  <br />tested in GitHub runner: it does not just work on my computer!
+- Documentation and Examples
+- Website to share/distribute code + data + documentation
 
-- [Website](https://ruralinnovation.github.io/cori.data.fcc){.external target="_blank"} to share it/distribute it
 
-
-## Open Source: Why share?
+## Open Source > Why share?
 
 ::: {.incremental}
 
@@ -403,7 +490,7 @@ packageVersion("cori.data.fcc")
 ```
 
 
-## How to use the package: Choose your own adventure!
+## How to use the package > Choose your own adventure!
 
 :::{.incremental}
 
@@ -418,7 +505,7 @@ packageVersion("cori.data.fcc")
 :::
   
 
-##  Packaging code = extra team member :construction_worker:
+##  Packaging code > Extra team member :construction_worker:
   
 > we’ve talked about how packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager.[^emily]
 
@@ -429,7 +516,7 @@ packageVersion("cori.data.fcc")
 [^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
 
 
-## Packaging code = Increase speed to innovation / insight
+## Packaging code > Increase speed to innovation / insight
  
 - Functions designed to get data and load it in your environment  
 
