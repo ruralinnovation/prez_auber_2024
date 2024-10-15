@@ -342,6 +342,12 @@ identical(num_files, files_dl)
 
 :::
 
+::: {.notes}
+
+promote collaboration: open source, more value from our codes, start discussion with upstream, USAC    
+
+:::
+
 
 ## What is packaged code?
 
@@ -352,19 +358,6 @@ identical(num_files, files_dl)
 - Tested against GitHub runner: it does not just work on my computer! 
 
 - [Website](https://ruralinnovation.github.io/cori.data.fcc){.external target="_blank"} to share it/distribute it
-
-
-## Open Source: Why share?
-
-::: {.incremental}
-
-  * Way to **publish**: we get more value that way  
-  
-  * Way to **share**: code is used! 
-
-  * A place were we can **exchange** in a constructive way 
-
-::: 
 
 
 ## How to get the package
