@@ -209,14 +209,13 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ![](assets/manual_fcc.mov)
 
-
 :::
 
 ::: {.column width="50%"}
 
-* :repeat: Repeat for every State  (56)
-* :repeat: Repeat for every version  (??)
-* :red_circle: Error prone (500 hundred clicks)
+- :repeat: Repeat for every State  (56)
+- :repeat: Repeat for every version  (??)
+- :red_circle: Error prone (500 hundred clicks)
 
 :::
 

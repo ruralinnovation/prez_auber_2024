@@ -50,9 +50,9 @@ html * {
   }
 
   img.r-stretch {
-    width: calc(100vw - 20px) !important;
-    height: calc(100vw * 0.421) !important;
-    max-height: calc(100vh - 215px) !important;
+    width: calc(100vw - 40px) !important;
+    height: calc((100vw - 40px) * 0.421) !important;
+    max-height: calc(100vh - 220px) !important;
   }
 
   img.quarto-figure-left {
