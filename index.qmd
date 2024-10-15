@@ -440,6 +440,10 @@ packageVersion("cori.data.fcc")
 
 ## Broadband service in the Northeast Kingdom
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 ::: {.panel-tabset}
 
 ### Visual
@@ -522,8 +526,23 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 :::
 
-##  Northeast Kingdom: only 11.5% of locations have fiber access in the Northeast Kingdom
+:::
 
+::: {.column width="40%"}
+
+- Better services closer to "main street" (and worst farther...)
+
+- 3 lines of codes to get the data 
+
+- Use census blocks: easy match with other data sources (ACS, BEA, etc ..) 
+
+
+:::
+
+
+::::
+
+##  Northeast Kingdom: only 11.5% of locations have fiber 
 
 :::: {.columns}
 
@@ -708,11 +727,11 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 - 1321 ISP operating in Ohio
 
-- Providers competiting in all Ohio are at the Core of the networks
+- Providers competiting in all Ohio are at the core
 
 - Providers with few competitors are at the edges
 
-- `cori.data.fcc` support spatial and relation data
+- `cori.data.fcc` support spatial and graph data
 
 
 :::
