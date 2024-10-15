@@ -541,7 +541,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 ### Visual
 
-![](assets/images/nek_broadband_fiber_service.png)
+![](assets/images/nek_fiber_service.png)
 
 
 ### Code
