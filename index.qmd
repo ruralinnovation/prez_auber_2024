@@ -149,89 +149,56 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 :::: {.columns} 
 
-::: {.column width="55%"}
+::: {.column width="30%" .fragment}
 
-
-|                   | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
-|-------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
-| Type of recording | self declarative                                                                                  | self declarative                                                                                                                                                                                                                     |
-| Granularity       | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services          | Mobile/Fixed                                                                                      | Mobile/Fixed                                                                                                                                                                                                                         |
-| Timeframe         | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
-| Releases          | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
-| Records           | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
-| Size              | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
-
-[^version]: One release can have multiple versions
+![](assets/images/fcc-seal-rgb-2020.svg)
 
 :::
 
-::: {.column width="45%"}
-
-- These datasets are voluminous, involving hundreds of files
-- FCC releases lack "guard rails" in terms of data quality and consistency.
-- Analysis of the National Broadband Map (NBM) data reveals inconsistencies:
-  - Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
-  - The same Provider ID is associated with different FRNs (Acentek).
-  - Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
-
-:::
-
-::::
-
-::: {.notes}
-Source of truth in terms of broadband data:
-- Agency in charge of regulating “everything” telco (... mostly; see [NTIA](https://www.ntia.gov/page/about-ntia){.external target="_blank"})
-- The agency collects and publishes data that is used as the basis for BIG infrastructure investments _and_ approval of federal + state funding awards
-- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-:::
-
-
-<!--
-## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
-
-:::: {.columns}
-
-::: {.column width="50%"}
+::: {.column width="70%" .fragment}
 
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
 |----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
-| Type of recording    | self declarative                                                                                  | self declarative                                                                                                                                                                                                                     |
 | Granularity          | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services             | Mobile/Fixed                                                                                      | Mobile/Fixed                                                                                                                                                                                                                         |
 | Timeframe            | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
 | Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
+::: {.fragment}
+- Big messy data
+
+- Recquire domain knowledge
+
+- Evolving data landscape
 
 [^version]: One release can have multiple versions
 
-
-:::
-
-::: {.column width="50%"}
-
-
-#### FCC provides data on ISP's since 2014, but:
-
-- These datasets are voluminous, involving hundreds of files
-- FCC releases lack "guard rails" in terms of data quality and consistency.
-- Analysis of the National Broadband Map (NBM) data reveals inconsistencies:
-  - Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
-  - The same Provider ID is associated with different FRNs (Acentek).
-  - Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
-
-::: {.notes}
-In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
 :::
 
 :::
 
 ::::
--->
+
+::: {.notes}
+
+- Agency in charge of regulating "everything" communications
+
+- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
+
+How to work with constant change upstream?
+
+These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
+
+FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
+
+Analysis of the National Broadband Map (NBM) data reveals inconsistencies and potential errors in key identifiers like the FCC Registration Number (FRN), Provider ID, and Brand Name:
+* Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
+The same Provider ID is associated with different FRNs (Acentek).
+Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
+
+:::
 
 
 ## Our first take > Manual extraction of National Broadband Map data…
@@ -291,7 +258,12 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 # [...]
 ```
+
+:::mermaid
+
+::: {.notes}
 ... this boilerplate was initially copy-and-pasted from project to project.
+:::
 
 :::
 
@@ -428,6 +400,12 @@ identical(num_files, files_dl)
 
 :::
 
+::: {.notes}
+
+promote collaboration: open source, more value from our codes, start discussion with upstream, USAC
+
+:::
+
 
 ## What is packaged code?
 
@@ -448,18 +426,6 @@ identical(num_files, files_dl)
 - Documentation and Examples
 - Website to share/distribute code + data + documentation
 
-
-## Open Source > Why share?
-
-::: {.incremental}
-
-  * Way to **publish**: we get more value that way  
-  
-  * Way to **share**: code is used! 
-
-  * A place were we can **exchange** in a constructive way 
-
-::: 
 
 
 ## How to get the package
@@ -531,6 +497,10 @@ packageVersion("cori.data.fcc")
 
 ## Broadband service in the Northeast Kingdom
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 ::: {.panel-tabset}
 
 ### Visual
@@ -544,7 +514,7 @@ packageVersion("cori.data.fcc")
 #| echo: true
 #| eval: false
 #| code-line-numbers: "6,7,8" 
-library(cori.data.fcc); library(dplyr); library(sf), library(tigris)
+library(cori.data.fcc); library(dplyr); library(sf); library(tigris)
 library(ggplot2); library(cori.charts); library(basemapR)
 
 cori.charts::load_fonts()
@@ -613,8 +583,23 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 :::
 
-##  Northeast Kingdom: only 11.5% of locations have fiber access in the Northeast Kingdom
+:::
 
+::: {.column width="40%"}
+
+- Better services closer to "main street" (and worst farther...)
+
+- 3 lines of codes to get the data
+
+- Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
+
+
+:::
+
+
+::::
+
+##  Northeast Kingdom: only 11.5% of locations have fiber
 
 :::: {.columns}
 
@@ -624,7 +609,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 ### Visual
 
-![](assets/images/nek_broadband_fiber_service.png)
+![](assets/images/nek_fiber_service.png)
 
 
 ### Code
@@ -683,10 +668,14 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 
 
-## How competitive are Ohio broadband providers?
+## What are each ISP competitors in Ohio?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
 
 ::: {.panel-tabset}
-
 
 ### Visual
 
@@ -703,20 +692,14 @@ draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
           vertex.label = V(x)$provider_name, 
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
-          edge.color = "black",
+          vertex.size = .1,
+          edge.color = "grey",
           edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
-                               "cnt_bl" = V(oh_graph)$cnt_bl,
-                               "cnt_rel" = V(oh_graph)$cnt_rel))
-bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
-            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
-)
+
+g <- draw_me_a_graph(oh_graph, brush=TRUE)
+points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 ```
 
 
@@ -725,11 +708,11 @@ bscols(
 ```{r}
 #| echo: TRUE
 #| eval: FALSE
-#| code-line-numbers: "8,43"
+#| code-line-numbers: "8,46"
 library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
 library(crosstalk);library(DT);library(threejs)
 
-oh<- tigris::counties(state = "39") # tigris is a great example of data as code
+oh <- tigris::counties(state = "39") # tigris is a great example of data as code
 
 talk_to_me <- function(x) {
     message(sprintf("Love Ohio: %s", x))
@@ -742,11 +725,14 @@ oh2_nbm <- oh_nbm[!is.na(oh_nbm$combo_frn), ]
 od_me <- function(x) {
   
   temp <- oh2_nbm[x, "array_frn"][[1]]
+  geoid_bl <- oh2_nbm[x, "geoid_bl"]
   if (length(temp) == 1L)
   {
-    return(data.frame(V1 = temp, V2 = NA))
+    return(data.frame(V1 = temp, V2 = NA, geoid_bl = geoid_bl))
   }
-  as.data.frame(t(combn(temp, 2)))
+  bob <- as.data.frame(t(combn(temp, 2)))
+  bob$geoid_bl <- geoid_bl
+  return(bob)
 }
 
 od <- lapply(1:nrow(oh2_nbm), od_me) |> dplyr::bind_rows()
@@ -781,24 +767,33 @@ draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
           vertex.label = V(x)$provider_name, 
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
-          edge.color = "black",
+          vertex.size = .1,
+          edge.color = "grey",
           edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
-                               "cnt_bl" = V(oh_graph)$cnt_bl,
-                               "cnt_rel" = V(oh_graph)$cnt_rel))
-bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
-            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
-)
-
+g <- draw_me_a_graph(oh_graph, brush=TRUE)
+points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 ```
 
 :::
+
+:::
+
+::: {.column width="40%"}
+
+- 1321 ISP operating in Ohio
+
+- Providers competiting in all Ohio are at the core
+
+- Providers with few competitors are at the edges
+
+- `cori.data.fcc` support spatial and graph data
+
+
+:::
+
+::::
 
 ## Summary
 
