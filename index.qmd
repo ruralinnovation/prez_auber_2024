@@ -17,6 +17,8 @@ editor: visual
 resources: assets
 ---
 
+# How are you getting your data? Are you downloading it? Is it hard?
+
 ## Overview
 
 I.    <span style="font-size: 125%;">**Introduction**</span> ![](assets/images/overview.png){fig-align="right"}
@@ -30,9 +32,11 @@ IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fc
 
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
+> Meet the people the people who can coax treasure out of messy, unstructured, data[^hbr]  
+
 Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
 
-![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](assets/images/hbrsexiestjob.png){width=800}
+[^hbr]: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)]
 
 - Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
 
@@ -149,16 +153,6 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 # Broadband research is evolving<br >... and so is the data!
 
-<!--
-- **Data Volume and Complexity**
-  <br />Sheer size of the data can overwhelm traditional data processing tools and techniques
-- **Lack of Data Quality and Consistency**
-  <br />Data duplication, inconsistencies in naming conventions, and data entry errors are widespread problems in data sources, requiring careful cleaning and validation
-- **Non-existent change process**
-  <br />General lack feedback/interaction cycle between researches and data providers
-  ## Federal Communications Commission ([FCC](https://www.fcc.gov/))
--->
-
 ## as data experts: solve data on behalf of the researchers
 
 :::: {.columns}
@@ -236,68 +230,6 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-<!--
-## … Automation with code …
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-```{bash}
-#| eval: false
-#| echo: true
-
-# [...]
-# Download all FCC data needed
-all : dirs dl_file list_file
-
-include config.mk
-
-## dirs:	Create specific dirs to download data
-dirs : config.mk
-	@pwd
-	@mkdir -p $(DATA_PATH)
-	echo "create $(DATA_PATH)"
-
-## dl_file:	Create a list of files availiable, download them
-dl_file : $(CSV_SRC) get_csv_dl.R
-	Rscript get_csv_dl.R $(CSV_SRC)
-	Rscript list_file_dl.R $(DATA_PATH) $(CSV_SRC)
-.PHONY : dl_file
-
-## list_file: Create a list of downloaded file
-list_file : list_file_dl.R $(CSV_SRC)
-	Rscript report_dl.R $(DATA_PATH)
-.PHONY : list_file
-
-# [...]
-```
-
-:::
-
-::: {.column width="50%" .fragment}
-
-- New projects -> New specs
-
-#### **Challenge**: copy/pasting and maintaining X **similar** code sources {.fragment}
-
-- Spoiler: Not everyone likes SQL
-
-#### **Challenge**: make it more accessible {.fragment}
-
-- Out of memory lead to processing data transformations in DB (PostgreSQL)
-
-#### **Challenge**: Slow, lack of reactivity {.fragment}
-
-:::
-
-::::
-
-::: {.notes}
-... this boilerplate was initially copy-and-pasted from project to project.
-:::
--->
-
 ## As a broadband researcher,
 
 - I wish I didn’t have to manually download FCC data
@@ -309,31 +241,7 @@ list_file : list_file_dl.R $(CSV_SRC)
 … I wish I had more time to do the interesting research and analysis
 
 
-## :bulb: Light from [posit::conf](https://posit.co/conference/), Slack is buzzing!
-
-Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing))
-
-::: {.callout-warning}
-Contains real slack messages with typos!
-:::
-
-::: {.r-stack .fragment}
-
-![](assets/images/asap_1.png){.fragment .fade-up}
-
-![](assets/images/asap_2.png){.fragment .fade-up}
-
-![](assets/images/asap_3.png){.fragment .fade-up}
-
-![](assets/images/asap_4.png){.fragment .fade-up}
-
-![](assets/images/asap_5.png){.fragment .fade-up}
-
-![](assets/images/asap_6.png){.fragment .fade-up}
-
-![](assets/images/asap_7.png){.fragment .fade-up}
-
-:::
+## slide to transition to package code
 
 
 # `cori.data.fcc`
