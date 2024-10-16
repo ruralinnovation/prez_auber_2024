@@ -1,5 +1,7 @@
+*.bak
 .DS_Store
 /.quarto/
-/index_files/
-*.html
 _freeze/
+_site /
+*_files/
+*.html

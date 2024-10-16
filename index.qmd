@@ -1,5 +1,5 @@
 ---
-title: "Working with Primary data"
+title: "[TITLE TBD]"
 subtitle: "`cori.data.fcc`:: an example of data as code"
 author: "Olivier Leroy"
 date: "October 20 2024"
@@ -9,182 +9,235 @@ favicon: assets/images/Logo-Mark_Black.png
 format:
   revealjs: 
     theme: src/custom_cori.scss
-    logo: img/CORI_Logo.png
+    logo: assets/images/CORI_Logo.png
     css: assets/fonts.css
     footnotes-hover:: true
 from: markdown+emoji
 editor: visual
+resources: assets
 ---
 
-## Slides are online: 
+## Overview
 
-- Realized in [Quarto](https://quarto.org/) (Reavealjs) 
+I.    <span style="font-size: 125%;">**Introduction**</span> ![](assets/images/overview.png){fig-align="right"}
+II.   <span style="font-size: 125%;">**Research using the latest broadband service data**</span>
+III.  <span style="font-size: 125%;">**Challenges to using the latest broadband service data**</span>
+  <br />_i.e., More data more problems_
+IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fcc`**</span>
+  <br />_i.e., How we accelerate innovation by making this complex,_
+  <br />_ever-changing broadband data more accessible and usable for research_
 
-- Running R and cori.data.fcc
 
-- Hosted/deployed in [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)
- 
-<br />[https://ruralinnovation.github.io/prez_auber_2024/](https://ruralinnovation.github.io/prez_auber_2024/#/title-slide)
+## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
-![](img/qr.svg){height="300" fig-align="center"}
+Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
 
-## Goals: 
+![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](assets/images/hbrsexiestjob.png){width=800}
 
-:::{.incremental} 
-1. Primary data is great! (but can be a pain...)
+- Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
 
-2. Use code (other pain?) to work with primary data
+::: {.notes}
+I find ways to add structure and meaning to data so that it can effectively inform the work of the organization’s analysts, researchers and community managers.
+:::
 
-3. Packaging it will make live easier!
+
+## CORI's Mission
+
+![](assets/images/cori-mission-slide-8.png)
+
+
+## What Broadband means to Rural America
+
+- We believe that **small towns** are home to **big ideas** — and combining new models of economic development with strategic investments in **new infrastructure** can **empower rural communities** across the U.S. to participate in and benefit from the nation's growing **tech economy**.
+
+### Broadband knowledge is an important part of our work
+
+- Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
+
+
+# Out of necessity we had to become experts in broadband data
+
+## Our broadband apps in the wild
+
+:::: {.columns}
+
+::: {.column width="54%"}
+
+[Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/){.external target="_blank"}
+
+![](assets/images/small_bead_tool.gif)
 
 :::
 
-## Plan: Retrace our Journey 
+::: {.column width="44%"}
 
-[TODO: rework at the end]
- 
-## :wave: Hi, I am Olivier Senior Data Engineer 
+[Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/){.external target="_blank"}
 
-- Working with primary data: "messy, unstructured data" is upon us
-
-![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](img/hbrsexiestjob.png){width=800} 
-
-- Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html) 
-
-
-## Data at Center On Rural Innovation ([CORI](https://ruralinnovation.us/))
-
-1. Rural data: we can't work with aggregate and need to go deeper
-
-I plan to delete this unless good points against
-
-#  Broadband: an important part of our works
-
-## Public-facing apps:  
-
-:::: {.columns} 
-
-::: {.column width="60%"}
-
-![](img/small_bead_tool.gif)
-
-[Rural Broadband Mapping Tool](https://rural-broadband-map.ruralinnovation.us/)
-
-:::
-
-::: {.column width="40%"}
-
-![](img/bb_climate.png)
-[Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/)
+![](assets/images/bb_climate_2.png)
 
 :::
 
 ::::
 
-## Research work: from ideation to report
+::: {.notes}
+_Need speaker notes with short and sweet takeaways for these two apps_
+:::
 
 
-::::{.columns } 
+## Our broadband research: from ideation to report
+
+::::{.columns }
 
 ::: {.column width="50%" .fragment}
 
-![](img/ideation.png)
+![](assets/images/ideation.png)
 
 :::
 
 ::: {.column width="50%" .fragment}
 
-![](img/report_slide.png){height=50%}
+![](assets/images/report_slide.png){width="50%"}
+
 
 :::
 
 ::::
 
-# Broadband research is evolving! 
 
-## Federal Communications Commission ([FCC](https://www.fcc.gov/)) 
+## Broadband research derived from CORI data work
 
-:::: {.columns} 
+:::: {.columns}
 
-::: {.column width="30%"}
+::: {.column width="50%"}
 
-![](img/fcc-seal-rgb-2020.svg)
+- **[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)**
+  <br />Weinstein, A., Erouart, M., & Dewbury, A. (2024) Beyond Connectivity: The role of broadband in rural economic growth and resilience. Center on Rural Innovation. [https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
+
+- **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
+  <br />Whitacre, B. (2024). The fibre broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
 
 :::
 
-::: {.column width="70%"}
+::: {.column width="50%"}
+![](assets/images/presenting_beyond_connectivity.png){width="75%"}
+
+:::
+
+::::
+
+
+## New findings from Broadband Research
+
+> _“Broadband access is increasingly recognized as essential infrastructure in today’s economy, with the_
+> _ability to connect residents and businesses to economic opportunities nationwide”_
+
+
+- Rural counties with high broadband utilization experience:
+  - Significantly higher business growth rates
+  - Increased self-employment growth rates
+  - Higher per-capita income growth rates
+  - Stronger GDP growth rates
+
+<p style="padding-right: 10%; text-align: right">Weinstein, A., Erouart, M., & Dewbury, A. (2024)</p>
+
+:::{.notes}
+- Broadband access can have a transformative impact on economic growth and resilience,
+  <br />but our research found that _access alone is insufficient_
+- Broadband utilization is a key metric, encompassing both adoption rates and effective leveraging of infrastructure
+:::
+
+
+# Broadband research is evolving<br >... and so is the data!
+
+<!--
+- **Data Volume and Complexity**
+  <br />Sheer size of the data can overwhelm traditional data processing tools and techniques
+- **Lack of Data Quality and Consistency**
+  <br />Data duplication, inconsistencies in naming conventions, and data entry errors are widespread problems in data sources, requiring careful cleaning and validation
+- **Non-existent change process**
+  <br />General lack feedback/interaction cycle between researches and data providers
+  ## Federal Communications Commission ([FCC](https://www.fcc.gov/))
+-->
+
+## as data experts: solve data on behalf of the researchers
+
+:::: {.columns}
+
+::: {.column width="30%" .fragment}
+
+![Federal Communications Commission ([FCC](https://www.fcc.gov/))](assets/images/fcc-seal-rgb-2020.svg)
+
+:::
+
+::: {.column width="70%" .fragment}
+
+
+|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
+|----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
+| Granularity          | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
+| Timeframe            | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
+| Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
+| Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
+| Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
+::: {.fragment}
+
+- Big messy data
+
+- Recquire domain knowledge
+
+- Evolving data landscape
+
+
+
+:::
+
+:::
+
+::::
+
+::: {.notes}
 
 - Agency in charge of regulating "everything" communications
 
 - Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
 
-#### **Challenge**: How to work with constant change upstream? {.fragment}
+How to work with constant change upstream?
+
+These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
+
+FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
+
+Analysis of the National Broadband Map (NBM) data reveals inconsistencies and potential errors in key identifiers like the FCC Registration Number (FRN), Provider ID, and Brand Name:
+* Different FRNs and Provider IDs are used for the same ISP ("EATEL Corp.")
+The same Provider ID is associated with different FRNs (Acentek).
+Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
+
 :::
 
-::::
 
-
-## Federal Communications Commission ([FCC](https://www.fcc.gov/))  
+## How you would use the FCC's data/platform…
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 
-
-|                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources)             | [National Broadband Map](https://broadbandmap.fcc.gov/home)                                                                                                                                                                          |
-|-------------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US Census Boundaries | 2010             | 2020                                                                                                                                                                                                                                 |
-| Type of recording    | self declarative | self declarative                                                                                                                                                                                                                     |
-| Granularity          | Census blocks     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
-| Services             | Mobile/Fixed | Mobile/Fixed                                                                                                                                                                                                                     |
-|Timeframe | 2014-2021 | 2022 - *Ongoing*                                                                                                                                                                                                                     |
-| Releases | **twice a year** | **twice a year[^version]**                                                                                                                                                                                                               |
-| Size | **400MB/year** | **22GB/year**                                                                                                                                                                                                                            |
-
-[^version]: One release can have multiple versions
-
+![](assets/manual_fcc.mov)
 
 :::
 
 ::: {.column width="50%"}
 
-
-#### Broadband access since 2014 but:
-  * 2 **voluminous** datasets, hundreds of files  
-
-  * No "**road safety barriers**": multiple encodings, erronous values (and more..)
+- :repeat: Repeat for every State  (56)
+- :repeat: Repeat for every version  (??)
+- :red_circle: Error prone (500 hundred clicks)
 
 :::
 
 ::::
 
-
-
-# Behind the scene: 
-
-## How it started: Manuel Extraction ...
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-![](img/manual_fcc.mov)
-
-
-:::
-
-::: {.column width="50%"}
-
-* :repeat: Repeat for every State  (56)
-* :repeat: Repeat for every version  (??)
-* :red_circle: Error prone (500 hundred clicks)
-
-:::
-
-::::
-
-
-## ... Automation with code ...
+<!--
+## … Automation with code …
 
 :::: {.columns}
 
@@ -194,7 +247,7 @@ I plan to delete this unless good points against
 #| eval: false
 #| echo: true
 
-# [...] 
+# [...]
 # Download all FCC data needed
 all : dirs dl_file list_file
 
@@ -214,7 +267,7 @@ dl_file : $(CSV_SRC) get_csv_dl.R
 
 ## list_file: Create a list of downloaded file
 list_file : list_file_dl.R $(CSV_SRC)
-	Rscript report_dl.R $(DATA_PATH) 
+	Rscript report_dl.R $(DATA_PATH)
 .PHONY : list_file
 
 # [...]
@@ -224,32 +277,41 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 ::: {.column width="50%" .fragment}
 
-::: {.incremental}
-- New projects ->  New specs
+- New projects -> New specs
 
-#### **challenge**: copy/pasting and maintaining X **similar** code sources {.fragment} 
+#### **Challenge**: copy/pasting and maintaining X **similar** code sources {.fragment}
 
-- Spoiler: Not everyone like SQL 
+- Spoiler: Not everyone likes SQL
 
-#### **challenge**: make it more accessible {.fragment}
+#### **Challenge**: make it more accessible {.fragment}
 
-- Out of memory -> Process in DB 
+- Out of memory lead to processing data transformations in DB (PostgreSQL)
 
-#### **Challenge**: Slow, lack of reactivity {.fragment} 
-
-:::
+#### **Challenge**: Slow, lack of reactivity {.fragment}
 
 :::
 
 ::::
 
-## :bulb: Light from [posit::conf](https://posit.co/conference/)
+::: {.notes}
+... this boilerplate was initially copy-and-pasted from project to project.
+:::
+-->
 
-Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing)) 
+## As a broadband researcher,
 
-![](img/duckplyr-duckDB.png){fig-align="center"}
+- I wish I didn’t have to manually download FCC data
 
-## Slack is buzzing!
+- I wish I could share my analysis (and code) with colleagues
+
+- I wish I could easily perform quality checks on the raw FCC data
+
+… I wish I had more time to do the interesting research and analysis
+
+
+## :bulb: Light from [posit::conf](https://posit.co/conference/), Slack is buzzing!
+
+Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing))
 
 ::: {.callout-warning}
 Contains real slack messages with typos!
@@ -257,25 +319,55 @@ Contains real slack messages with typos!
 
 ::: {.r-stack .fragment}
 
-![](img/asap_1.png){.fragment .fade-up}
+![](assets/images/asap_1.png){.fragment .fade-up}
 
-![](img/asap_2.png){.fragment .fade-up}
+![](assets/images/asap_2.png){.fragment .fade-up}
 
-![](img/asap_3.png){.fragment .fade-up}
+![](assets/images/asap_3.png){.fragment .fade-up}
 
-![](img/asap_4.png){.fragment .fade-up}
+![](assets/images/asap_4.png){.fragment .fade-up}
 
-![](img/asap_5.png){.fragment .fade-up}
+![](assets/images/asap_5.png){.fragment .fade-up}
 
-![](img/asap_6.png){.fragment .fade-up}
+![](assets/images/asap_6.png){.fragment .fade-up}
 
-![](img/asap_7.png){.fragment .fade-up}
+![](assets/images/asap_7.png){.fragment .fade-up}
 
 :::
 
-### DuckDB solved the lack of reactivity!{.fragment}
 
-## ... Code Packaged
+# `cori.data.fcc`
+
+
+## … data packaged as code
+
+:::{.incremental}
+1. **Address Data Challenges**<br />
+  - Data is packaged as code to simplify data access, reduce errors, and promote collaboration.
+  - Low-level data transformations are codified: easy for others to reproduce.
+
+2. **Accelerate Innovation**<br />
+  - Broadband data is packaged so that researchers can focus on analysis and insights, not data wrangling.
+
+3. **Unlock Deeper Insights Faster**<br />
+  - `cori.data.fcc` provides fast access to granular details, essential for understanding broadband challenges across multiple geographic scales.
+:::
+
+:::{.fragment}
+
+> [packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager](https://www.emilyriederer.com/post/team-of-packages/#collaboration).
+
+
+::: 
+
+::: {.notes}
+
+promote collaboration: open source, more value from our codes, start discussion with upstream, USAC
+
+:::
+
+
+## … how it works
 
 :::: {.columns}
 
@@ -284,7 +376,7 @@ Contains real slack messages with typos!
 ::: {.panel-tabset}
 
 ### Visual
-![](img/dl_nbm_smaller.mov)
+![](assets/dl_nbm_smaller.mov)
 
 ### Code
 
@@ -308,7 +400,7 @@ dl_nbm(
   data_type = "Fixed Broadband",
   data_category = "Nationwide",
 )
-# part to check if dl was successful 
+# part to check if dl was successful
 num_files <- get_nbm_available() |>
   dplyr::filter(release == "June 30, 2023" &
                 data_type == "Fixed Broadband" &
@@ -329,86 +421,65 @@ identical(num_files, files_dl)
 
 ::: {.column width="50%"}
 
-- DuckDB: in-process
+<p>&nbsp;</p><br />
 
-- Reduce errors 
+- Added DuckDB
 
-- Complexity is in **one** place and **abstracted** so we can focus on what bring **value**! 
+- Created quality checks to reduce errors
+
+- Complexity is handled in our **upstream** process and **abstracted** so that users can focus on what brings **value**!
 
 :::
 
 ::::
 
+::: {.notes}
+DuckDB unlocked in-process analytics, so access to a database management system/server is no longer required in order to explore and use the data
 
-# cori.data.fcc
+:::
 
+<!--
 ## What is packaged code?
 
-### One white lie: Code that work outside of "my" computer 
+### Code that works outside of "my" computer
+
+- Code that works seamlessly on any system with the necessary dependencies
+  <br />in this case the R programming language/runtime and…
+- Essential R packages, including
+  - `dplyr`
+  - `duckdb`
+  - `paws` (AWS S3 access)
+
 
 ### Benefits from the language ecosystem
 
-- Tested against GitHub runner: it does not just work on my computer! 
+- Testing and Validation:
+  <br />tested in GitHub runner: it does not just work on my computer!
+- Documentation and Examples
+- Website to share/distribute code + data + documentation
+-->
 
-- [Website](https://ruralinnovation.github.io/cori.data.fcc/index.html) to share it/distribute it
-
-## Open Source: Why sharing it? 
-
-::: {.incremental}
-
-  * Way to **publish**: we get more value that way  
-  
-  * Way to **share**: code is used! 
-
-  * A place were we can **exchange** in a constructive way 
-
-::: 
-
-## How to get it: 
-
-The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
-
-You need the R package [{remotes}](https://remotes.r-lib.org/).
-
-```{r}
-#| eval: false
-#| label: install-package
-#| echo: true
- 
-install.packages("remotes")
-remotes::install_github("ruralinnovation/cori.data.fcc")
-```
-
-```{r}
-#| echo: false
-library(cori.data.fcc)
-```
-
-:construction: Check the version you have and see what new versions are offering :construction:
-```{r}
-#| label: version-package
-#| echo: true
-packageVersion("cori.data.fcc")
-```
-
-
-## What can it do: Choose your own adventure!
+## How to use the package > Choose your own adventure!
 
 :::{.incremental}
 
-* I need to go back to the source: [Download data from FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)
+- _Broadband data at the census block (or tract, county, etc.) level is perfect for my research_: <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span>
+  <br />**Download the transformed data for NBM from CORI ([ISP](https://ruralinnovation.github.io/cori.data.fcc/reference/get_frn_nbm_bl.html) / [County](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html))**
 
-* I need primary data but working with hundreds of CSV is not for me:  Download raw data from CORI ([NBM](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html) / [Form 477](https://ruralinnovation.github.io/cori.data.fcc/reference/get_f477.html))
+- _I need to inspect the source (raw) data_:
+  <br />**Download raw data [files directly from the FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)**
 
-* Census block is perfect for me:  Download tranformed data for NBM from CORI ([ISP](https://ruralinnovation.github.io/cori.data.fcc/reference/get_frn_nbm_bl.html) / [County](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html))
+- _I need source data but working with hundreds of CSV is not for me_:
+  <br />**Download raw data as tables from CORI ([NBM](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html) / [Form 477](https://ruralinnovation.github.io/cori.data.fcc/reference/get_f477.html))**
 
-* Guide you in those steps!
+- The guides linked above can help you with each step!
 
 :::
-  
-##  Packaging code = extra team member :construction_worker:
-  
-> we’ve talked about how packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager.[^emily]
+
+<!--
+##  Packaging code > Extra team member :construction_worker:
+
+
 
 >  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
@@ -416,31 +487,211 @@ packageVersion("cori.data.fcc")
 
 [^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
 
-## Packaging code = Increase speed to inovation / insight 
- 
-- Functions designed to get data and load it in your environment  
 
-- **Capitalize on it**! 
+## Packaging code > Increase speed to innovation / insight
+
+- Functions designed to get data and load it in your environment
+
+- **Capitalize on it**!
 
   * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates) -> add it!
+-->
 
 
-# Examples of uses cases
-
-## First Example: Block covered BEAD like
-
-Place holder for Camdem blog post
+# Examples use cases
 
 
-## What are the ISP in Ohio?
+## Broadband service in the Northeast Kingdom
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {.panel-tabset}
+
+### Visual
+
+![](assets/images/nek_bb_service.png)
+
+
+### Code
+
+```{r service-nek}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "6,7,8"
+library(cori.data.fcc); library(dplyr); library(sf); library(tigris)
+library(ggplot2); library(cori.charts); library(basemapR)
+
+cori.charts::load_fonts()
+
+caledonia_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50005")
+essex_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50009")
+orleans_co_nbm <- cori.data.fcc::get_nbm_bl(geoid_co = "50019")
+
+nek_nbm <- dplyr::bind_rows(caledonia_co_nbm, essex_co_nbm, orleans_co_nbm)
+
+# tigris to get places and block
+vt_blocks <- tigris::blocks("VT", progress_bar = FALSE)
+vt_places <- tigris::places(state = "VT", progress_bar = FALSE)
+
+# wrangling
+nek_bb_blocks <- inner_join(
+    vt_blocks,
+    nek_nbm,
+    by = c("GEOID20" = "geoid_bl")
+  ) |>
+  mutate(
+    pct_100_20 = cnt_100_20 / cnt_total_locations,
+    pct_fiber = cnt_fiber_locations / cnt_total_locations
+  )
+
+# Get major NEK Place centroids for map labeling
+vt_places_centroids <- vt_places[lengths(sf::st_intersects(vt_places, nek_bb_blocks)) > 0, ] |>
+  st_centroid()
+
+# Map
+bbox <- sf::st_bbox(nek_bb_blocks) |>
+        cori.charts::fit_bbox_to_aspect_ratio(target_aspect_ratio = 2)
+
+fig <- ggplot(data = nek_bb_blocks) +
+  base_map(
+    bbox,
+    increase_zoom = 3,
+    basemap = 'voyager'
+  ) +
+  geom_sf(aes(fill = pct_100_20), color = "dimgray", linewidth = 0.1, alpha = 0.9) +
+  scale_fill_cori(
+    discrete = FALSE,
+    palette = "ctg2pu",
+    labels = scales::label_percent(),
+    reverse = T
+  ) +
+  geom_sf_label(data = vt_places_centroids, aes(label = NAME), size = 2, color = "black", family = "Lato", fontface = "bold") +
+  coord_sf(
+    expand = TRUE,
+    xlim = c(bbox['xmin'], bbox['xmax']),
+    ylim = c(bbox['ymin'], bbox['ymax'])
+  ) +
+  theme_cori_map() +
+  theme(
+    legend.key.width = unit(50, "pt")
+  ) +
+  labs(
+    title = "Broadband service in the Northeast Kingdom",
+    subtitle = "Percent of locations with access to 100/20 Mbps service by census block",
+    caption = "Data source: 2023 FCC National Broadband Map\nMap source: © OpenStreetMap contributors © CARTO",
+    x = NULL,
+    y = NULL
+  )
+
+```
+
+:::
+
+:::
+
+::: {.column width="40%"}
+
+<p>&nbsp;</p><br />
+
+- Better services closer to "main street" (and worst farther...)
+
+- 3 lines of codes to get the data
+
+- Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
+
+
+:::
+
+
+::::
+
+##  Northeast Kingdom: only 11.5% of locations have fiber
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+::: {.panel-tabset}
+
+### Visual
+
+![](assets/images/nek_fiber_service.png)
+
+
+### Code
+
+```{r fiber-nek}
+#| echo: true
+#| eval: false
+
+fig <- ggplot(data = nek_bb_blocks) +
+  base_map(
+    bbox,
+    increase_zoom = 3,
+    basemap = 'voyager'
+  ) +
+  geom_sf(aes(fill = pct_fiber), color = "dimgray", linewidth = 0.1, alpha = 0.6) +
+  scale_fill_cori(
+    discrete = FALSE,
+    palette = "ctg2pu",
+    labels = scales::label_percent(),
+    reverse = T
+  ) +
+  geom_sf_label(data = vt_places_centroids, aes(label = NAME), size = 2, color = "black", family = "Lato", fontface = "bold") +
+  coord_sf(
+    expand = TRUE,
+    xlim = c(bbox['xmin'], bbox['xmax']),
+    ylim = c(bbox['ymin'], bbox['ymax'])
+  ) +
+  theme_cori_map() +
+  theme(
+    legend.key.width = unit(50, "pt"),
+  ) +
+  labs(
+    title = "Fiber access in the Northeast Kingdom",
+    subtitle = "Percent of locations with access to fiber by census block",
+    caption = "Data source: 2023 FCC National Broadband Map\nMap source: © OpenStreetMap contributors © CARTO",
+    x = NULL,
+    y = NULL
+  )
+
+```
+:::
+
+:::
+
+::: {.column width="40%"}
+
+<p>&nbsp;</p><br />
+
+* Only 11.5% of locations have fiber access in the Northeast Kingdom
+
+* 6/25 ISP are providing Fiber
+
+* Leading ISP here is small ISP, non-profit: NEK broadband
+
+:::
+
+::::
+
+
+
+## What are each ISP competitors in Ohio?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
 
 ::: {.panel-tabset}
 
 ### Visual
 
 ```{r display_graph}
-#| echo: FALSE
-#| eval: TRUE
+#| echo: false
+#| eval: true
 library(igraph)
 library(crosstalk);library(DT);library(threejs)
 
@@ -449,35 +700,29 @@ oh_graph <- readRDS("data//oh_graph.rds")
 
 draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
-          vertex.label = V(x)$provider_name, 
+          vertex.label = V(x)$provider_name,
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
-          edge.color = "black",
+          vertex.size = .1,
+          edge.color = "grey",
           edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
-                               "cnt_bl" = V(oh_graph)$cnt_bl,
-                               "cnt_rel" = V(oh_graph)$cnt_rel))
-bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
-            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
-)
+
+g <- draw_me_a_graph(oh_graph, brush=TRUE)
+points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 ```
 
 
-### Code 
+### Code
 
 ```{r}
 #| echo: TRUE
 #| eval: FALSE
-#| code-line-numbers: "8,43"
-library(tigris);library(cori.data.fcc);library(igraph);library(dplyr) 
+#| code-line-numbers: "8,46"
+library(tigris);library(cori.data.fcc);library(igraph);library(dplyr)
 library(crosstalk);library(DT);library(threejs)
 
-oh<- tigris::counties(state = "39") # tigris is a great example of data as code
+oh <- tigris::counties(state = "39") # tigris is a great example of data as code
 
 talk_to_me <- function(x) {
     message(sprintf("Love Ohio: %s", x))
@@ -488,19 +733,22 @@ oh_nbm <- lapply(oh$GEOID, talk_to_me) |> dplyr::bind_rows()
 oh2_nbm <- oh_nbm[!is.na(oh_nbm$combo_frn), ]
 
 od_me <- function(x) {
-  
+
   temp <- oh2_nbm[x, "array_frn"][[1]]
+  geoid_bl <- oh2_nbm[x, "geoid_bl"]
   if (length(temp) == 1L)
   {
-    return(data.frame(V1 = temp, V2 = NA))
+    return(data.frame(V1 = temp, V2 = NA, geoid_bl = geoid_bl))
   }
-  as.data.frame(t(combn(temp, 2)))
+  bob <- as.data.frame(t(combn(temp, 2)))
+  bob$geoid_bl <- geoid_bl
+  return(bob)
 }
 
 od <- lapply(1:nrow(oh2_nbm), od_me) |> dplyr::bind_rows()
 od <- od[!is.na(od$V2),]
 
-bob <- rbind(data.frame(frn = od$V1, geoid_bl = od$geoid_bl), 
+bob <- rbind(data.frame(frn = od$V1, geoid_bl = od$geoid_bl),
              data.frame(frn = od$V2, geoid_bl = od$geoid_bl))
 
 cnt_bl <- summarise(bob, cnt_bl = n_distinct(geoid_bl), cnt_rel = n(), .by = frn)
@@ -527,46 +775,101 @@ oh_graph <- graph_from_data_frame(rel[,c("from", "to")], directed = FALSE, verti
 
 draw_me_a_graph <- function(x, ...) {
   threejs::graphjs(x,
-          vertex.label = V(x)$provider_name, 
+          vertex.label = V(x)$provider_name,
           vertex.color = rep(2, vcount(x)),
-          vertex.size = .5, 
-          edge.color = "black",
+          vertex.size = .1,
+          edge.color = "grey",
           edge.width = 3, ...)
 }
 
-sd = SharedData$new(data.frame("provider_name" = V(oh_graph)$provider_name,
-                               "cnt_bl" = V(oh_graph)$cnt_bl,
-                               "cnt_rel" = V(oh_graph)$cnt_rel))
-bscols(
-  datatable(sd, rownames=FALSE, 
-            colnames = c('Provider Name', 'Cnt Block', 'Cnt Rel.'), 
-            options = list(pageLength = 5, lengthMenu = c(5, 10, 15, 20))),
-  draw_me_a_graph(oh_graph, brush=TRUE, crosstalk=sd)
-)
-
+g <- draw_me_a_graph(oh_graph, brush=TRUE)
+points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 ```
 
 :::
 
-## Summary
+:::
 
-::: {.incremental} 
+::: {.column width="40%"}
 
-- Primary data can give more power (especialy in new field)!
+<p>&nbsp;</p><br />
 
-- (Primary) data is only useful if you can **effectively** use it.
+- 1321 ISP operating in Ohio
 
-- Use code that are abstracting the pain
+- Providers competiting in all Ohio are at the core
 
-- Easier to **capitalize/build** on it: generating less tech debt
+- Providers with few competitors are at the edges
 
-- we need those extra "team members"
+- `cori.data.fcc` support spatial and graph data
 
-::: 
+
+:::
+
+::::
+
+
+## How to get the package
+
+The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
+
+You need the R package [{remotes}](https://remotes.r-lib.org/).
+
+```{r}
+#| eval: false
+#| label: install-package
+#| echo: true
+
+install.packages("remotes")
+remotes::install_github("ruralinnovation/cori.data.fcc")
+```
+
+```{r}
+#| echo: false
+library(cori.data.fcc)
+```
+
+:construction: Check the version you have and see what new versions are available :construction:
+```{r}
+#| label: version-package
+#| echo: true
+packageVersion("cori.data.fcc")
+```
+
+
+
+## Data is only useful if you can **effectively** use it.
+
+::: {.incremental}
+
+- Data packages are abstracting the pain
+
+- Data packages can give more power
+
+- In emerging field: Easier to **capitalize/build** on it
+
+- We need those extra "team members"
+
+:::
+
+
+## Slides are online:
+
+- Built with R and [cori.data.fcc](https://ruralinnovation.github.io/cori.data.fcc/){.external target="_blank"}
+
+- Created by [Quarto](https://quarto.org/) (format: revealjs)
+
+- Hosted and deployed on [GitHub](https://github.com/ruralinnovation/conf_URISA_2023)<br />
+  [https://ruralinnovation.github.io/prez_auber_2024/](https://ruralinnovation.github.io/prez_auber_2024/#/title-slide){.external target="_blank"}
+
+<br />
+
+![](assets/images/qr.svg){height="300" fig-align="center"}
+
 
 ## Contacts
 
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
+[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
 
-[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA) 
+# Thank you!
