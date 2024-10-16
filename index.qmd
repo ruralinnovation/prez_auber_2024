@@ -48,15 +48,14 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ## What Broadband means to Rural America
 
-- We believe that small towns are home to big ideas — and combining new models of economic development with strategic investments in new infrastructure can empower rural communities across the U.S. to participate in and benefit from the nation's growing tech economy.
+- We believe that **small towns** are home to **big ideas** — and combining new models of economic development with strategic investments in **new infrastructure** can **empower rural communities** across the U.S. to participate in and benefit from the nation's growing **tech economy**.
 
 ### Broadband knowledge is an important part of our work
 
-  - Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
+- Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
 
 
 # Out of necessity we had to become experts in broadband data
-
 
 ## Our broadband apps in the wild
 
@@ -98,7 +97,7 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 ::: {.column width="50%" .fragment}
 
 ![](assets/images/report_slide.png){width="50%"}
-![](assets/images/presenting_beyond_connectivity.png){width="75%"}
+
 
 :::
 
@@ -107,11 +106,24 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 ## Broadband research derived from CORI data work
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
 - **[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)**
   <br />Weinstein, A., Erouart, M., & Dewbury, A. (2024) Beyond Connectivity: The role of broadband in rural economic growth and resilience. Center on Rural Innovation. [https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
 - **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
   <br />Whitacre, B. (2024). The fibre broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
+
+:::
+
+::: {.column width="50%"}
+![](assets/images/presenting_beyond_connectivity.png){width="75%"}
+
+:::
+
+::::
 
 
 ## New findings from Broadband Research
@@ -119,9 +131,7 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 > _“Broadband access is increasingly recognized as essential infrastructure in today’s economy, with the_
 > _ability to connect residents and businesses to economic opportunities nationwide”_
 
-- Broadband access can have a transformative impact on economic growth and resilience,
-  <br />but our research found that _access alone is insufficient_
-- Broadband utilization is a key metric, encompassing both adoption rates and effective leveraging of infrastructure
+
 - Rural counties with high broadband utilization experience:
   - Significantly higher business growth rates
   - Increased self-employment growth rates
@@ -130,10 +140,14 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 <p style="padding-right: 10%; text-align: right">Weinstein, A., Erouart, M., & Dewbury, A. (2024)</p>
 
+:::{.notes}
+- Broadband access can have a transformative impact on economic growth and resilience,
+  <br />but our research found that _access alone is insufficient_
+- Broadband utilization is a key metric, encompassing both adoption rates and effective leveraging of infrastructure
+:::
 
-## Broadband research is evolving<br >... and so is the data!
 
-#### Our role as data experts requires us to solve data issues on behalf of the researchers
+# Broadband research is evolving<br >... and so is the data!
 
 <!--
 - **Data Volume and Complexity**
@@ -142,16 +156,16 @@ _Need speaker notes with short and sweet takeaways for these two apps_
   <br />Data duplication, inconsistencies in naming conventions, and data entry errors are widespread problems in data sources, requiring careful cleaning and validation
 - **Non-existent change process**
   <br />General lack feedback/interaction cycle between researches and data providers
+  ## Federal Communications Commission ([FCC](https://www.fcc.gov/))
 -->
 
-
-## Federal Communications Commission ([FCC](https://www.fcc.gov/))
+## as data experts: solve data on behalf of the researchers
 
 :::: {.columns}
 
 ::: {.column width="30%" .fragment}
 
-![](assets/images/fcc-seal-rgb-2020.svg)
+![Federal Communications Commission ([FCC](https://www.fcc.gov/))](assets/images/fcc-seal-rgb-2020.svg)
 
 :::
 
@@ -167,13 +181,14 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
 ::: {.fragment}
+
 - Big messy data
 
 - Recquire domain knowledge
 
 - Evolving data landscape
 
-[^version]: One release can have multiple versions
+
 
 :::
 
@@ -283,24 +298,20 @@ list_file : list_file_dl.R $(CSV_SRC)
 :::
 -->
 
+## As a broadband researcher,
 
-## Considering the data needs of our researchers
+- I wish I didn’t have to manually download FCC data
 
-- "As a researcher, I wish that I had access to...":
-  - Data on demand (expedience)
-  - Quality checks and validation performed on data
-  - Ability to share analysis with collaborators
+- I wish I could share my analysis (and code) with colleagues
 
-... which leads to ...
+- I wish I could easily perform quality checks on the raw FCC data
 
-<!--
-## :bulb: Light from [posit::conf](https://posit.co/conference/)
+… I wish I had more time to do the interesting research and analysis
+
+
+## :bulb: Light from [posit::conf](https://posit.co/conference/), Slack is buzzing!
 
 Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing))
-
-![](assets/images/duckplyr-duckDB.png){fig-align="center"}
-
-## Slack is buzzing!
 
 ::: {.callout-warning}
 Contains real slack messages with typos!
@@ -323,7 +334,6 @@ Contains real slack messages with typos!
 ![](assets/images/asap_7.png){.fragment .fade-up}
 
 :::
--->
 
 
 # `cori.data.fcc`
@@ -332,16 +342,23 @@ Contains real slack messages with typos!
 ## … data packaged as code
 
 :::{.incremental}
-1. **Accelerate Innovation**<br />
-  - Broadband data is packaged so that researchers can focus on analysis and insights, not data wrangling.
-  - Like adding a new team member to your research team
-2. **Address Data Challenges**<br />
+1. **Address Data Challenges**<br />
   - Data is packaged as code to simplify data access, reduce errors, and promote collaboration.
-  - Low-level data transformations are codified so that subsequent analysis is easy for others to reproduce.
+  - Low-level data transformations are codified: easy for others to reproduce.
+
+2. **Accelerate Innovation**<br />
+  - Broadband data is packaged so that researchers can focus on analysis and insights, not data wrangling.
+
 3. **Unlock Deeper Insights Faster**<br />
   - `cori.data.fcc` provides fast access to granular details, essential for understanding broadband challenges across multiple geographic scales.
-
 :::
+
+:::{.fragment}
+
+> [packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager](https://www.emilyriederer.com/post/team-of-packages/#collaboration).
+
+
+::: 
 
 ::: {.notes}
 
@@ -462,7 +479,7 @@ DuckDB unlocked in-process analytics, so access to a database management system/
 <!--
 ##  Packaging code > Extra team member :construction_worker:
 
-> we’ve talked about how packages can act like team members such as the **IT Guy**, **Analyst**, Tech Lead, or Project Manager.[^emily]
+
 
 >  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
 
@@ -819,17 +836,15 @@ packageVersion("cori.data.fcc")
 ```
 
 
-## Summary
+## Summary: Data is only useful if you can **effectively** use it.
 
 ::: {.incremental}
 
-- Data is only useful if you can **effectively** use it.
-
-- Data packages can give more power (especialy in emerging field)!
-
 - Data packages are abstracting the pain
 
-- Easier to **capitalize/build** on it: generating less tech debt
+- Data packages can give more power (especialy )!
+
+- In emerging field: Easier to **capitalize/build** on it
 
 - We need those extra "team members"
 
@@ -855,3 +870,5 @@ packageVersion("cori.data.fcc")
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
 [LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
+
+# Thank you!
