@@ -1,5 +1,5 @@
 ---
-title: "[TITLE TBD]"
+title: "Data Innovation"
 subtitle: "`cori.data.fcc`:: an example of data as code"
 author: "Olivier Leroy"
 date: "October 20 2024"
