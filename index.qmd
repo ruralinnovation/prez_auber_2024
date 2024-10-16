@@ -84,7 +84,9 @@ I find ways to add structure and meaning to data so that it can effectively info
 ::::
 
 ::: {.notes}
-_Need speaker notes with short and sweet takeaways for these two apps_
+- we are working with these data at the scale of the US (including territories) at the granularity of census blocks
+- we are enhancing this data with other sources ACS, FEMA and more
+- public facing aps (“people are going to check their house”)
 :::
 
 
@@ -153,18 +155,11 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 # Broadband research is evolving<br >... and so is the data!
 
-## as data experts: solve data on behalf of the researchers
+## Broadband data is increasing 30th fold
 
 :::: {.columns}
 
-::: {.column width="30%" .fragment}
-
-![Federal Communications Commission ([FCC](https://www.fcc.gov/))](assets/images/fcc-seal-rgb-2020.svg)
-
-:::
-
-::: {.column width="70%" .fragment}
-
+::: {.column width="60%" .fragment}
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
 |----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -174,17 +169,15 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 | Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
-::: {.fragment}
-
-- Big messy data
-
-- Recquire domain knowledge
-
-- Evolving data landscape
-
-
 
 :::
+
+::: {.column width="40%" .fragment}
+- "Big messy data"
+
+- Require domain knowledge
+
+- Evolving data landscape
 
 :::
 
