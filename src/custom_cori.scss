@@ -33,6 +33,36 @@ html * {
 .reveal {
   color: #1E343D;
 
+  blockquote {
+    padding-left: 5%;
+  }
+
+  .r-stretch, .stretch {
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    width: 50% !important;
+    height: auto !important;
+  }
+
+  img {
+    margin: 0 !important;
+  }
+
+  img.r-stretch {
+    width: calc(100vw - 40px) !important;
+    height: calc((100vw - 40px) * 0.421) !important;
+    max-height: calc(100vh - 220px) !important;
+  }
+
+  img.quarto-figure-left {
+    float: left !important;
+  }
+
+  img.quarto-figure-right {
+    float: right !important;
+  }
+
   /* Standard CORI slide deck actually includes logo in bottom right corner, like quarto default */
   .slide-logo {
     //display: block;
@@ -122,14 +152,16 @@ html * {
           flex-basis: 0;
           flex-grow: 1;
           flex-shrink: 1;
-          //overflow-x: hidden;
-          max-height: 22.5%;
+          line-height: 2em;
+          //max-height: 22.5%;
           padding-left: 5%;
+          //overflow-x: hidden;
           //border: 2px solid #000;
 
           &.cell {
             min-height: min-content;
             max-height: min-content;
+            padding-right: 5%;
           }
 
           &.img {
@@ -158,6 +190,18 @@ html * {
           ul {
             padding-left: 0.5% !important;
           }
+        }
+
+        table th {
+          white-space: nowrap !important;
+        }
+
+        * div.cell {
+          padding-right: 5%;
+        }
+
+        * .panel-tabset .tab-content div.cell-output-display {
+          overflow: hidden !important;
         }
 
       }
@@ -211,21 +255,6 @@ html * {
       justify-content: left;
     }
 
-  }
-
-  .r-stretch, .stretch {
-    max-width: none;
-    max-height: none;
-    aspect-ratio: auto;
-    width: 50% !important;
-    height: auto !important;
-  }
-
-  img.r-stretch {
-    margin: 0 !important;
-    width: calc(100vw - 20px) !important;
-    height: calc(100vw * 0.421) !important;
-    max-height: calc(100vh - 215px) !important;
   }
 
 }
