@@ -836,13 +836,14 @@ packageVersion("cori.data.fcc")
 ```
 
 
-## Summary: Data is only useful if you can **effectively** use it.
+
+## Data is only useful if you can **effectively** use it.
 
 ::: {.incremental}
 
 - Data packages are abstracting the pain
 
-- Data packages can give more power (especialy )!
+- Data packages can give more power
 
 - In emerging field: Easier to **capitalize/build** on it
 
