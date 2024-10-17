@@ -141,7 +141,7 @@ from ideation to report
 ::::
 
 
-## Broadnand research is expanding, going beyond traditional economic analysis
+## Broadband research is expanding, beyond traditional economic analysis
 
 ::::{.columns}
 
@@ -153,9 +153,12 @@ from ideation to report
 
 ::: {.column width="30%"}
 
-213%
+<br />
 
-The growth rate of new businesses is 213% higher for rural communities with high broadband utilization
+### 213%
+
+
+The growth rate of **new businesses** is 213% higher for rural communities with **high broadband utilization**
 
 :::
 
@@ -191,11 +194,13 @@ The growth rate of new businesses is 213% higher for rural communities with high
 
 ::: {.column width="40%" .fragment}
 
-- Data has grown 50 fold from one data product to the next
+<p>&nbsp;</p><br />
 
-- Require domain knowledge
+- Data has grown **50 fold** from one data product to the next
 
-- Evolving data landscape
+- Require **domain knowledge**
+
+- **Evolving** data landscape
 
 :::
 
@@ -225,15 +230,19 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::: {.column width="50%"}
 
+<p>&nbsp;</p><br />
+
 ![](assets/manual_fcc.mov)
 
 :::
 
 ::: {.column width="50%"}
 
-- :repeat: Repeat for every State  (56)
-- :repeat: Repeat for every version  (??)
-- :red_circle: Error prone (500 hundred clicks)
+<p>&nbsp;</p><br />
+
+- :repeat: **Repeat** for every State  (56)
+- :repeat: **Repeat** for every version  (??)
+- :red_circle: **Error** prone (500 hundred clicks)
 
 :::
 
@@ -241,13 +250,15 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ## The current structure and delivery of FCC data does not meet the growing needs of broadband researchers
 
-- I wish I didn’t have to manually download FCC data
 
-- I wish I could share my analysis (and code) with colleagues
 
-- I wish I could easily perform quality checks on the raw FCC data
+- <span style="font-size: 125%;">I wish I didn’t have to manually download FCC data</span>
 
-… I wish I had more time to do the interesting research and analysis
+- <span style="font-size: 125%;">I wish I could share my analysis (and code) with colleagues</span>
+
+- <span style="font-size: 125%;">I wish I could easily perform quality checks on the raw FCC data</span>
+
+### … I wish I had more time to do the interesting research and analysis
 
 # `cori.data.fcc`
 
