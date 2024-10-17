@@ -711,7 +711,7 @@ packageVersion("cori.data.fcc")
 Open source supported by CORI and open to collaborations
 :::
 
-## Data is only useful if you can **effectively** use it.
+## Data is only useful if you can **effectively** process it
 
 ::: {.incremental}
 
