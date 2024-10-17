@@ -36,7 +36,7 @@ IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fc
 
 Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
 
-[^hbr]: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)]
+[^hbr]: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)
 
 - Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
 
@@ -187,10 +187,6 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 - Agency in charge of regulating "everything" communications
 
-- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-
-How to work with constant change upstream?
-
 These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
 
 FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
@@ -223,7 +219,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-## As a broadband researcher,
+## FCC data does not meet the needs of a broadband researcher
 
 - I wish I didn’t have to manually download FCC data
 
@@ -233,12 +229,11 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 … I wish I had more time to do the interesting research and analysis
 
-
-## slide to transition to package code
-
-
 # `cori.data.fcc`
 
+:::{.notes}
+CORI has developed a product to address this problem by packaging data as code…
+:::
 
 ## … data packaged as code
 
@@ -338,27 +333,6 @@ identical(num_files, files_dl)
 DuckDB unlocked in-process analytics, so access to a database management system/server is no longer required in order to explore and use the data
 
 :::
-
-<!--
-## What is packaged code?
-
-### Code that works outside of "my" computer
-
-- Code that works seamlessly on any system with the necessary dependencies
-  <br />in this case the R programming language/runtime and…
-- Essential R packages, including
-  - `dplyr`
-  - `duckdb`
-  - `paws` (AWS S3 access)
-
-
-### Benefits from the language ecosystem
-
-- Testing and Validation:
-  <br />tested in GitHub runner: it does not just work on my computer!
-- Documentation and Examples
-- Website to share/distribute code + data + documentation
--->
 
 ## How to use the package > Choose your own adventure!
 
@@ -753,7 +727,11 @@ packageVersion("cori.data.fcc")
 :::
 
 
-## Slides are online:
+## Contacts Us: 
+
+::::{.columns}
+
+:::{.column width="50%"}
 
 - Built with R and [cori.data.fcc](https://ruralinnovation.github.io/cori.data.fcc/){.external target="_blank"}
 
@@ -766,11 +744,16 @@ packageVersion("cori.data.fcc")
 
 ![](assets/images/qr.svg){height="300" fig-align="center"}
 
+:::
 
-## Contacts
+:::{.column width="50%"}
 
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
 [LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
+
+:::
+
+::::
 
 # Thank you!
