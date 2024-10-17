@@ -32,7 +32,8 @@ IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fc
 
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
-<p>&nbsp;</p><br />
+<br />
+
 > Meet the people the people who can coax treasure out of messy, unstructured, data[^hbr]  
 
 <p>&nbsp;</p><br />
@@ -71,6 +72,8 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ![](assets/images/small_bead_tool.gif)
 
+![](assets/images/bead_qr.svg){fig-align="center"}
+
 :::
 
 ::: {.column width="44%"}
@@ -78,6 +81,8 @@ I find ways to add structure and meaning to data so that it can effectively info
 [Broadband Climate Risk Mitigation Tool](https://broadband-risk.ruralinnovation.us/){.external target="_blank"}
 
 ![](assets/images/bb_climate_2.png)
+
+![](assets/images/bbrisk_qr.svg){fig-align="center"}
 
 :::
 
@@ -91,7 +96,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 
 ## … and research
-
+<!--
 ::::{.columns }
 
 ::: {.column width="50%" .fragment}
@@ -115,7 +120,7 @@ from ideation to report
 
 
 ##  Broadband research is expanding, going beyond traditional economic analysis
-
+-->
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -124,7 +129,7 @@ from ideation to report
   <br />Weinstein, A., Erouart, M., & Dewbury, A. (2024) Beyond Connectivity: The role of broadband in rural economic growth and resilience. Center on Rural Innovation. [https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
 - **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
-  <br />Whitacre, B. (2024). The fibre broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
+  <br />Whitacre, B. (2024). The fiber broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
 
 :::
 
