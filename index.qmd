@@ -1,6 +1,6 @@
 ---
-title: "[TITLE TBD]"
-subtitle: "`cori.data.fcc`:: an example of data as code"
+title: "Data Innovation"
+subtitle: "Streamlining Broadband Insights with `cori.data.fcc`"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
@@ -17,6 +17,8 @@ editor: visual
 resources: assets
 ---
 
+# How are you getting your data? Are you downloading it? Is it hard?
+
 ## Overview
 
 I.    <span style="font-size: 125%;">**Introduction**</span> ![](assets/images/overview.png){fig-align="right"}
@@ -30,9 +32,14 @@ IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fc
 
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
-Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
+<p>&nbsp;</p><br />
+> Meet the people the people who can coax treasure out of messy, unstructured, data[^hbr]  
 
-![Source: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)](assets/images/hbrsexiestjob.png){width=800}
+<p>&nbsp;</p><br />
+
+- Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
+
+[^hbr]: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)
 
 - Socials: [LinkedIn](https://www.linkedin.com/in/olivier-leroy-r/) | [Mastodon](https://fosstodon.org/@defuneste) | [Personal Website](https://branchtwigleaf.com/about.html)
 
@@ -52,12 +59,9 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ### Broadband knowledge is an important part of our work
 
-- Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
-
-
 # Out of necessity we had to become experts in broadband data
 
-## Our broadband apps in the wild
+## We’ve packaged our expertise into tools…
 
 :::: {.columns}
 
@@ -80,11 +84,13 @@ I find ways to add structure and meaning to data so that it can effectively info
 ::::
 
 ::: {.notes}
-_Need speaker notes with short and sweet takeaways for these two apps_
+- we are working with these data at the scale of the US (including territories) at the granularity of census blocks
+- we are enhancing this data with other sources ACS, FEMA and more
+- public facing aps (“people are going to check their house”)
 :::
 
 
-## Our broadband research: from ideation to report
+## … and research
 
 ::::{.columns }
 
@@ -98,13 +104,17 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 ![](assets/images/report_slide.png){width="50%"}
 
-
+![](assets/images/calixlgo.png)
 :::
 
 ::::
 
+::: {.notes}
+from ideation to report
+:::
 
-## Broadband research derived from CORI data work
+
+##  Broadband research is expanding, going beyond traditional economic analysis
 
 :::: {.columns}
 
@@ -126,17 +136,25 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 ::::
 
 
-## New findings from Broadband Research
+## Broadnand research is expanding, going beyond traditional economic analysis
 
-> _“Broadband access is increasingly recognized as essential infrastructure in today’s economy, with the_
-> _ability to connect residents and businesses to economic opportunities nationwide”_
+::::{.columns}
 
+::: {.column width="70%"}
 
-- Rural counties with high broadband utilization experience:
-  - Significantly higher business growth rates
-  - Increased self-employment growth rates
-  - Higher per-capita income growth rates
-  - Stronger GDP growth rates
+![](assets/images/rural_broadband_adoptions_vs_estab_pct_change.png)
+
+:::
+
+::: {.column width="30%"}
+
+213%
+
+The growth rate of new businesses is 213% higher for rural communities with high broadband utilization
+
+:::
+
+::::
 
 <p style="padding-right: 10%; text-align: right">Weinstein, A., Erouart, M., & Dewbury, A. (2024)</p>
 
@@ -149,48 +167,30 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 # Broadband research is evolving<br >... and so is the data!
 
-<!--
-- **Data Volume and Complexity**
-  <br />Sheer size of the data can overwhelm traditional data processing tools and techniques
-- **Lack of Data Quality and Consistency**
-  <br />Data duplication, inconsistencies in naming conventions, and data entry errors are widespread problems in data sources, requiring careful cleaning and validation
-- **Non-existent change process**
-  <br />General lack feedback/interaction cycle between researches and data providers
-  ## Federal Communications Commission ([FCC](https://www.fcc.gov/))
--->
-
-## as data experts: solve data on behalf of the researchers
+## Broadband data is more detailed than ever before but at a cost
 
 :::: {.columns}
 
-::: {.column width="30%" .fragment}
-
-![Federal Communications Commission ([FCC](https://www.fcc.gov/))](assets/images/fcc-seal-rgb-2020.svg)
-
-:::
-
-::: {.column width="70%" .fragment}
-
+::: {.column width="60%" .fragment}
 
 |                      | [Form 477](https://www.fcc.gov/economics-analytics/industry-analysis-division/form-477-resources) | [National Broadband Map](https://broadbandmap.fcc.gov/home){white-space="nowrap"}                                                                                                                                                    |
 |----------------------|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
 | Granularity          | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
 | Timeframe            | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
-| Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
+| Releases             | **twice a year**                                                                                  | **twice a year**                                                                                                                                                                                                           |
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
-::: {.fragment}
-
-- Big messy data
-
-- Recquire domain knowledge
-
-- Evolving data landscape
-
-
 
 :::
+
+::: {.column width="40%" .fragment}
+
+- Data has grown 50 fold from one data product to the next
+
+- Require domain knowledge
+
+- Evolving data landscape
 
 :::
 
@@ -200,11 +200,9 @@ _Need speaker notes with short and sweet takeaways for these two apps_
 
 - Agency in charge of regulating "everything" communications
 
-- Their data landscape is evolving fast (now they have a [platform](https://opendata.fcc.gov/)!)
-
-How to work with constant change upstream?
-
 These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
+
+increase 50th fold
 
 FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
 
@@ -236,69 +234,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-<!--
-## … Automation with code …
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-```{bash}
-#| eval: false
-#| echo: true
-
-# [...]
-# Download all FCC data needed
-all : dirs dl_file list_file
-
-include config.mk
-
-## dirs:	Create specific dirs to download data
-dirs : config.mk
-	@pwd
-	@mkdir -p $(DATA_PATH)
-	echo "create $(DATA_PATH)"
-
-## dl_file:	Create a list of files availiable, download them
-dl_file : $(CSV_SRC) get_csv_dl.R
-	Rscript get_csv_dl.R $(CSV_SRC)
-	Rscript list_file_dl.R $(DATA_PATH) $(CSV_SRC)
-.PHONY : dl_file
-
-## list_file: Create a list of downloaded file
-list_file : list_file_dl.R $(CSV_SRC)
-	Rscript report_dl.R $(DATA_PATH)
-.PHONY : list_file
-
-# [...]
-```
-
-:::
-
-::: {.column width="50%" .fragment}
-
-- New projects -> New specs
-
-#### **Challenge**: copy/pasting and maintaining X **similar** code sources {.fragment}
-
-- Spoiler: Not everyone likes SQL
-
-#### **Challenge**: make it more accessible {.fragment}
-
-- Out of memory lead to processing data transformations in DB (PostgreSQL)
-
-#### **Challenge**: Slow, lack of reactivity {.fragment}
-
-:::
-
-::::
-
-::: {.notes}
-... this boilerplate was initially copy-and-pasted from project to project.
-:::
--->
-
-## As a broadband researcher,
+## The current structure and delivery of FCC data does not meet the growing needs of broadband researchers
 
 - I wish I didn’t have to manually download FCC data
 
@@ -308,36 +244,11 @@ list_file : list_file_dl.R $(CSV_SRC)
 
 … I wish I had more time to do the interesting research and analysis
 
-
-## :bulb: Light from [posit::conf](https://posit.co/conference/), Slack is buzzing!
-
-Workshop on DuckDB ([Parquet](https://parquet.apache.org/) / [Arrow](https://arrow.apache.org/) / [OLAP](https://en.wikipedia.org/wiki/Online_analytical_processing))
-
-::: {.callout-warning}
-Contains real slack messages with typos!
-:::
-
-::: {.r-stack .fragment}
-
-![](assets/images/asap_1.png){.fragment .fade-up}
-
-![](assets/images/asap_2.png){.fragment .fade-up}
-
-![](assets/images/asap_3.png){.fragment .fade-up}
-
-![](assets/images/asap_4.png){.fragment .fade-up}
-
-![](assets/images/asap_5.png){.fragment .fade-up}
-
-![](assets/images/asap_6.png){.fragment .fade-up}
-
-![](assets/images/asap_7.png){.fragment .fade-up}
-
-:::
-
-
 # `cori.data.fcc`
 
+:::{.notes}
+CORI has developed a product to address this problem by packaging data as code…
+:::
 
 ## … data packaged as code
 
@@ -423,11 +334,11 @@ identical(num_files, files_dl)
 
 <p>&nbsp;</p><br />
 
-- Added DuckDB
-
 - Created quality checks to reduce errors
 
 - Complexity is handled in our **upstream** process and **abstracted** so that users can focus on what brings **value**!
+
+- Added DuckDB
 
 :::
 
@@ -437,27 +348,6 @@ identical(num_files, files_dl)
 DuckDB unlocked in-process analytics, so access to a database management system/server is no longer required in order to explore and use the data
 
 :::
-
-<!--
-## What is packaged code?
-
-### Code that works outside of "my" computer
-
-- Code that works seamlessly on any system with the necessary dependencies
-  <br />in this case the R programming language/runtime and…
-- Essential R packages, including
-  - `dplyr`
-  - `duckdb`
-  - `paws` (AWS S3 access)
-
-
-### Benefits from the language ecosystem
-
-- Testing and Validation:
-  <br />tested in GitHub runner: it does not just work on my computer!
-- Documentation and Examples
-- Website to share/distribute code + data + documentation
--->
 
 ## How to use the package > Choose your own adventure!
 
@@ -476,32 +366,12 @@ DuckDB unlocked in-process analytics, so access to a database management system/
 
 :::
 
-<!--
-##  Packaging code > Extra team member :construction_worker:
-
-
-
->  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
-
-[^emily]: [https://www.emilyriederer.com/post/team-of-packages/#collaboration](https://www.emilyriederer.com/post/team-of-packages/#collaboration)
-
-[^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
-
-
-## Packaging code > Increase speed to innovation / insight
-
-- Functions designed to get data and load it in your environment
-
-- **Capitalize on it**!
-
-  * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates) -> add it!
--->
 
 
 # Examples use cases
 
 
-## Broadband service in the Northeast Kingdom
+## Unlock analysis with 3 repeatable lines of codes
 
 :::: {.columns}
 
@@ -595,9 +465,9 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-- Better services closer to "main street" (and worst farther...)
+- 3 lines of codes to get the data…
 
-- 3 lines of codes to get the data
+-  … avoiding thousands of lines of code or clicks 
 
 - Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
 
@@ -607,7 +477,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 ::::
 
-##  Northeast Kingdom: only 11.5% of locations have fiber
+##  Dive deeper, faster!
 
 :::: {.columns}
 
@@ -666,11 +536,16 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-* Only 11.5% of locations have fiber access in the Northeast Kingdom
+- From a “first look  analysis”: good on main street, bad further away
 
-* 6/25 ISP are providing Fiber
+- To a deeper  analysis: 	
 
-* Leading ISP here is small ISP, non-profit: NEK broadband
+  * Only 11.5% of locations have fiber access in the Northeast Kingdom
+
+  * 6/25 ISP are providing Fiber
+
+  * Leading ISP here is small ISP, non-profit: NEK broadband
+
 
 :::
 
@@ -678,7 +553,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 
 
-## What are each ISP competitors in Ohio?
+## cori.data.fcc supports spatial and graph data at multiple scales
 
 :::: {.columns}
 
@@ -794,14 +669,13 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 <p>&nbsp;</p><br />
 
+#### What are each ISP competitor in Ohio?
+
 - 1321 ISP operating in Ohio
 
 - Providers competiting in all Ohio are at the core
 
 - Providers with few competitors are at the edges
-
-- `cori.data.fcc` support spatial and graph data
-
 
 :::
 
@@ -835,24 +709,29 @@ library(cori.data.fcc)
 packageVersion("cori.data.fcc")
 ```
 
+::: {.callout-tip}
 
+Open source supported by CORI and open to collaborations
+:::
 
-## Data is only useful if you can **effectively** use it.
+## Data is only useful if you can **effectively** process it
 
 ::: {.incremental}
 
-- Data packages are abstracting the pain
+- Data packages are extra “team members”
 
-- Data packages can give more power
+- Data packages  give more computing power
 
-- In emerging field: Easier to **capitalize/build** on it
-
-- We need those extra "team members"
+- In emerging field: Easier to capitalize/build on it
 
 :::
 
 
-## Slides are online:
+## Contacts Us: 
+
+::::{.columns}
+
+:::{.column width="50%"}
 
 - Built with R and [cori.data.fcc](https://ruralinnovation.github.io/cori.data.fcc/){.external target="_blank"}
 
@@ -865,11 +744,16 @@ packageVersion("cori.data.fcc")
 
 ![](assets/images/qr.svg){height="300" fig-align="center"}
 
+:::
 
-## Contacts
+:::{.column width="50%"}
 
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
 [LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
+
+:::
+
+::::
 
 # Thank you!
