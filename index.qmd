@@ -61,7 +61,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 # Out of necessity we had to become experts in broadband data
 
-## Our broadband apps in the wild
+## We’ve packaged our expertise into tools…
 
 :::: {.columns}
 
@@ -90,7 +90,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 :::
 
 
-## Our broadband research: from ideation to report
+## … and research
 
 ::::{.columns }
 
@@ -109,8 +109,12 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ::::
 
+::: {.notes}
+from ideation to report
+:::
 
-## Broadband research derived from CORI data work
+
+##  Broadnand research is expanding, going beyond traditional economic analysis
 
 :::: {.columns}
 
@@ -155,7 +159,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 # Broadband research is evolving<br >... and so is the data!
 
-## Broadband data is increasing 30th fold
+## Broadband data is more detailed than ever before but at a cost
 
 :::: {.columns}
 
@@ -188,6 +192,8 @@ I find ways to add structure and meaning to data so that it can effectively info
 - Agency in charge of regulating "everything" communications
 
 These datasets are voluminous, involving hundreds of files, especially for the Form 477 data which covers ISP data since 2014
+
+increase 50th fold
 
 FCC releases lack "guard rails" in terms of data quality and consistency.  In addition to publishing very meager change logs (based on CostQuest’s pre-release/proprietary updates), issues include multiple encodings, erroneous values, and limited quality control
 
