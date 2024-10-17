@@ -133,17 +133,25 @@ from ideation to report
 ::::
 
 
-## New findings from Broadband Research
+## Broadnand research is expanding, going beyond traditional economic analysis
 
-> _“Broadband access is increasingly recognized as essential infrastructure in today’s economy, with the_
-> _ability to connect residents and businesses to economic opportunities nationwide”_
+::::{.columns}
 
+::: {.column width="70%"}
 
-- Rural counties with high broadband utilization experience:
-  - Significantly higher business growth rates
-  - Increased self-employment growth rates
-  - Higher per-capita income growth rates
-  - Stronger GDP growth rates
+![](assets/images/rural_broadband_adoptions_vs_estab_pct_change.png)
+
+:::
+
+::: {.column width="30%"}
+
+213%
+
+The growth rate of new businesses is 213% higher for rural communities with high broadband utilization
+
+:::
+
+::::
 
 <p style="padding-right: 10%; text-align: right">Weinstein, A., Erouart, M., & Dewbury, A. (2024)</p>
 
@@ -174,7 +182,8 @@ from ideation to report
 :::
 
 ::: {.column width="40%" .fragment}
-- "Big messy data"
+
+- Data has grown 50 fold from one data product to the next
 
 - Require domain knowledge
 
