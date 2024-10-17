@@ -56,9 +56,6 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ### Broadband knowledge is an important part of our work
 
-- Broadband data is used extensively in our work to provide critical support to secure funding, develop infrastructure, and implement the programs needed to unlock the potential of rural America.
-
-
 # Out of necessity we had to become experts in broadband data
 
 ## We’ve packaged our expertise into tools…
@@ -104,7 +101,7 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ![](assets/images/report_slide.png){width="50%"}
 
-
+![](assets/images/calixlgo.png)
 :::
 
 ::::
@@ -225,7 +222,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-## FCC data does not meet the needs of a broadband researcher
+## The current structure and delivery of FCC data does not meet the growing needs of broadband researchers
 
 - I wish I didn’t have to manually download FCC data
 
@@ -357,32 +354,12 @@ DuckDB unlocked in-process analytics, so access to a database management system/
 
 :::
 
-<!--
-##  Packaging code > Extra team member :construction_worker:
-
-
-
->  [...] developed packages are [...] extra expert team members.[^dataanalysisreuse]
-
-[^emily]: [https://www.emilyriederer.com/post/team-of-packages/#collaboration](https://www.emilyriederer.com/post/team-of-packages/#collaboration)
-
-[^dataanalysisreuse]: [https://milesmcbain.xyz/posts/data-analysis-reuse/](https://milesmcbain.xyz/posts/data-analysis-reuse/)
-
-
-## Packaging code > Increase speed to innovation / insight
-
-- Functions designed to get data and load it in your environment
-
-- **Capitalize on it**!
-
-  * New project that is requiring [FCC staff block estimates](https://www.fcc.gov/staff-block-estimates) -> add it!
--->
 
 
 # Examples use cases
 
 
-## Broadband service in the Northeast Kingdom
+## Unlock analysis with 3 repeatable lines of codes
 
 :::: {.columns}
 
@@ -476,9 +453,9 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-- Better services closer to "main street" (and worst farther...)
+- 3 lines of codes to get the data…
 
-- 3 lines of codes to get the data
+-  … avoiding you thousand lines of code or clicks 
 
 - Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
 
@@ -488,7 +465,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 ::::
 
-##  Northeast Kingdom: only 11.5% of locations have fiber
+##  Dive deeper, faster!
 
 :::: {.columns}
 
@@ -547,11 +524,16 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-* Only 11.5% of locations have fiber access in the Northeast Kingdom
+- From a “first look  analysis”: good on main street, bad further away
 
-* 6/25 ISP are providing Fiber
+- To a deeper  analysis: 	
 
-* Leading ISP here is small ISP, non-profit: NEK broadband
+  * Only 11.5% of locations have fiber access in the Northeast Kingdom
+
+  * 6/25 ISP are providing Fiber
+
+  * Leading ISP here is small ISP, non-profit: NEK broadband
+
 
 :::
 
@@ -559,7 +541,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 
 
-## What are each ISP competitors in Ohio?
+## cori.data.fcc support spatial and graph data at multiple scales
 
 :::: {.columns}
 
@@ -675,14 +657,13 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 <p>&nbsp;</p><br />
 
+#### What are each ISP competitor in Ohio?
+
 - 1321 ISP operating in Ohio
 
 - Providers competiting in all Ohio are at the core
 
 - Providers with few competitors are at the edges
-
-- `cori.data.fcc` support spatial and graph data
-
 
 :::
 
@@ -716,19 +697,20 @@ library(cori.data.fcc)
 packageVersion("cori.data.fcc")
 ```
 
+::: {.callout-tip}
 
+Open source supported by CORI and open to collaborations
+:::
 
 ## Data is only useful if you can **effectively** use it.
 
 ::: {.incremental}
 
-- Data packages are abstracting the pain
+- Data packages are extra “team members”
 
-- Data packages can give more power
+- Data packages  give more computing power
 
-- In emerging field: Easier to **capitalize/build** on it
-
-- We need those extra "team members"
+- In emerging field: Easier to capitalize/build on it
 
 :::
 
