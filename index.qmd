@@ -1,6 +1,6 @@
 ---
 title: "Data Innovation"
-subtitle: "`cori.data.fcc`:: an example of data as code"
+subtitle: "Streamlining Broadband Insights with `cori.data.fcc`"
 author: "Olivier Leroy"
 date: "October 20 2024"
 institute: "Center On Rural Innovation"
@@ -32,9 +32,12 @@ IV.   <span style="font-size: 125%;">**Our broadband data package: `cori.data.fc
 
 ## :wave: Hi, I'm Olivier, a Senior Data Engineer at CORI
 
+<p>&nbsp;</p><br />
 > Meet the people the people who can coax treasure out of messy, unstructured, data[^hbr]  
 
-Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
+<p>&nbsp;</p><br />
+
+- Working with source data—often referred to as "big", "messy", "unstructured" data—is a growing challenge
 
 [^hbr]: [Harvard Business Review](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century)
 
@@ -175,7 +178,7 @@ The growth rate of new businesses is 213% higher for rural communities with high
 | US Census Boundaries | 2010                                                                                              | 2020                                                                                                                                                                                                                                 |
 | Granularity          | Census blocks                                                                                     | [Locations](https://broadbandmap.fcc.gov/location-summary/fixed?version=dec2022&location_id=1350199199&addr1=390+MORGAN+ST&addr2=OBERLIN%2C+OH+44074&zoom=15.00&vlon=-82.231744&vlat=41.287448&br=r&speed=25_3&tech=1_2_3_4_5_6_7_8) |
 | Timeframe            | 2014-2021                                                                                         | 2022 - *Ongoing*                                                                                                                                                                                                                     |
-| Releases             | **twice a year**                                                                                  | **twice a year[^version]**                                                                                                                                                                                                           |
+| Releases             | **twice a year**                                                                                  | **twice a year**                                                                                                                                                                                                           |
 | Records              | **416,447,807**                                                                                   | **3,488,191,994**                                                                                                                                                                                                                    |
 | Size                 | **400MB/year**                                                                                    | **22GB/year**                                                                                                                                                                                                                        |
 
@@ -464,7 +467,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 - 3 lines of codes to get the data…
 
--  … avoiding you thousand lines of code or clicks 
+-  … avoiding thousands of lines of code or clicks 
 
 - Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
 
@@ -550,7 +553,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 
 
-## cori.data.fcc support spatial and graph data at multiple scales
+## cori.data.fcc supports spatial and graph data at multiple scales
 
 :::: {.columns}
 
