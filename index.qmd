@@ -248,17 +248,17 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-## The current structure and delivery of FCC data does not meet the growing needs of broadband researchers
+## FCC data does not meet the growing needs of broadband researchers
 
+<p>&nbsp;</p><br />
 
-
-- <span style="font-size: 125%;">I wish I didn’t have to manually download FCC data</span>
+- <span style="font-size: 125%;">I wish I didn’t have to manually download FCC data</span>![](assets/images/overview.png){fig-align="right"}
 
 - <span style="font-size: 125%;">I wish I could share my analysis (and code) with colleagues</span>
 
 - <span style="font-size: 125%;">I wish I could easily perform quality checks on the raw FCC data</span>
 
-### … I wish I had more time to do the interesting research and analysis
+-  <span style="font-size: 125%;"> **… I wish I had more time to do the interesting research and analysis** </span>
 
 # `cori.data.fcc`
 
@@ -350,7 +350,7 @@ identical(num_files, files_dl)
 
 <p>&nbsp;</p><br />
 
-- Created quality checks to reduce errors
+- Created **quality checks** to reduce errors
 
 - Complexity is handled in our **upstream** process and **abstracted** so that users can focus on what brings **value**!
 
@@ -552,9 +552,9 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-- From a “first look  analysis”: good on main street, bad further away
+- From a **simple analysis**: good on main street, bad further away
 
-- To a deeper  analysis: 	
+- To a **deeper** analysis: 	
 
   * Only 11.5% of locations have fiber access in the Northeast Kingdom
 
@@ -748,6 +748,14 @@ Open source supported by CORI and open to collaborations
 ::::{.columns}
 
 :::{.column width="50%"}
+Website: [https://ruralinnovation.us](https://ruralinnovation.us)
+
+[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
+
+
+:::
+
+:::{.column width="50%"}
 
 - Built with R and [cori.data.fcc](https://ruralinnovation.github.io/cori.data.fcc/){.external target="_blank"}
 
@@ -758,15 +766,8 @@ Open source supported by CORI and open to collaborations
 
 <br />
 
-![](assets/images/qr.svg){height="300" fig-align="center"}
+![](assets/images/qr.svg){height="300" fig-align="left"}
 
-:::
-
-:::{.column width="50%"}
-
-Website: [https://ruralinnovation.us](https://ruralinnovation.us)
-
-[LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
 
 :::
 
