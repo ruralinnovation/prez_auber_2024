@@ -111,7 +111,7 @@ from ideation to report
 :::
 
 
-##  Broadnand research is expanding, going beyond traditional economic analysis
+##  Broadband research is expanding, going beyond traditional economic analysis
 
 :::: {.columns}
 
@@ -331,11 +331,11 @@ identical(num_files, files_dl)
 
 <p>&nbsp;</p><br />
 
-- Added DuckDB
-
 - Created quality checks to reduce errors
 
 - Complexity is handled in our **upstream** process and **abstracted** so that users can focus on what brings **value**!
+
+- Added DuckDB
 
 :::
 
