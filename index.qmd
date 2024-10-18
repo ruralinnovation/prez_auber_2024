@@ -481,11 +481,11 @@ fig <- ggplot(data = nek_bb_blocks) +
 
 <p>&nbsp;</p><br />
 
-- 3 lines of codes to get the data…
+- **3 lines** of codes to get the data…
 
 -  … avoiding thousands of lines of code or clicks 
 
-- Use census blocks: easy match with other data sources (ACS, BEA, etc ..)
+- Use census blocks: **easy match with other data sources** (ACS, BEA, etc ..)
 
 
 :::
@@ -732,16 +732,34 @@ Open source supported by CORI and open to collaborations
 
 ## Data is only useful if you can **effectively** process it
 
-::: {.incremental}
 
-- Data packages are extra “team members”
+::::{.columns}
 
-- Data packages  give more computing power
+::: {.column width="50%"}
 
-- In emerging field: Easier to capitalize/build on it
+<p>&nbsp;</p><br />
+
+- Data packages are **extra “team members”**
+
+<span>&nbsp;</span>
+
+- Data packages give **more computing** power
+
+<span>&nbsp;</span>
+
+- In emerging field: Easier to **capitalize/build** on it
 
 :::
 
+::: {.column width="50%"}
+
+```{=html}
+<iframe width="600" height="600" src="https://ruralinnovation.github.io/cori.data.fcc/" title="cori.data.fcc"></iframe>
+```
+
+:::
+
+::::
 
 ## Contacts Us: 
 
