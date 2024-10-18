@@ -391,11 +391,11 @@ DuckDB unlocked in-process analytics, so access to a database management system/
 - _Broadband data at the census block (or tract, county, etc.) level is perfect for my research_: <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span> <span>&nbsp;</span>
   <br />**Download the transformed data for NBM from CORI ([ISP](https://ruralinnovation.github.io/cori.data.fcc/reference/get_frn_nbm_bl.html) / [County](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html))**
 
-- _I need to inspect the source (raw) data_:
-  <br />**Download raw data [files directly from the FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)**
-
 - _I need source data but working with hundreds of CSV is not for me_:
   <br />**Download raw data as tables from CORI ([NBM](https://ruralinnovation.github.io/cori.data.fcc/reference/get_county_nbm_raw.html) / [Form 477](https://ruralinnovation.github.io/cori.data.fcc/reference/get_f477.html))**
+
+- _I need to inspect the source (raw) data_:
+  <br />**Download raw data [files directly from the FCC](https://ruralinnovation.github.io/cori.data.fcc/articles/Check_and_download_NBM_data.html)**
 
 - The guides linked above can help you with each step!
 
@@ -719,9 +719,9 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 ## How to get the package
 
-The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
+0. The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
 
-You need the R package [{remotes}](https://remotes.r-lib.org/).
+1. You need the R package [{remotes}](https://remotes.r-lib.org/).
 
 ```{r}
 #| eval: false
@@ -732,22 +732,21 @@ install.packages("remotes")
 remotes::install_github("ruralinnovation/cori.data.fcc")
 ```
 
+2. Load it!
+
 ```{r}
-#| echo: false
+#| echo: true
 library(cori.data.fcc)
 ```
 
-:construction: Check the version you have and see what new versions are available :construction:
+3. :construction: Check the version! :construction:
 ```{r}
 #| label: version-package
 #| echo: true
 packageVersion("cori.data.fcc")
 ```
 
-::: {.callout-tip}
-
-Open source supported by CORI and open to collaborations
-:::
+###  Open source supported by CORI and open to collaborations {.center}
 
 # Summary
 
