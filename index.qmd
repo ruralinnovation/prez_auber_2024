@@ -99,7 +99,7 @@ We believe that **small towns** are home to **big ideas** — and combining new 
 
 ![](assets/images/bb_climate_2.png)
 
-![](assets/images/bbrisk_qr.svg){fig-align="center"}
+![](assets/images/bb_risk.svg.svg){fig-align="center"}
 
 :::
 
