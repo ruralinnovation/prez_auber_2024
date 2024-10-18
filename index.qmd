@@ -746,7 +746,7 @@ library(cori.data.fcc)
 packageVersion("cori.data.fcc")
 ```
 
-###  Open source supported by CORI and open to collaborations {.center}
+###  Open source supported by CORI, welcome any collaborations!
 
 # Summary
 
