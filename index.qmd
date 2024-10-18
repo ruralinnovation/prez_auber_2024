@@ -56,9 +56,26 @@ I find ways to add structure and meaning to data so that it can effectively info
 
 ## What Broadband means to Rural America
 
-- We believe that **small towns** are home to **big ideas** — and combining new models of economic development with strategic investments in **new infrastructure** can **empower rural communities** across the U.S. to participate in and benefit from the nation's growing **tech economy**.
+::::{.columns}
+
+:::{.column width="54%"}
+
+<p>&nbsp;</p><br />
+
+We believe that **small towns** are home to **big ideas** — and combining new models of economic development with strategic investments in **new infrastructure** can **empower rural communities** across the U.S. to participate in and benefit from the nation's growing **tech economy**.
+
+:::
+
+:::{.column width="44%"}
+
+![](assets/images/Shaniqua%20CorleyMoore.jpg)
+
+:::
+
+::::
 
 ### Broadband knowledge is an important part of our work
+
 
 # Out of necessity we had to become experts in broadband data
 
@@ -125,11 +142,13 @@ from ideation to report
 
 ::: {.column width="50%"}
 
+- **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
+  <br />Whitacre, B. (2024). The fiber broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
+
+
 - **[Beyond connectivity: The role of broadband in rural economic growth and resilience](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)**
   <br />Weinstein, A., Erouart, M., & Dewbury, A. (2024) Beyond Connectivity: The role of broadband in rural economic growth and resilience. Center on Rural Innovation. [https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/](https://ruralinnovation.us/resources/reports/report-the-role-of-broadband-in-rural-economic-growth-and-resilience/)
 
-- **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
-  <br />Whitacre, B. (2024). The fiber broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
 
 :::
 
@@ -141,7 +160,7 @@ from ideation to report
 ::::
 
 
-## Broadband research is expanding, beyond traditional economic analysis
+## Broadband research, not only about housing market
 
 ::::{.columns}
 
@@ -252,7 +271,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 <p>&nbsp;</p><br />
 
-- <span style="font-size: 125%;">I wish I didn’t have to manually download FCC data</span>![](assets/images/overview.png){fig-align="right"}
+- <span style="font-size: 125%;">I wish I didn’t have to manually download FCC data</span>![](assets/images/data_center.png){fig-align="right" width="40%"}
 
 - <span style="font-size: 125%;">I wish I could share my analysis (and code) with colleagues</span>
 
@@ -294,7 +313,7 @@ promote collaboration: open source, more value from our codes, start discussion 
 :::
 
 
-## … how it works
+## 440 files in 12 lignes of codes
 
 :::: {.columns}
 
@@ -730,6 +749,8 @@ packageVersion("cori.data.fcc")
 Open source supported by CORI and open to collaborations
 :::
 
+# Summary
+
 ## Data is only useful if you can **effectively** process it
 
 
@@ -753,6 +774,8 @@ Open source supported by CORI and open to collaborations
 
 ::: {.column width="50%"}
 
+<br />
+
 ```{=html}
 <iframe width="600" height="600" src="https://ruralinnovation.github.io/cori.data.fcc/" title="cori.data.fcc"></iframe>
 ```
@@ -769,6 +792,8 @@ Open source supported by CORI and open to collaborations
 Website: [https://ruralinnovation.us](https://ruralinnovation.us)
 
 [LinkedIn](https://www.linkedin.com/company/11099658) | [Twitter](https://twitter.com/Ruralinno) | [Facebook](https://www.facebook.com/RuralInno/) | [Instagram](https://www.instagram.com/ruralinno/) | [YouTube](https://www.youtube.com/channel/UCyqbtSrv4Nad9vVv4dQptcA)
+
+![](assets/images/10%20(1).png)
 
 
 :::
