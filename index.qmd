@@ -277,7 +277,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 - <span style="font-size: 125%;">I wish I could easily perform quality checks on the raw FCC data</span>
 
--  <span style="font-size: 125%;"> **… I wish I had more time to do the interesting research and analysis** </span>
+-  <span style="font-size: 125%;"> **There’s a steep learning curve in working with this data … I wish I had more time to focus on  interesting research and analysis** </span>
 
 # `cori.data.fcc`
 
@@ -313,7 +313,7 @@ promote collaboration: open source, more value from our codes, start discussion 
 :::
 
 
-## 440 files in 12 lignes of codes
+## 440 files in 12 lines of codes
 
 :::: {.columns}
 
@@ -579,7 +579,7 @@ fig <- ggplot(data = nek_bb_blocks) +
 
   * 6/25 ISP are providing Fiber
 
-  * Leading ISP here is small ISP, non-profit: NEK broadband
+  * We see that NEK broadband provides the best (most inclusive) coverage in the area. This insight relates to our recent broadband research
 
 
 :::
@@ -704,13 +704,18 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 <p>&nbsp;</p><br />
 
-#### What are each ISP competitor in Ohio?
+#### Mapping the ISP market in Ohio?
 
 - 1321 ISP operating in Ohio
 
-- Providers competiting in all Ohio are at the core
+- How to interpret: 
 
-- Providers with few competitors are at the edges
+  * Providers competing in competitive markets are at the center
+
+  * Providers with few competitors are on the edges
+
+- This type of analysis may be helpful in telling a story about ISP speeds and services, and ultimately general service quality. 
+
 
 :::
 
@@ -718,6 +723,10 @@ points3d(g, vertices(g), color="black", pch=V(oh_graph)$provider_name, size=1.5)
 
 
 ## How to get the package
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 0. The source code is hosted on [GitHub](https://github.com/ruralinnovation/cori.data.fcc) (Version control)
 
@@ -748,27 +757,6 @@ packageVersion("cori.data.fcc")
 
 ###  Open source supported by CORI, welcome any collaborations!
 
-# Summary
-
-## Data is only useful if you can **effectively** process it
-
-
-::::{.columns}
-
-::: {.column width="50%"}
-
-<p>&nbsp;</p><br />
-
-- Data packages are **extra “team members”**
-
-<span>&nbsp;</span>
-
-- Data packages give **more computing** power
-
-<span>&nbsp;</span>
-
-- In emerging field: Easier to **capitalize/build** on it
-
 :::
 
 ::: {.column width="50%"}
@@ -778,6 +766,44 @@ packageVersion("cori.data.fcc")
 ```{=html}
 <iframe width="600" height="600" src="https://ruralinnovation.github.io/cori.data.fcc/" title="cori.data.fcc"></iframe>
 ```
+
+:::
+
+::::
+
+
+# Summary
+
+## Our response to the changing broadband research landscape
+
+
+::::{.columns}
+
+::: {.column width="50%"}
+
+<p>&nbsp;</p><br />
+
+
+- We hope to **reduce the entry costs** associated with broadband research by making this a publically available product.
+
+- We’ve **packaged the data (and expertise)** to add an **extra “team member”** to your research team
+
+- And in return we hope to:
+
+  * **Support** the expansion of exciting broadband research, positively impacting rural communities.
+
+  * Increase the visibility and accountability of FCC products. 
+
+  * Increase awareness of the **important role broadband plays in rural areas**.
+
+
+:::
+
+::: {.column width="50%"}
+
+<br />
+
+![](assets/images/rural_nonrural_broadband_gap.png)
 
 :::
 
