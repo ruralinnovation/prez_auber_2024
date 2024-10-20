@@ -264,7 +264,7 @@ Multiple FRNs exist for well-known ISPs like Windstream and AT&T.
 
 ::::
 
-## FCC data does not meet the growing needs of broadband researchers
+## FCC data does not meet the growing needs of researchers
 
 <p>&nbsp;</p><br />
 
