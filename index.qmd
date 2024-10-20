@@ -142,7 +142,7 @@ from ideation to report
 
 ::: {.column width="50%"}
 
-- **[The Fibre Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
+- **[The Fiber Broadband Housing Premium Across Three US States](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)**
   <br />Whitacre, B. (2024). The fiber broadband housing premium across three US States. Regional Studies, Regional Science, 11(1), 38–62. [https://doi.org/10.1080/21681376.2024.2305951](https://www.tandfonline.com/doi/full/10.1080/21681376.2024.2305951#abstract)
 
 
